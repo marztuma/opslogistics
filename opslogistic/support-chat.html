@@ -294,14 +294,16 @@
         }
 
         .faq-answer {
-            padding: 0 1.5rem;
-            max-height: 0;
+            padding: 1rem 1.5rem;
+            max-height: 500px;
             overflow: hidden;
-            transition: max-height 0.3s;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .faq-answer.open {
             padding: 1rem 1.5rem;
+            opacity: 1;
             max-height: 500px;
         }
 

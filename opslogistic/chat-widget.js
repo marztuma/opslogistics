@@ -301,7 +301,7 @@
 
         .ops-faq-item {
           background: #f9f9f9;
-          border-left: 3px solid #0055CC;
+          border-bottom: 1px solid #e0e0e0;
           padding: 0.75rem;
           border-radius: 4px;
           cursor: pointer;

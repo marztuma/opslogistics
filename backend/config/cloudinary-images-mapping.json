@@ -1,0 +1,268 @@
+﻿{
+    "healthcare":  [
+                       {
+                           "originalName":  "Stock that circulates instead of selling.webp",
+                           "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463089/opslogistics/healthcare/ghaheack7lvamsewvhz6.webp",
+                           "folder":  "healthcare",
+                           "cloudinaryId":  "opslogistics/healthcare/ghaheack7lvamsewvhz6"
+                       },
+                       {
+                           "originalName":  "The only supply chain that has to come back.webp",
+                           "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463092/opslogistics/healthcare/smrelpgzaxnon0qrkjja.webp",
+                           "folder":  "healthcare",
+                           "cloudinaryId":  "opslogistics/healthcare/smrelpgzaxnon0qrkjja"
+                       },
+                       {
+                           "originalName":  "The shipment is the evidence..webp",
+                           "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463095/opslogistics/healthcare/gbjn1at2cpofy8hqe7o5.webp",
+                           "folder":  "healthcare",
+                           "cloudinaryId":  "opslogistics/healthcare/gbjn1at2cpofy8hqe7o5"
+                       }
+                   ],
+    "contract logistics":  [
+                               {
+                                   "originalName":  "Send us twelve months of order data..webp",
+                                   "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463053/opslogistics/contract%20logistics/qdat7qpl13meisckh0gu.webp",
+                                   "folder":  "contract logistics",
+                                   "cloudinaryId":  "opslogistics/contract logistics/qdat7qpl13meisckh0gu"
+                               },
+                               {
+                                   "originalName":  "The disciplines that separate a good site from a cheap one.webp",
+                                   "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463056/opslogistics/contract%20logistics/mhhfs6oszaootnsgyyxo.webp",
+                                   "folder":  "contract logistics",
+                                   "cloudinaryId":  "opslogistics/contract logistics/mhhfs6oszaootnsgyyxo"
+                               },
+                               {
+                                   "originalName":  "Where the cost actually sits.webp",
+                                   "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463059/opslogistics/contract%20logistics/ilni1y3z5bnqka2zma2q.webp",
+                                   "folder":  "contract logistics",
+                                   "cloudinaryId":  "opslogistics/contract logistics/ilni1y3z5bnqka2zma2q"
+                               }
+                           ],
+    "white papers":  [
+                         {
+                             "originalName":  "You do not have to give us your email.webp",
+                             "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463133/opslogistics/white%20papers/hv1ej71u0jtazlpztjmo.webp",
+                             "folder":  "white papers",
+                             "cloudinaryId":  "opslogistics/white papers/hv1ej71u0jtazlpztjmo"
+                         }
+                     ],
+    "lastmile":  [
+                     {
+                         "originalName":  "Everything upstream is judged at one door..webp",
+                         "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463097/opslogistics/lastmile/sit8qmn8zxg0xlu18uys.webp",
+                         "folder":  "lastmile",
+                         "cloudinaryId":  "opslogistics/lastmile/sit8qmn8zxg0xlu18uys"
+                     },
+                     {
+                         "originalName":  "The van is already there.webp",
+                         "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463102/opslogistics/lastmile/o0m26jswsdbytukbxqhi.webp",
+                         "folder":  "lastmile",
+                         "cloudinaryId":  "opslogistics/lastmile/o0m26jswsdbytukbxqhi"
+                     },
+                     {
+                         "originalName":  "What happens when the door does not open.webp",
+                         "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463107/opslogistics/lastmile/segqlvlmomonahnbl0xd.webp",
+                         "folder":  "lastmile",
+                         "cloudinaryId":  "opslogistics/lastmile/segqlvlmomonahnbl0xd"
+                     }
+                 ],
+    "logo":  [
+                 {
+                     "originalName":  "ChatGPT_Image_Aug_1__2026__04_18_30_AM-removebg-preview.webp",
+                     "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790462981/opslogistics/logo/z29yyzladsvvgttdxj6a.webp",
+                     "folder":  "logo",
+                     "cloudinaryId":  "opslogistics/logo/z29yyzladsvvgttdxj6a"
+                 }
+             ],
+    "energy":  [
+                   {
+                       "originalName":  "The last two kilometres.webp",
+                       "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463080/opslogistics/energy/klq1rygq6hcuz9lhnefx.webp",
+                       "folder":  "energy",
+                       "cloudinaryId":  "opslogistics/energy/klq1rygq6hcuz9lhnefx"
+                   },
+                   {
+                       "originalName":  "The long tail nobody plans for.webp",
+                       "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463086/opslogistics/energy/roxpczvhotuel7fudy3l.webp",
+                       "folder":  "energy",
+                       "cloudinaryId":  "opslogistics/energy/roxpczvhotuel7fudy3l"
+                   }
+               ],
+    "customs":  [
+                    {
+                        "originalName":  "Send us a code you are unsure about..webp",
+                        "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463065/opslogistics/customs/me7qc8rrt84xzqqlfuxa.webp",
+                        "folder":  "customs",
+                        "cloudinaryId":  "opslogistics/customs/me7qc8rrt84xzqqlfuxa"
+                    },
+                    {
+                        "originalName":  "The part that saves money rather than time.webp",
+                        "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463068/opslogistics/customs/bgxagp5ztckshtjf5yyy.webp",
+                        "folder":  "customs",
+                        "cloudinaryId":  "opslogistics/customs/bgxagp5ztckshtjf5yyy"
+                    },
+                    {
+                        "originalName":  "What clearance actually involves.webp",
+                        "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463071/opslogistics/customs/sbtfo4pvsupiko8pmegn.webp",
+                        "folder":  "customs",
+                        "cloudinaryId":  "opslogistics/customs/sbtfo4pvsupiko8pmegn"
+                    }
+                ],
+    "case studies":  [
+                         {
+                             "originalName":  "54414110-760f-460c-8337-7ec8b07718cd 4th pic place holder.webp",
+                             "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463035/opslogistics/case%20studies/c4owdne4fmbrsmp9yvtv.webp",
+                             "folder":  "case studies",
+                             "cloudinaryId":  "opslogistics/case studies/c4owdne4fmbrsmp9yvtv"
+                         },
+                         {
+                             "originalName":  "dbe36e5e-f829-411c-aaac-4ed575de54e7 2nd pic holder.webp",
+                             "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463039/opslogistics/case%20studies/mleonpwzgxunleoyvtgw.webp",
+                             "folder":  "case studies",
+                             "cloudinaryId":  "opslogistics/case studies/mleonpwzgxunleoyvtgw"
+                         },
+                         {
+                             "originalName":  "Three problems we were brought in on.webp",
+                             "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463041/opslogistics/case%20studies/w0iyqs5vnw7cdfkhf2mg.webp",
+                             "folder":  "case studies",
+                             "cloudinaryId":  "opslogistics/case studies/w0iyqs5vnw7cdfkhf2mg"
+                         }
+                     ],
+    "ecommerce":  [
+                      {
+                          "originalName":  "Where the margin quietly leaves.webp",
+                          "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463074/opslogistics/ecommerce/fxjquhejkhksuxkzfvvf.webp",
+                          "folder":  "ecommerce",
+                          "cloudinaryId":  "opslogistics/ecommerce/fxjquhejkhksuxkzfvvf"
+                      }
+                  ],
+    "logistics":  [
+                      {
+                          "originalName":  "Why your freight invoice never quite matches your quote.webp",
+                          "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463110/opslogistics/logistics/s0hgjisccfmu7nbl9h8b.webp",
+                          "folder":  "logistics",
+                          "cloudinaryId":  "opslogistics/logistics/s0hgjisccfmu7nbl9h8b"
+                      }
+                  ],
+    "automotive":  [
+                       {
+                           "originalName":  "96080ec0-e549-496d-932b-3aa421fde99b.webp",
+                           "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463024/opslogistics/automotive/uwrgimsqmfqeoznqw4m3.webp",
+                           "folder":  "automotive",
+                           "cloudinaryId":  "opslogistics/automotive/uwrgimsqmfqeoznqw4m3"
+                       },
+                       {
+                           "originalName":  "Batteries are the hardest thing in the vehicle to move.webp",
+                           "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463029/opslogistics/automotive/u3eiuh7msi3fwx3xx9to.webp",
+                           "folder":  "automotive",
+                           "cloudinaryId":  "opslogistics/automotive/u3eiuh7msi3fwx3xx9to"
+                       },
+                       {
+                           "originalName":  "The long tail nobody plans for.webp",
+                           "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463032/opslogistics/automotive/fs8s1ur0yxptidnqw8up.webp",
+                           "folder":  "automotive",
+                           "cloudinaryId":  "opslogistics/automotive/fs8s1ur0yxptidnqw8up"
+                       }
+                   ],
+    "technology":  [
+                       {
+                           "originalName":  "Delivered is not the same as installed.webp",
+                           "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463121/opslogistics/technology/oay28rquitj8cjzq2lrw.webp",
+                           "folder":  "technology",
+                           "cloudinaryId":  "opslogistics/technology/oay28rquitj8cjzq2lrw"
+                       },
+                       {
+                           "originalName":  "Most tech ships more than once.webp",
+                           "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463126/opslogistics/technology/uwijfc1o6af9afjsrokr.webp",
+                           "folder":  "technology",
+                           "cloudinaryId":  "opslogistics/technology/uwijfc1o6af9afjsrokr"
+                       }
+                   ],
+    "cotsumer service":  [
+                             {
+                                 "originalName":  "Talk to someone who can actually answer..webp",
+                                 "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463062/opslogistics/cotsumer%20service/aj7tup03gavxhu2hbjto.webp",
+                                 "folder":  "cotsumer service",
+                                 "cloudinaryId":  "opslogistics/cotsumer service/aj7tup03gavxhu2hbjto"
+                             }
+                         ],
+    "home":  [
+                 {
+                     "originalName":  "3d63aa55-573e-4d41-b574-81235d3ca999.webp",
+                     "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790462985/opslogistics/home/lwjiork2wx9yi9i7wc9z.webp",
+                     "folder":  "home",
+                     "cloudinaryId":  "opslogistics/home/lwjiork2wx9yi9i7wc9z"
+                 },
+                 {
+                     "originalName":  "bulk maritime transport.webp",
+                     "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790462988/opslogistics/home/xj9brzpmctcczmks1mvy.webp",
+                     "folder":  "home",
+                     "cloudinaryId":  "opslogistics/home/xj9brzpmctcczmks1mvy"
+                 },
+                 {
+                     "originalName":  "Bulk shipping or shipping by retailer.webp",
+                     "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790462991/opslogistics/home/rsiw83uh30dmrnhcwmwd.webp",
+                     "folder":  "home",
+                     "cloudinaryId":  "opslogistics/home/rsiw83uh30dmrnhcwmwd"
+                 },
+                 {
+                     "originalName":  "Enterprise logistics services.webp",
+                     "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790462997/opslogistics/home/lkdmmmqwdmdzljyzl0tn.webp",
+                     "folder":  "home",
+                     "cloudinaryId":  "opslogistics/home/lkdmmmqwdmdzljyzl0tn"
+                 },
+                 {
+                     "originalName":  "Freight is not clean. We are not going to pretend otherwise..webp",
+                     "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463000/opslogistics/home/ji8dc0nvuhiq8cyr4anh.webp",
+                     "folder":  "home",
+                     "cloudinaryId":  "opslogistics/home/ji8dc0nvuhiq8cyr4anh"
+                 },
+                 {
+                     "originalName":  "Globalization is holding strong at a record level.webp",
+                     "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463003/opslogistics/home/yu3xzsxjpyonwvkelt5w.webp",
+                     "folder":  "home",
+                     "cloudinaryId":  "opslogistics/home/yu3xzsxjpyonwvkelt5w"
+                 },
+                 {
+                     "originalName":  "Innovation ›.webp",
+                     "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463006/opslogistics/home/rtngrjs0x9anjgmsnq0h.webp",
+                     "folder":  "home",
+                     "cloudinaryId":  "opslogistics/home/rtngrjs0x9anjgmsnq0h"
+                 },
+                 {
+                     "originalName":  "Navigate the latest pricing developments.webp",
+                     "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463010/opslogistics/home/jkmygar3kyrsch3rgj0g.webp",
+                     "folder":  "home",
+                     "cloudinaryId":  "opslogistics/home/jkmygar3kyrsch3rgj0g"
+                 },
+                 {
+                     "originalName":  "Shipping documents and parcels.webp",
+                     "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463014/opslogistics/home/b1gfawimc1i5on4u0oyy.webp",
+                     "folder":  "home",
+                     "cloudinaryId":  "opslogistics/home/b1gfawimc1i5on4u0oyy"
+                 },
+                 {
+                     "originalName":  "Sustainable development ›.webp",
+                     "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463018/opslogistics/home/xl3dibxi4lpjq2btwvrn.webp",
+                     "folder":  "home",
+                     "cloudinaryId":  "opslogistics/home/xl3dibxi4lpjq2btwvrn"
+                 }
+             ],
+    "retail":  [
+                   {
+                       "originalName":  "Stock in the wrong place is losing value right now..webp",
+                       "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463116/opslogistics/retail/rqc89gcsjncswuskaprc.webp",
+                       "folder":  "retail",
+                       "cloudinaryId":  "opslogistics/retail/rqc89gcsjncswuskaprc"
+                   }
+               ],
+    "cold chain":  [
+                       {
+                           "originalName":  "The chain breaks at the joins.webp",
+                           "cloudinaryUrl":  "https://res.cloudinary.com/tyt96rdp/image/upload/v1790463045/opslogistics/cold%20chain/dflrxjpdcbh5wpu193ts.webp",
+                           "folder":  "cold chain",
+                           "cloudinaryId":  "opslogistics/cold chain/dflrxjpdcbh5wpu193ts"
+                       }
+                   ]
+}

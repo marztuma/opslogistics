@@ -22,6 +22,7 @@ app.use('/api/tracking', require('./routes/tracking'));
 app.use('/api/pricing', require('./routes/pricing'));
 app.use('/api/support', require('./routes/support'));
 app.use('/api/admin', require('./routes/admin'));
+app.use('/api/uploads', require('./routes/uploads'));
 
 // Health check
 app.get('/health', (req, res) => {

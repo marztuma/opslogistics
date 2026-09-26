@@ -24,9 +24,9 @@ if (fs.existsSync(indexPath)) {
     const homeImages = mapping.home || [];
 
     if (homeImages.length > 0) {
-        // Replace the hero background
+        // Replace ALL background images with Cloudinary URLs (global flag)
         html = html.replace(
-            /background-image: linear-gradient\(rgba\(0,0,0,0\.3\), rgba\(0,0,0,0\.3\)\), url\('data:image[^']*'\)/,
+            /background-image: linear-gradient\(rgba\(0,0,0,0\.3\), rgba\(0,0,0,0\.3\)\), url\('data:image[^']*'\)/g,
             `background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${homeImages[3]?.cloudinaryUrl || homeImages[0].cloudinaryUrl}')`
         );
     }
@@ -60,19 +60,31 @@ industryPages.forEach(page => {
 
         if (images.length > 0) {
             let html = fs.readFileSync(filePath, 'utf8');
+            let imageIndex = 0;
 
-            // Replace first SVG placeholder with first image
-            let replaced = false;
-
-            // Try to replace data:image SVG with Cloudinary URL
+            // Replace ALL data:image SVG src attributes
             html = html.replace(
-                /src="data:image\/svg\+xml,[^"]*"/,
-                `src="${images[0].cloudinaryUrl}"`
+                /src="data:image\/svg\+xml,[^"]*"/g,
+                () => {
+                    if (imageIndex < images.length) {
+                        return `src="${images[imageIndex++].cloudinaryUrl}"`;
+                    }
+                    return `src="${images[0].cloudinaryUrl}"`;
+                }
             );
 
-            if (html.includes(images[0].cloudinaryUrl)) {
-                replaced = true;
-            }
+            // Replace placeholder DIVs with actual img tags
+            imageIndex = 0;
+            html = html.replace(
+                /<div style="[^"]*">([^<]*)<\/div>/g,
+                () => {
+                    if (imageIndex < images.length) {
+                        const alt = images[imageIndex].originalName || 'Image';
+                        return `<img src="${images[imageIndex++].cloudinaryUrl}" alt="${alt}" style="width: 100%; height: auto; border-radius: 12px;">`;
+                    }
+                    return `<img src="${images[0].cloudinaryUrl}" alt="Image" style="width: 100%; height: auto; border-radius: 12px;">`;
+                }
+            );
 
             fs.writeFileSync(filePath, html, 'utf8');
             console.log(`[OK] ${page.file} - Added ${images.length} ${page.name} image(s)`);

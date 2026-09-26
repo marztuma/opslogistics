@@ -1,12 +1,18 @@
 {
   "version": 2,
+  "buildCommand": "npm install",
   "builds": [
     {
       "src": "server.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": "../opslogistic/**"
+        "includeFiles": "*.js",
+        "excludeFiles": "node_modules/**"
       }
+    },
+    {
+      "src": "../opslogistic/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [

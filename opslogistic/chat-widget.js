@@ -2,7 +2,7 @@
 // Include this in your HTML: <script src="chat-widget.js"></script>
 
 (function() {
-  const API_URL = 'http://localhost:5000/api/support';
+  const API_URL = '/api/support';
   const WIDGET_ID = 'ops-chat-widget';
   const CHAT_OPEN_KEY = 'ops-chat-open';
 

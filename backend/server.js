@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
+const path = require('path');
 const db = require('./config/database');
 
 const app = express();
@@ -11,6 +12,9 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Serve static frontend files from ../opslogistic directory
+app.use(express.static(path.join(__dirname, '../opslogistic')));
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
@@ -29,9 +33,9 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date() });
 });
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({ error: 'Route not found' });
+// Serve index.html for all non-API routes (SPA fallback)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../opslogistic/index.html'));
 });
 
 // Error handler

@@ -62,7 +62,7 @@ industryPages.forEach(page => {
             let html = fs.readFileSync(filePath, 'utf8');
             let imageIndex = 0;
 
-            // Replace ALL data:image SVG src attributes
+            // Replace ALL data:image SVG src attributes (for existing img tags)
             html = html.replace(
                 /src="data:image\/svg\+xml,[^"]*"/g,
                 () => {
@@ -73,16 +73,17 @@ industryPages.forEach(page => {
                 }
             );
 
-            // Replace placeholder DIVs with actual img tags
+            // Replace placeholder DIVs with img tags (target divs with background gradient + text)
+            // Match: <div style="...background...">Text content</div>
             imageIndex = 0;
             html = html.replace(
-                /<div style="[^"]*">([^<]*)<\/div>/g,
+                /<div\s+style="[^"]*background:\s*(?:linear-gradient|var\([^)]+\))[^"]*"[^>]*>\s*([^<]+)\s*<\/div>/g,
                 () => {
                     if (imageIndex < images.length) {
                         const alt = images[imageIndex].originalName || 'Image';
                         return `<img src="${images[imageIndex++].cloudinaryUrl}" alt="${alt}" style="width: 100%; height: auto; border-radius: 12px;">`;
                     }
-                    return `<img src="${images[0].cloudinaryUrl}" alt="Image" style="width: 100%; height: auto; border-radius: 12px;">`;
+                    return arguments[0]; // Return unchanged if out of images
                 }
             );
 

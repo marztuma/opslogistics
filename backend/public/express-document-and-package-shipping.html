@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Document and Package Shipping - OPS Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .express-hero {
+            background: white;
+            padding: 4rem 2rem;
+        }
+
+        .express-hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .express-hero-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .express-label {
+            font-size: 0.75rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .express-heading {
+            font-size: 2.8rem;
+            color: var(--dark-blue);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.8px;
+        }
+
+        .express-heading .highlight {
+            color: var(--primary-blue);
+        }
+
+        .express-description {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .express-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .express-btn-primary {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.875rem 1.75rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .express-btn-primary:hover {
+            background: #0047A3;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        .express-btn-secondary {
+            background: white;
+            color: var(--dark-blue);
+            border: 2px solid var(--dark-blue);
+            padding: calc(0.875rem - 2px) calc(1.75rem - 2px);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .express-btn-secondary:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .express-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .express-tag {
+            background: #f0f4f8;
+            color: var(--dark-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .express-hero-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .express-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 1024px) {
+            .express-hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .express-heading {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .express-hero {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .express-heading {
+                font-size: 1.75rem;
+            }
+
+            .express-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .express-btn-primary,
+            .express-btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="navbar">
+        <!-- Top Bar -->
+        <div class="navbar-top">
+            <div class="navbar-top-container">
+                <div class="logo">
+                    <svg viewBox="0 0 120 50" class="logo-icon">
+                        <g>
+                            <circle cx="20" cy="25" r="15" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M15 28 Q20 18 25 28" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M12 30 L28 30" stroke="#0055CC" stroke-width="1"/>
+                            <path d="M14 32 L26 32" stroke="#0055CC" stroke-width="0.8"/>
+                        </g>
+                        <text x="38" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#003A70">OPS</text>
+                        <text x="38" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#0055CC">LOGISTICS</text>
+                    </svg>
+                </div>
+                <div class="navbar-top-right">
+                    <a href="index.html" class="top-link">Exit</a>
+                    <a href="#" class="top-link">What OPS provides <span>↗</span></a>
+                    <a href="#" class="top-link">To research</a>
+                    <div class="language-selector">
+                        <span>🇨🇲</span>
+                        <a href="#">Cameroon <span>▼</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="navbar-bottom">
+            <div class="navbar-bottom-container">
+                <nav class="nav-menu">
+                    <a href="track.html" class="nav-item">Track</a>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Ship <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <h4>START SHIPPING</h4>
+                                <a href="quote.html" class="dropdown-item">
+                                    <span>Get a Quote</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="ship-now.html" class="dropdown-item">
+                                    <span>Ship Now</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="request-business-account.html" class="dropdown-item">
+                                    <span>Request a Business Account</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>LEARN MORE ABOUT</h4>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Document and Package</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="express-document-and-package-shipping.html" class="dropdown-item">
+                                    <span>Express document and package shipping</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="retailers-and-volume-shipping.html" class="dropdown-item">
+                                    <span>Retailers or volume shipping (Business Only)</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>Pallets, Containers and Cargo</h5>
+                                <p class="card-label">BUSINESS ONLY</p>
+                                <p>Air and ocean freight, plus customs and logistics services with OPS Global Forwarding.</p>
+                                <a href="freight-services.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore Freight Services</a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>OPS for Your Business</h5>
+                                <p class="card-label">LET'S BE SHIPPING PARTNERS</p>
+                                <p>Small start-up? Medium-sized business going international? Satisfy your business shipping needs.</p>
+                                <a href="business-offerings.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore Our Business Offerings</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Enterprise Logistics Services <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-card">
+                                <h5>Enterprise Logistics Services</h5>
+                                <p>Our supply chain division creates customized solutions for businesses. The perfect fit as a third-party logistics (3PL) provider.</p>
+                                <button class="dropdown-btn">Explore the OPS supply chain</button>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>SOLUTIONS</h4>
+                                <a href="contract-logistics.html" class="dropdown-item">
+                                    <span>CONTRACT LOGISTICS</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>E-commerce execution</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="customs-and-compliance.html" class="dropdown-item">
+                                    <span>Customs and compliance</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="cold-chain-logistics.html" class="dropdown-item">
+                                    <span>Cold chain logistics</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="last-mile-delivery.html" class="dropdown-item">
+                                    <span>Last mile delivery</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>INDUSTRIES</h4>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Technology</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Healthcare and Life Sciences</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Retail and fashion</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Automobile</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Energy and public utilities</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>RESOURCES</h4>
+                                <a href="case-studies.html" class="dropdown-item">
+                                    <span>Case studies</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="white-papers.html" class="dropdown-item">
+                                    <span>White papers</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <span>Logistics Insights</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Pricing updates</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="customer-service.html" class="nav-item">Customer Service</a>
+                    <a href="faq.html" class="nav-item">FAQ</a>
+                    <a href="service-updates.html" class="nav-item">Service Updates</a>
+                    <a href="support-chat.html" class="nav-item">Support</a>
+                </nav>
+                <button class="login-btn">Customer portal logins <span>▼</span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Express Hero Section -->
+    <section class="express-hero">
+        <div class="express-hero-container">
+            <div class="express-hero-content">
+                <span class="express-label">OPS Express</span>
+                <h1 class="express-heading">One envelope. One box. <span class="highlight">Same care</span> as a container.</h1>
+                <p class="express-description">A signed contract, a passport, a spare part holding up a line, a sample a customer is waiting on. Small things with disproportionate consequences — collected from your door and delivered to theirs, tracked the whole way.</p>
+
+                <div class="express-buttons">
+                    <a href="ship-now.html" class="express-btn-primary">Ship Now</a>
+                    <a href="quote.html" class="express-btn-secondary">Get a Quote</a>
+                </div>
+
+                <div class="express-tags">
+                    <span class="express-tag">Documents</span>
+                    <span class="express-tag">Parcels</span>
+                    <span class="express-tag">Door to Door</span>
+                    <span class="express-tag">Import & Export</span>
+                    <span class="express-tag">Tracked to Signature</span>
+                </div>
+            </div>
+
+            <div class="express-hero-image">
+                <svg viewBox="0 0 600 400" style="width: 100%; height: auto; background: linear-gradient(135deg, #e8eef5 0%, #f5f5f5 100%); border-radius: 12px;">
+                    <!-- Placeholder airplane/cargo image -->
+                    <rect width="600" height="400" fill="url(#grad)"/>
+                    <defs>
+                        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d0d8e8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#e8eef5;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <text x="300" y="200" text-anchor="middle" font-size="18" fill="#999" opacity="0.6">Airplane cargo image</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Are Sending Section -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <span style="font-size: 0.75rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 1.5rem;">01 – What you are sending</span>
+            <h2 style="font-size: 2.8rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">Document or parcel is not a size question</h2>
+            <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 3rem; max-width: 900px;">It is a customs question, and it is the first thing that changes how your shipment is handled. Paper with no commercial value travels differently from anything a border can put a price on — even if the box is smaller.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                <!-- Left: Classification Box -->
+                <div style="background: linear-gradient(135deg, #001a3a 0%, #003a70 100%); color: white; border-radius: 12px; padding: 2rem; position: relative; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.6); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem;">Largest</div>
+                        <h3 style="font-size: 1.5rem; color: white; font-weight: 700; margin: 0 0 2rem 0;">Parcel</h3>
+                    </div>
+                    <div style="background: rgba(0,85,204,0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem;">
+                        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.8); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Middle</div>
+                        <p style="font-size: 1rem; color: white; font-weight: 700; margin: 0;">Small parcel</p>
+                    </div>
+                    <div style="background: var(--primary-blue); border-radius: 8px; padding: 1.5rem;">
+                        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.8); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Document</div>
+                        <p style="font-size: 1rem; color: white; font-weight: 700; margin: 0;">Document</p>
+                    </div>
+                </div>
+
+                <!-- Right: Descriptions -->
+                <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+                    <div>
+                        <h3 style="font-size: 1.2rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.75rem 0;">A document</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.6; margin: 0;">Paper with no resale value — contracts, certificates, deeds, tender submissions. Usually the simplest customs treatment there is, because there is nothing to value or classify.</p>
+                    </div>
+
+                    <div>
+                        <h3 style="font-size: 1.2rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.75rem 0;">A parcel</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.6; margin: 0;">Anything with commercial value, however small. It needs a description, a value and a commodity code, and it can attract duty and tax in the destination.</p>
+                    </div>
+
+                    <div>
+                        <h3 style="font-size: 1.2rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.75rem 0;">The trap</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.6; margin: 0;">Putting a sample, a USB drive or a promotional item in with paperwork turns a document into a parcel. Declared as documents, it will be stopped — and the delay costs more than declaring it would have.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Note -->
+            <div style="background: #f0f4f8; padding: 1.5rem; margin-top: 3rem; border-radius: 4px;">
+                <p style="margin: 0; font-size: 0.95rem; color: var(--text-dark); line-height: 1.6;"><strong>No dimensions or weight limits are published here.</strong> They differ by service, destination and aircraft, and a limit quoted on a web page is the one people plan around. Your quote carries the actual figures for the service you pick.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section style="background: linear-gradient(135deg, #001a3a 0%, #003a70 100%); color: white; padding: 2.5rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; display: block; margin-bottom: 0.75rem;">02 – Pricing</span>
+            <h2 style="font-size: 2rem; color: white; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; letter-spacing: -0.8px;">Why a light box can cost more than a heavy one</h2>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2rem; max-width: 800px;">The single most common surprise on an express invoice, and it is not a mistake. Aircraft run out of space long before they run out of lift, so express services price on whichever of two numbers is larger.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; margin-bottom: 1.5rem;">
+                <!-- Left: Inputs -->
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 1.25rem;">
+                        <span style="font-size: 0.65rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.7px; text-transform: uppercase; display: block; margin-bottom: 0.5rem;">Input A</span>
+                        <h3 style="font-size: 1rem; color: white; font-weight: 700; margin-bottom: 0.5rem;">Actual weight</h3>
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5; margin: 0;">What the scales say when the packed box goes on them.</p>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 1.25rem;">
+                        <span style="font-size: 0.65rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.7px; text-transform: uppercase; display: block; margin-bottom: 0.5rem;">Input B</span>
+                        <h3 style="font-size: 1rem; color: white; font-weight: 700; margin-bottom: 0.5rem;">Volumetric weight</h3>
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5; margin: 0;">A weight derived from the space the box occupies. Length by width by height, divided by a set figure.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Output -->
+                <div style="background: white; color: var(--dark-blue); border-radius: 8px; padding: 1.5rem;">
+                    <div style="background: var(--primary-blue); color: white; padding: 0.4rem 0.875rem; border-radius: 16px; width: fit-content; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.7px; text-transform: uppercase; margin-bottom: 0.75rem;">Whichever is greater</div>
+                    <div style="font-size: 0.75rem; color: var(--text-light); font-weight: 700; letter-spacing: 0.7px; text-transform: uppercase; margin-bottom: 0.5rem;">You are billed on</div>
+                    <h3 style="font-size: 1.2rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem;">Chargeable weight</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.5; margin: 0;">Which is why a box of cushions costs more to fly than its scales suggest, and why trimming an oversized carton can cut a bill more than removing items would.</p>
+                </div>
+            </div>
+
+            <!-- Note -->
+            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 4px;">
+                <p style="margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.9); line-height: 1.5;"><strong>We have not published the divisor.</strong> It differs by service and carrier, and a number on a page that your quote contradicts is how invoice arguments start. Ask at booking — and if a box is close to the line, we will tell you whether repacking is worth the effort.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Can Send Section -->
+    <section style="background: white; padding: 2.5rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; display: block; margin-bottom: 0.75rem;">03 – What you can send</span>
+            <h2 style="font-size: 2rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 2rem; line-height: 1.2; letter-spacing: -0.8px;">Three answers, and the middle one matters most</h2>
+            <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin-bottom: 2rem; max-width: 800px;">Most refused shipments are not people trying to send something forbidden. They are people who did not know an ordinary item needed declaring.</p>
+
+            <div style="border-top: 1px solid #e8e8e8; padding-top: 1.5rem;">
+                <!-- Items List -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <!-- Item 1 -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e8e8;">
+                        <div style="flex: 1; padding-right: 1rem;">
+                            <h3 style="font-size: 1rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Documents and general goods</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.5; margin: 0;">Paperwork, clothing, books, most consumer items, spare parts and samples. Described and valued honestly, these move without difficulty.</p>
+                        </div>
+                        <button style="background: var(--primary-blue); color: white; border: none; padding: 0.5rem 1rem; border-radius: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; cursor: pointer; white-space: nowrap; margin-left: 1rem; flex-shrink: 0;">Send freely</button>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e8e8;">
+                        <div style="flex: 1; padding-right: 1rem;">
+                            <h3 style="font-size: 1rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Anything containing a battery</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.5; margin: 0;">Phones, laptops, tools, toys, power banks. Regulated as dangerous goods, with rules that differ depending on whether the battery is loose, in the device or packed beside it.</p>
+                        </div>
+                        <button style="background: var(--dark-blue); color: white; border: none; padding: 0.5rem 1rem; border-radius: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; cursor: pointer; white-space: nowrap; margin-left: 1rem; flex-shrink: 0;">Tell us first</button>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e8e8;">
+                        <div style="flex: 1; padding-right: 1rem;">
+                            <h3 style="font-size: 1rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Liquids, aerosols and cosmetics</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.5; margin: 0;">Perfume, nail varnish, some cleaning products. Frequently regulated by air even in small quantities, and frequently sent by people who had no idea.</p>
+                        </div>
+                        <button style="background: var(--dark-blue); color: white; border: none; padding: 0.5rem 1rem; border-radius: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; cursor: pointer; white-space: nowrap; margin-left: 1rem; flex-shrink: 0;">Tell us first</button>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e8e8;">
+                        <div style="flex: 1; padding-right: 1rem;">
+                            <h3 style="font-size: 1rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Food, plants and anything biological</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.5; margin: 0;">Subject to import controls that vary enormously by destination. Some countries refuse items others wave through without comment.</p>
+                        </div>
+                        <button style="background: var(--dark-blue); color: white; border: none; padding: 0.5rem 1rem; border-radius: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; cursor: pointer; white-space: nowrap; margin-left: 1rem; flex-shrink: 0;">Tell us first</button>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e8e8;">
+                        <div style="flex: 1; padding-right: 1rem;">
+                            <h3 style="font-size: 1rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">High-value items and jewellery</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.5; margin: 0;">Not prohibited, but they change the routing, the security handling and the cover you need. Under-declaring to save duty voids the insurance you were relying on.</p>
+                        </div>
+                        <button style="background: var(--dark-blue); color: white; border: none; padding: 0.5rem 1rem; border-radius: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; cursor: pointer; white-space: nowrap; margin-left: 1rem; flex-shrink: 0;">Tell us first</button>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e8e8;">
+                        <div style="flex: 1; padding-right: 1rem;">
+                            <h3 style="font-size: 1rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Cash, negotiable instruments and precious metals</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.5; margin: 0;">Not carried on express services. There are specialist providers for this and we will point you to that conversation rather than take the booking.</p>
+                        </div>
+                        <button style="background: #ccc; color: #666; border: none; padding: 0.5rem 1rem; border-radius: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; cursor: not-allowed; white-space: nowrap; margin-left: 1rem; flex-shrink: 0;">Not carried</button>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 1.5rem; border-bottom: 1px solid #e8e8e8;">
+                        <div style="flex: 1; padding-right: 1rem;">
+                            <h3 style="font-size: 1rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Live animals, human remains and hazardous waste</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.5; margin: 0;">Outside what an express network handles. Each requires specialist carriers, permits and handling that a parcel service is not built for.</p>
+                        </div>
+                        <button style="background: #ccc; color: #666; border: none; padding: 0.5rem 1rem; border-radius: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; cursor: not-allowed; white-space: nowrap; margin-left: 1rem; flex-shrink: 0;">Not carried</button>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 1.5rem;">
+                        <div style="flex: 1; padding-right: 1rem;">
+                            <h3 style="font-size: 1rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Counterfeit goods and anything illegal at either end</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.5; margin: 0;">Refused, and where required reported. This includes items legal where you are and not where they are going — the destination's law governs.</p>
+                        </div>
+                        <button style="background: #ccc; color: #666; border: none; padding: 0.5rem 1rem; border-radius: 16px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; cursor: not-allowed; white-space: nowrap; margin-left: 1rem; flex-shrink: 0;">Not carried</button>
+                    </div>
+                </div>
+
+                <!-- Note -->
+                <div style="background: #f0f4f8; padding: 1.25rem; border-radius: 4px; margin-top: 2rem;">
+                    <p style="margin: 0; font-size: 0.85rem; color: var(--text-dark); line-height: 1.6;"><strong>This is a guide, not the rule book.</strong> What is permitted depends on the destination country, the commodity and the service, and it changes. If you are unsure, describe the item before you pack it — a two-minute question beats a shipment held at an airport.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packing Section -->
+    <section style="background: white; padding: 2.5rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                <!-- Left: Image -->
+                <div style="background: linear-gradient(135deg, #e8eef5 0%, #f5f5f5 100%); border-radius: 12px; overflow: hidden; min-height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <svg viewBox="0 0 500 400" style="width: 100%; height: 100%;">
+                        <defs>
+                            <linearGradient id="warehouseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#d0d8e8;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#e8eef5;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="500" height="400" fill="url(#warehouseGrad)"/>
+                        <text x="250" y="200" text-anchor="middle" font-size="16" fill="#999" opacity="0.6">Warehouse/Packing Image</text>
+                    </svg>
+                </div>
+
+                <!-- Right: Rules -->
+                <div>
+                    <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; display: block; margin-bottom: 0.75rem;">04 – Packing</span>
+                    <h2 style="font-size: 2rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem; line-height: 1.2; letter-spacing: -0.8px;">Assume it will be at the bottom of the stack</h2>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">Express parcels are sorted mechanically, moved on belts and loaded with hundreds of others. Nothing here is exotic — it is the difference between a claim and a delivery.</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                        <!-- Rule 1 -->
+                        <div style="display: flex; gap: 0.75rem;">
+                            <div style="display: flex; align-items: flex-start; margin-top: 0.125rem;">
+                                <svg viewBox="0 0 24 24" width="20" height="20" style="min-width: 20px;">
+                                    <rect x="2" y="2" width="20" height="20" fill="none" stroke="var(--primary-blue)" stroke-width="2" rx="2"/>
+                                    <path d="M7 12l3 3 7-7" stroke="var(--primary-blue)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 0.8rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; margin: 0 0 0.25rem 0;">Rule 01</h4>
+                                <h3 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.35rem 0;">A new box, not a reused one</h3>
+                                <p style="font-size: 0.8rem; color: var(--text-light); line-height: 1.5; margin: 0;">Cardboard loses most of its strength after one journey. An old box with old labels also gets scanned wrongly more often than people expect.</p>
+                            </div>
+                        </div>
+
+                        <!-- Rule 2 -->
+                        <div style="display: flex; gap: 0.75rem;">
+                            <div style="display: flex; align-items: flex-start; margin-top: 0.125rem;">
+                                <svg viewBox="0 0 24 24" width="20" height="20" style="min-width: 20px;">
+                                    <rect x="2" y="2" width="20" height="20" fill="none" stroke="var(--primary-blue)" stroke-width="2" rx="2"/>
+                                    <path d="M7 12l3 3 7-7" stroke="var(--primary-blue)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 0.8rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; margin: 0 0 0.25rem 0;">Rule 02</h4>
+                                <h3 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.35rem 0;">Nothing touching a wall</h3>
+                                <p style="font-size: 0.8rem; color: var(--text-light); line-height: 1.5; margin: 0;">Cushioning on every side, including underneath. Damage almost always starts at a corner that had nothing behind it.</p>
+                            </div>
+                        </div>
+
+                        <!-- Rule 3 -->
+                        <div style="display: flex; gap: 0.75rem;">
+                            <div style="display: flex; align-items: flex-start; margin-top: 0.125rem;">
+                                <svg viewBox="0 0 24 24" width="20" height="20" style="min-width: 20px;">
+                                    <rect x="2" y="2" width="20" height="20" fill="none" stroke="var(--primary-blue)" stroke-width="2" rx="2"/>
+                                    <path d="M7 12l3 3 7-7" stroke="var(--primary-blue)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 0.8rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; margin: 0 0 0.25rem 0;">Rule 03</h4>
+                                <h3 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.35rem 0;">No movement when shaken</h3>
+                                <p style="font-size: 0.8rem; color: var(--text-light); line-height: 1.5; margin: 0;">If contents shift, they will shift for the whole journey. Fill the voids rather than adding a bigger box — that costs you volumetric weight too.</p>
+                            </div>
+                        </div>
+
+                        <!-- Rule 4 -->
+                        <div style="display: flex; gap: 0.75rem;">
+                            <div style="display: flex; align-items: flex-start; margin-top: 0.125rem;">
+                                <svg viewBox="0 0 24 24" width="20" height="20" style="min-width: 20px;">
+                                    <rect x="2" y="2" width="20" height="20" fill="none" stroke="var(--primary-blue)" stroke-width="2" rx="2"/>
+                                    <path d="M7 12l3 3 7-7" stroke="var(--primary-blue)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 0.8rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; margin: 0 0 0.25rem 0;">Rule 04</h4>
+                                <h3 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.35rem 0;">Tape every seam</h3>
+                                <p style="font-size: 0.8rem; color: var(--text-light); line-height: 1.5; margin: 0;">Across the middle and along both edges. Parcel tape, not household tape, and never string or wrapping paper on the outside.</p>
+                            </div>
+                        </div>
+
+                        <!-- Rule 5 -->
+                        <div style="display: flex; gap: 0.75rem;">
+                            <div style="display: flex; align-items: flex-start; margin-top: 0.125rem;">
+                                <svg viewBox="0 0 24 24" width="20" height="20" style="min-width: 20px;">
+                                    <rect x="2" y="2" width="20" height="20" fill="none" stroke="var(--primary-blue)" stroke-width="2" rx="2"/>
+                                    <path d="M7 12l3 3 7-7" stroke="var(--primary-blue)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 0.8rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; margin: 0 0 0.25rem 0;">Rule 05</h4>
+                                <h3 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.35rem 0;">The address inside as well as out</h3>
+                                <p style="font-size: 0.8rem; color: var(--text-light); line-height: 1.5; margin: 0;">If a label is torn off in a sorting hub, a copy inside the box is the only thing that reunites it with you.</p>
+                            </div>
+                        </div>
+
+                        <!-- Rule 6 -->
+                        <div style="display: flex; gap: 0.75rem;">
+                            <div style="display: flex; align-items: flex-start; margin-top: 0.125rem;">
+                                <svg viewBox="0 0 24 24" width="20" height="20" style="min-width: 20px;">
+                                    <rect x="2" y="2" width="20" height="20" fill="none" stroke="var(--primary-blue)" stroke-width="2" rx="2"/>
+                                    <path d="M7 12l3 3 7-7" stroke="var(--primary-blue)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 0.8rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; margin: 0 0 0.25rem 0;">Rule 06</h4>
+                                <h3 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.35rem 0;">Describe the contents accurately</h3>
+                                <p style="font-size: 0.8rem; color: var(--text-light); line-height: 1.5; margin: 0;">On the paperwork, in plain words. "Gift" and "sample" mean nothing to a customs officer and slow the shipment down rather than speeding it up.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started CTA Section -->
+    <section style="background: linear-gradient(135deg, #001a3a 0%, #003a70 100%); color: white; padding: 3.5rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; display: block; margin-bottom: 1rem;">Get started</span>
+            <h2 style="font-size: 2.5rem; color: white; font-weight: 700; margin-bottom: 1.25rem; line-height: 1.2; letter-spacing: -0.8px;">Tell us what is in the box before you seal it.</h2>
+            <p style="font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 2rem; max-width: 850px;">What it is, roughly what it is worth and where it is going. That is enough for us to confirm the service, tell you whether anything needs declaring, and flag it if the box you have chosen is going to cost you more than it needs to.</p>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="ship-now.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.875rem 1.75rem; border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Ship Now</a>
+                <button style="background: transparent; color: white; border: 2px solid white; padding: calc(0.875rem - 2px) calc(1.75rem - 2px); border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Ask a Question First</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA Section -->
+    <section class="footer-cta">
+        <div class="footer-cta-container">
+            <h3>Need help with your shipment? Our team is available 24/7.</h3>
+            <button class="footer-cta-btn">Track Your Shipment →</button>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer-about">
+                <div class="footer-logo">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40'%3E%3Ctext x='40' y='28' font-size='20' font-weight='bold' fill='%230055CC'%3EOPS%3C/text%3E%3Ctext x='40' y='38' font-size='10' fill='%23003A70'%3ELOGISTICS%3C/text%3E%3C/svg%3E" alt="OPS Logistics">
+                </div>
+                <p>Delivering excellence worldwide. Air, sea, road and rail freight to over 220 countries and territories.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>SERVICES</h4>
+                <ul>
+                    <li><a href="#">Express Shipping</a></li>
+                    <li><a href="#">OPS Express</a></li>
+                    <li><a href="#">eCommerce</a></li>
+                    <li><a href="#">Supply Chain</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">About OPS</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Innovation</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HELP</h4>
+                <ul>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Service Updates</a></li>
+                    <li><a href="#">Request a business account</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 OPS Logistics. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Handle dropdown toggle on click
+        const dropdownToggles = document.querySelectorAll('.nav-item-dropdown > .nav-item');
+
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const parentDropdown = toggle.closest('.nav-item-dropdown');
+                const isActive = parentDropdown.classList.contains('active');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => {
+                    if (active !== parentDropdown) {
+                        active.classList.remove('active');
+                    }
+                });
+
+                // Toggle current dropdown
+                if (isActive) {
+                    parentDropdown.classList.remove('active');
+                } else {
+                    parentDropdown.classList.add('active');
+                }
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-item-dropdown')) {
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => {
+                    active.classList.remove('active');
+                });
+            }
+        });
+    </script>
+    <!-- Support Chat Widget -->
+    <script src="chat-widget.js"></script>
+    <!-- Auth Helper for login button -->
+    <script src="auth-helper.js"></script>
+</body>
+</html>
+

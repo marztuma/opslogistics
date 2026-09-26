@@ -13,8 +13,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static frontend files from ../opslogistic directory
-app.use(express.static(path.join(__dirname, '../opslogistic')));
+// Serve static frontend files from ./public directory
+app.use(express.static(path.join(__dirname, './public')));
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
@@ -35,7 +35,7 @@ app.get('/health', (req, res) => {
 
 // Serve index.html for all non-API routes (SPA fallback)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../opslogistic/index.html'));
+  res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 // Error handler

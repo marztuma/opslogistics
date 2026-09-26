@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — OPS Logistics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0055CC;
+            --dark-blue: #003A70;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --border-light: #e0e0e0;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: white;
+            color: var(--text-dark);
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .header-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .header-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .header-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .page-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0,85,204,0.1);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 1rem;
+        }
+
+        .tab-btn {
+            background: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary-blue);
+        }
+
+        .tab-btn.active {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+
+        .featured-section {
+            background: linear-gradient(135deg, #001a3a 0%, #003a70 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .featured-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .featured-card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .featured-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        .featured-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .featured-question {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .featured-preview {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.5;
+        }
+
+        .faq-section {
+            margin: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            cursor: pointer;
+            user-select: none;
+            background: white;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-question-text {
+            font-weight: 600;
+            color: var(--text-dark);
+            flex: 1;
+            padding-right: 1rem;
+        }
+
+        .faq-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.95rem;
+        }
+
+        .faq-answer.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        .faq-answer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .faq-answer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-section {
+            background: var(--bg-light);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .cta-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .cta-option {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+        }
+
+        .cta-option-title {
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-option-text {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--dark-blue);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #001a3a 0%, #003a70 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .contact-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-blue);
+            border: none;
+        }
+
+        .btn-white:hover {
+            background: var(--bg-light);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tabs {
+                gap: 0.5rem;
+            }
+
+            .tab-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">OPS Logistics</div>
+            <div class="header-links">
+                <a href="index.html">Home</a>
+                <a href="quote.html">Get a Quote</a>
+                <a href="track.html">Track</a>
+                <a href="support-chat.html">Support</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">The questions we answer every day</h1>
+            <p class="page-subtitle">
+                Find answers to common questions about shipping, pricing, tracking, and our services. Can't find what you're looking for? Contact us directly.
+            </p>
+            <input type="text" class="search-box" id="searchInput" placeholder="Search FAQs...">
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="filterByCategory('all')">All</button>
+            <button class="tab-btn" onclick="filterByCategory('basics')">Basics</button>
+            <button class="tab-btn" onclick="filterByCategory('shipping')">Shipping</button>
+            <button class="tab-btn" onclick="filterByCategory('pricing')">Pricing</button>
+            <button class="tab-btn" onclick="filterByCategory('tracking')">Tracking</button>
+            <button class="tab-btn" onclick="filterByCategory('issues')">Issues</button>
+        </div>
+
+        <!-- Featured Section -->
+        <div class="featured-section">
+            <div class="featured-title">The six we are asked most</div>
+            <div class="featured-grid" id="featuredGrid">
+                <!-- Featured FAQs will be inserted here -->
+            </div>
+        </div>
+
+        <!-- FAQ Sections -->
+        <div id="faqSections">
+            <!-- FAQ sections will be inserted here -->
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <div class="cta-title">Three faster routes than reading further</div>
+            <div class="cta-options">
+                <div class="cta-option">
+                    <div class="cta-option-title">📍 Track a shipment</div>
+                    <div class="cta-option-text">See where your freight is right now and when it'll arrive.</div>
+                    <a href="track.html" class="btn">Go to tracker</a>
+                </div>
+                <div class="cta-option">
+                    <div class="cta-option-title">📞 Call someone</div>
+                    <div class="cta-option-text">Our team is available 24/7 to answer any shipping question.</div>
+                    <button class="btn" onclick="alert('Call: +1 858-428-7703')">Call now</button>
+                </div>
+                <div class="cta-option">
+                    <div class="cta-option-title">💬 Send a question</div>
+                    <div class="cta-option-text">Fill out a form and we'll respond within 2 hours.</div>
+                    <a href="support-chat.html" class="btn">Contact us</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <div class="contact-title">Ask us, it is genuinely quicker.</div>
+            <div class="contact-text">
+                If your question involves a shipment, your account, or specific logistics needs, reaching out directly is faster than scrolling through FAQs. We respond to all inquiries within 2 hours, 24/7.
+            </div>
+            <div class="contact-buttons">
+                <a href="support-chat.html" class="btn btn-white">Send a question</a>
+                <button class="btn btn-outline" onclick="alert('Call: +1 858-428-7703')">Call +1 858-428-7703</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <div class="footer-section-title">OPS Logistics</div>
+                <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.6;">
+                    Shipping solutions to every country on earth. We simplify global freight logistics.
+                </p>
+            </div>
+            <div>
+                <div class="footer-section-title">Services</div>
+                <a href="quote.html" class="footer-link">Get a Quote</a>
+                <a href="ship-now.html" class="footer-link">Ship Now</a>
+                <a href="track.html" class="footer-link">Track</a>
+                <a href="containers-shop.html" class="footer-link">Shop Containers</a>
+            </div>
+            <div>
+                <div class="footer-section-title">Support</div>
+                <a href="faq.html" class="footer-link">FAQ</a>
+                <a href="support-chat.html" class="footer-link">Help & Support</a>
+                <a href="service-updates.html" class="footer-link">Service Status</a>
+                <a href="customer-service.html" class="footer-link">Contact Us</a>
+            </div>
+            <div>
+                <div class="footer-section-title">Company</div>
+                <a href="index.html" class="footer-link">About</a>
+                <a href="#" class="footer-link">Careers</a>
+                <a href="#" class="footer-link">Privacy</a>
+                <a href="#" class="footer-link">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="faq-script.js"></script>
+    <!-- Auth Helper for login button -->
+    <script src="auth-helper.js"></script>
+</body>
+</html>

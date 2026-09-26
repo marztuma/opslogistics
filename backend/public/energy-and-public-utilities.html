@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy and Public Utilities - OPS Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @media (max-width: 768px) {
+            h1 { font-size: 1.75rem !important; line-height: 1.3 !important; }
+            h2 { font-size: 1.5rem !important; line-height: 1.3 !important; }
+            section { padding: 2rem 1.5rem !important; }
+            [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+            [style*="grid-template-columns: repeat"] { grid-template-columns: 1fr !important; gap: 1rem !important; }
+            [style*="height: 300px"], [style*="height: 350px"] { height: 220px !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="navbar">
+        <div class="navbar-top">
+            <div class="navbar-top-container">
+                <div class="logo">
+                    <svg viewBox="0 0 120 50" class="logo-icon">
+                        <g>
+                            <circle cx="20" cy="25" r="15" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M15 28 Q20 18 25 28" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M12 30 L28 30" stroke="#0055CC" stroke-width="1"/>
+                            <path d="M14 32 L26 32" stroke="#0055CC" stroke-width="0.8"/>
+                        </g>
+                        <text x="38" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#003A70">OPS</text>
+                        <text x="38" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#0055CC">LOGISTICS</text>
+                    </svg>
+                </div>
+                <div class="navbar-top-right">
+                    <a href="index.html" class="top-link">Exit</a>
+                    <a href="#" class="top-link">What OPS provides <span>↗</span></a>
+                    <a href="#" class="top-link">To research</a>
+                    <div class="language-selector">
+                        <span>🇨🇲</span>
+                        <a href="#">Cameroon <span>▼</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-bottom">
+            <div class="navbar-bottom-container">
+                <nav class="nav-menu">
+                    <a href="index.html#track" class="nav-item">Track</a>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Ship <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <h4>START SHIPPING</h4>
+                                <a href="quote.html" class="dropdown-item"><span>Get a Quote</span><span class="arrow">→</span></a>
+                                <a href="ship-now.html" class="dropdown-item"><span>Ship Now</span><span class="arrow">→</span></a>
+                                <a href="request-business-account.html" class="dropdown-item"><span>Request a Business Account</span><span class="arrow">→</span></a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>LEARN MORE ABOUT</h4>
+                                <a href="#" class="dropdown-item"><span>Document and Package</span><span class="arrow">→</span></a>
+                                <a href="express-document-and-package-shipping.html" class="dropdown-item"><span>Express document and package shipping</span><span class="arrow">→</span></a>
+                                <a href="retailers-and-volume-shipping.html" class="dropdown-item"><span>Retailers or volume shipping (Business Only)</span><span class="arrow">→</span></a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>Pallets, Containers and Cargo</h5>
+                                <p class="card-label">BUSINESS ONLY</p>
+                                <p>Air and ocean freight, plus customs and logistics services with OPS Global Forwarding.</p>
+                                <a href="freight-services.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block;">Explore Freight Services</a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>OPS for Your Business</h5>
+                                <p class="card-label">LET'S BE SHIPPING PARTNERS</p>
+                                <p>Small start-up? Medium-sized business going international? Satisfy your business shipping needs.</p>
+                                <a href="business-offerings.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block;">Explore Our Business Offerings</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Enterprise logistics services <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-card">
+                                <h5>Enterprise Logistics Services</h5>
+                                <p>Our supply chain division manages warehousing, fulfillment, and freight operations for growing businesses. As your third-party logistics provider.</p>
+                                <button class="dropdown-btn">Explore the OPS supply chain</button>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>SOLUTIONS</h4>
+                                <a href="contract-logistics.html" class="dropdown-item"><span>CONTRACT LOGISTICS</span><span class="arrow">→</span></a>
+                                <a href="ecommerce-execution.html" class="dropdown-item"><span>E-commerce execution</span><span class="arrow">→</span></a>
+                                <a href="customs-and-compliance.html" class="dropdown-item"><span>Customs and compliance</span><span class="arrow">→</span></a>
+                                <a href="cold-chain-logistics.html" class="dropdown-item"><span>Cold chain logistics</span><span class="arrow">→</span></a>
+                                <a href="last-mile-delivery.html" class="dropdown-item"><span>Last mile delivery</span><span class="arrow">→</span></a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>THE CREATION</h4>
+                                <a href="technology.html" class="dropdown-item"><span>Technology</span><span class="arrow">→</span></a>
+                                <a href="healthcare-and-life-sciences.html" class="dropdown-item"><span>Healthcare and Life Sciences</span><span class="arrow">→</span></a>
+                                <a href="retail-and-fashion.html" class="dropdown-item"><span>Retail and fashion</span><span class="arrow">→</span></a>
+                                <a href="automobile.html" class="dropdown-item"><span>Automobile</span><span class="arrow">→</span></a>
+                                <a href="energy-and-public-utilities.html" class="dropdown-item"><span>Energy and public utilities</span><span class="arrow">→</span></a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>BEST OS</h4>
+                                <a href="case-studies.html" class="dropdown-item"><span>Case studies</span><span class="arrow">→</span></a>
+                                <a href="white-papers.html" class="dropdown-item"><span>White papers</span><span class="arrow">→</span></a>
+                                <a href="#" class="dropdown-item"><span>Blog Logistics Insights</span><span class="arrow">→</span></a>
+                                <a href="#" class="dropdown-item"><span>Pricing updates</span><span class="arrow">→</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="customer-service.html" class="nav-item">Customer Service</a>
+                    <a href="faq.html" class="nav-item">FAQ</a>
+                    <a href="service-updates.html" class="nav-item">Service Updates</a>
+                    <a href="support-chat.html" class="nav-item">Support</a>
+                </nav>
+                <button class="login-btn">Customer portal logins <span>▼</span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section style="background: white; padding: 4rem 2rem; position: relative; overflow: hidden;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <h1 style="font-size: 3rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">When the cargo will not fit through <span style="color: var(--primary-blue);">the door.</span></h1>
+                    <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 2rem;">Energy and infrastructure cargo is oversize, overdimensional, and over-specialized. A single piece of equipment can weigh hundreds of tons, require custom routing, and demand expertise in port operations, customs, and final delivery.</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#" style="background: var(--primary-blue); color: white; padding: 0.875rem 1.75rem; border-radius: 6px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-block;">Let's talk energy</a>
+                        <button style="background: transparent; color: var(--text-dark); border: 2px solid var(--text-dark); padding: calc(0.875rem - 2px) calc(1.75rem - 2px); border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer;">Open a Business</button>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(135deg, #8899aa 0%, #6677aa 100%); border-radius: 12px; height: 350px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Port and cargo infrastructure image</div>
+            </div>
+        </div>
+        <div style="background: var(--dark-blue); color: white; padding: 1.5rem 2rem; margin-top: 3rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1400px; margin-left: auto; margin-right: auto; margin-bottom: -2rem; position: relative; z-index: 10; border-radius: 8px;">
+            <div>
+                <h4 style="font-size: 0.85rem; color: rgba(255,255,255,0.8); font-weight: 600; text-transform: uppercase; margin: 0 0 0.5rem 0;">Heavylift & RoRo</h4>
+                <p style="font-size: 0.9rem; color: white; margin: 0; font-weight: 600;">Vessel options</p>
+            </div>
+            <div>
+                <h4 style="font-size: 0.85rem; color: rgba(255,255,255,0.8); font-weight: 600; text-transform: uppercase; margin: 0 0 0.5rem 0;">Port Operations</h4>
+                <p style="font-size: 0.9rem; color: white; margin: 0; font-weight: 600;">Expert handling</p>
+            </div>
+            <div>
+                <h4 style="font-size: 0.85rem; color: rgba(255,255,255,0.8); font-weight: 600; text-transform: uppercase; margin: 0 0 0.5rem 0;">Final Delivery</h4>
+                <p style="font-size: 0.9rem; color: white; margin: 0; font-weight: 600;">Last-mile logistics</p>
+            </div>
+            <div>
+                <h4 style="font-size: 0.85rem; color: rgba(255,255,255,0.8); font-weight: 600; text-transform: uppercase; margin: 0 0 0.5rem 0;">Route Planning</h4>
+                <p style="font-size: 0.9rem; color: white; margin: 0; font-weight: 600;">Custom solutions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Container Price List Section -->
+    <section style="background: white; padding: 4rem 2rem; margin-top: 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.8rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">This is why a container price list is useless here</h2>
+            <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 3rem; max-width: 900px;">Energy cargo does not fit in containers. The pricing model is based on oversize, weight, routing, port capability, and destination infrastructure. A single quote requires custom assessment.</p>
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0;">20' Container</h4>
+                        <span style="font-size: 0.85rem; color: var(--text-light); font-weight: 600;">USD 2,500</span>
+                    </div>
+                    <div style="background: var(--primary-blue); height: 30px; border-radius: 6px; width: 35%;"></div>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0;">40' Container</h4>
+                        <span style="font-size: 0.85rem; color: var(--text-light); font-weight: 600;">USD 3,200</span>
+                    </div>
+                    <div style="background: var(--primary-blue); height: 30px; border-radius: 6px; width: 45%;"></div>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0;">Flatrack 40' feet</h4>
+                        <span style="font-size: 0.85rem; color: var(--text-light); font-weight: 600;">USD 4,800</span>
+                    </div>
+                    <div style="background: var(--primary-blue); height: 30px; border-radius: 6px; width: 55%;"></div>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0;">Corner cargo 40' feet</h4>
+                        <span style="font-size: 0.85rem; color: var(--text-light); font-weight: 600;">USD 6,400</span>
+                    </div>
+                    <div style="background: var(--primary-blue); height: 30px; border-radius: 6px; width: 70%;"></div>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0;">Specialized cargo & bulk</h4>
+                        <span style="font-size: 0.85rem; color: var(--text-light); font-weight: 600;">Custom quote</span>
+                    </div>
+                    <div style="background: var(--dark-blue); height: 30px; border-radius: 6px; width: 100%;"></div>
+                </div>
+            </div>
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.6; margin: 0;">Oversize cargo pricing factors: overall dimensions, weight per piece, route complexity, port infrastructure, equipment handling requirements, and final delivery accessibility. Each shipment requires bespoke assessment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Move Section -->
+    <section style="background: linear-gradient(135deg, #001a3a 0%, #003a70 100%); color: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.8rem; color: white; font-weight: 700; margin-bottom: 1.5rem;">The move is the short part</h2>
+            <p style="font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 3rem; max-width: 900px;">Moving the cargo is the engineering problem. Getting it there is logistics. Getting it to the final site is the real challenge. Energy projects have long lead times and complex downstream requirements.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                <div>
+                    <h4 style="font-size: 1.1rem; color: white; font-weight: 700; margin-bottom: 1.5rem;">Move-in & feasibility</h4>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px;">
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Site assessment and route planning before booking vessel</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px;">
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Port selection and berth allocation for heavylift operations</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px;">
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Final delivery access: roads, bridges, power lines, and terrain</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.1rem; color: white; font-weight: 700; margin-bottom: 1.5rem;">Inland to project site</h4>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px;">
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Heavy transport by specialized truck or rail</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px;">
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Installation & commissioning support on site</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px;">
+                            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">Compliance with local & project requirements</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background: rgba(255,255,255,0.08); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0;">Energy projects are not standard freight moves. Project delays cost millions. OPS understands the urgency and the complexity of coordinating with the project timeline.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div style="background: linear-gradient(135deg, #4a7fb0 0%, #356b95 100%); padding: 2rem; border-radius: 12px; color: white;">
+                    <h4 style="font-size: 0.85rem; color: rgba(255,255,255,0.8); font-weight: 600; text-transform: uppercase; margin-bottom: 1rem;">CASE STUDY</h4>
+                    <h3 style="font-size: 2rem; color: white; font-weight: 700; margin-bottom: 1rem; line-height: 1.2;">Energy Infrastructure Logistics</h3>
+                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.9); line-height: 1.6; margin-bottom: 1.5rem;">Moving turbines, transformers, and heavy equipment to remote power generation sites across continents.</p>
+                    <button style="background: white; color: var(--dark-blue); border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem;">Download case study</button>
+                </div>
+                <div>
+                    <h4 style="font-size: 0.9rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem;">Everything that can stop a load</h4>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <svg style="width: 20px; height: 20px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">Bridge height and weight restrictions</p>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <svg style="width: 20px; height: 20px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">Power line clearance and special routing</p>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <svg style="width: 20px; height: 20px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">Road conditions and temporary infrastructure</p>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <svg style="width: 20px; height: 20px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">Seasonal and weather considerations</p>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <svg style="width: 20px; height: 20px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">Customs and trans-border documentation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What It Travels On Section -->
+    <section style="background: var(--light-gray); padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.8rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">What it travels on</h2>
+            <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 3rem; max-width: 900px;">Energy cargo uses every transport mode. The selection depends on weight, size, route, and project timeline. Often, multiple modes combine in one shipment.</p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">Heavylift & RoRo vessels</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">Specialized ships designed to carry oversized and heavy equipment. RoRo vessels for rolling cargo, heavylift cranes for extreme loads.</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">Barge & inland waterway</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">When land routes are too congested or terrain is impassable, barge transport via rivers and canals can move massive loads efficiently.</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">Heavy trucks & rail</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">Over-the-road and rail transport for inland movement. Requires specialized trailers, route surveys, and sometimes temporary infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Last Two Kilometres Section -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <h2 style="font-size: 2.2rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem;">The last two kilometres</h2>
+                    <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.7; margin-bottom: 2rem;">The final leg of energy logistics is the most complex. Site access, terrain conditions, equipment placement, and on-site coordination determine whether a project succeeds on schedule. OPS coordinates with the project team to ensure seamless handoff.</p>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.6; margin: 0;">We have managed final delivery on remote mining sites, desert facilities, and complex urban locations. The common denominator is understanding site constraints before moving the cargo.</p>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(135deg, #d4a574 0%, #c49464 100%); border-radius: 12px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Heavy equipment installation image</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section style="background: linear-gradient(135deg, #001a3a 0%, #003a70 100%); color: white; padding: 4rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.8rem; color: white; font-weight: 700; margin-bottom: 1.5rem;">Send us the drawing, not the description.</h2>
+            <p style="font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 2.5rem;">Energy logistics requires understanding the physical constraints of your cargo and your site. Specifications, drawings, and site surveys are the starting point. OPS translates those into logistics solutions.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#" style="background: var(--primary-blue); color: white; padding: 0.875rem 1.75rem; border-radius: 6px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-block;">Get a Quote</a>
+                <button style="background: transparent; color: white; border: 2px solid white; padding: calc(0.875rem - 2px) calc(1.75rem - 2px); border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer;">Upload Your Specs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="footer-cta-container">
+            <h3>Need help with your shipment? Our team is available 24/7</h3>
+            <button class="footer-cta-btn">Track Your Shipment →</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer-about">
+                <div class="footer-logo">
+                    <img src="https://res.cloudinary.com/tyt96rdp/image/upload/v1790463080/opslogistics/energy/klq1rygq6hcuz9lhnefx.webp" alt="OPS Logistics">
+                </div>
+                <p>Delivering excellence worldwide. Air, sea, road and rail freight to over 220 countries and territories.</p>
+            </div>
+            <div class="footer-section">
+                <h4>SERVICES</h4>
+                <ul><li><a href="#">Express Shipping</a></li><li><a href="#">OPS Express</a></li><li><a href="#">eCommerce</a></li><li><a href="#">Supply Chain</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul><li><a href="#">About OPS</a></li><li><a href="#">Sustainability</a></li><li><a href="#">Innovation</a></li><li><a href="#">Careers</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>HELP</h4>
+                <ul><li><a href="#">Customer Service</a></li><li><a href="#">Service Updates</a></li><li><a href="#">Request a business account</a></li><li><a href="#">FAQ</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OPS Logistics. All rights reserved.</p>
+            <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Cookie Policy</a></div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar dropdown functionality
+        const dropdownToggles = document.querySelectorAll('.nav-item-dropdown > .nav-item');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const parentDropdown = toggle.closest('.nav-item-dropdown');
+                const isActive = parentDropdown.classList.contains('active');
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => {
+                    if (active !== parentDropdown) active.classList.remove('active');
+                });
+                parentDropdown.classList.toggle('active');
+            });
+        });
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-item-dropdown')) {
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => active.classList.remove('active'));
+            }
+        });
+    </script>
+    <!-- Support Chat Widget -->
+    <script src="chat-widget.js"></script>
+    <!-- Auth Helper for login button -->
+    <script src="auth-helper.js"></script>
+</body>
+</html>

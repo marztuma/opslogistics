@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight Services - OPS Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="navbar">
+        <!-- Top Bar -->
+        <div class="navbar-top">
+            <div class="navbar-top-container">
+                <div class="logo">
+                    <svg viewBox="0 0 120 50" class="logo-icon">
+                        <g>
+                            <circle cx="20" cy="25" r="15" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M15 28 Q20 18 25 28" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M12 30 L28 30" stroke="#0055CC" stroke-width="1"/>
+                            <path d="M14 32 L26 32" stroke="#0055CC" stroke-width="0.8"/>
+                        </g>
+                        <text x="38" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#003A70">OPS</text>
+                        <text x="38" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#0055CC">LOGISTICS</text>
+                    </svg>
+                </div>
+                <div class="navbar-top-right">
+                    <a href="index.html" class="top-link">Exit</a>
+                    <a href="#" class="top-link">What OPS provides <span>↗</span></a>
+                    <a href="#" class="top-link">To research</a>
+                    <div class="language-selector">
+                        <span>🇨🇲</span>
+                        <a href="#">Cameroon <span>▼</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="navbar-bottom">
+            <div class="navbar-bottom-container">
+                <nav class="nav-menu">
+                    <a href="index.html#track" class="nav-item">Track</a>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Ship <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <h4>START SHIPPING</h4>
+                                <a href="quote.html" class="dropdown-item">
+                                    <span>Get a Quote</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="ship-now.html" class="dropdown-item">
+                                    <span>Ship Now</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="request-business-account.html" class="dropdown-item">
+                                    <span>Request a Business Account</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>LEARN MORE ABOUT</h4>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Document and Package</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="express-document-and-package-shipping.html" class="dropdown-item">
+                                    <span>Express document and package shipping</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="retailers-and-volume-shipping.html" class="dropdown-item">
+                                    <span>Retailers or volume shipping (Business Only)</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>Pallets, Containers and Cargo</h5>
+                                <p class="card-label">BUSINESS ONLY</p>
+                                <p>Air and ocean freight, plus customs and logistics services with OPS Global Forwarding.</p>
+                                <button class="dropdown-btn">Explore Freight Services</button>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>OPS for Your Business</h5>
+                                <p class="card-label">LET'S BE SHIPPING PARTNERS</p>
+                                <p>Small start-up? Medium-sized business going international? Satisfy your business shipping needs.</p>
+                                <a href="business-offerings.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore Our Business Offerings</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Enterprise logistics services <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-card">
+                                <h5>Enterprise Logistics Services</h5>
+                                <p>Our supply chain division creates customized solutions for businesses. The perfect fit as a third-party logistics (3PL) provider.</p>
+                                <button class="dropdown-btn">Explore the OPS supply chain</button>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>SOLUTIONS</h4>
+                                <a href="contract-logistics.html" class="dropdown-item">
+                                    <span>CONTRACT LOGISTICS</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>E-commerce execution</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="customs-and-compliance.html" class="dropdown-item">
+                                    <span>Customs and compliance</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="cold-chain-logistics.html" class="dropdown-item">
+                                    <span>Cold chain logistics</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="last-mile-delivery.html" class="dropdown-item">
+                                    <span>Last mile delivery</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>THE CREATION</h4>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Technology</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Healthcare and Life Sciences</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Retail and fashion</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Automobile</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Energy and public utilities</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>BEST OS</h4>
+                                <a href="case-studies.html" class="dropdown-item">
+                                    <span>Case studies</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="white-papers.html" class="dropdown-item">
+                                    <span>White papers</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <span>Blog Logistics Insights</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Pricing updates</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="customer-service.html" class="nav-item">Customer Service</a>
+                    <a href="faq.html" class="nav-item">FAQ</a>
+                    <a href="service-updates.html" class="nav-item">Service Updates</a>
+                    <a href="support-chat.html" class="nav-item">Support</a>
+                </nav>
+                <button class="login-btn">Customer portal logins <span>▼</span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h1 style="font-size: 3rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">Freight services for cargo that will not fit in a box.</h1>
+            <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 2rem; max-width: 900px;">Pallets, containers, heavy equipment and full-truck loads. Air, ocean, road and rail to over 220 countries. Customs and logistics services included. Our Global Forwarding division handles everything that weighs more than a parcel.</p>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                <span style="background: #f0f4f8; color: var(--primary-blue); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Air Freight</span>
+                <span style="background: #f0f4f8; color: var(--primary-blue); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Ocean Freight</span>
+                <span style="background: #f0f4f8; color: var(--primary-blue); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Road Freight</span>
+                <span style="background: #f0f4f8; color: var(--primary-blue); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Rail Freight</span>
+                <span style="background: #f0f4f8; color: var(--primary-blue); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Customs & Compliance</span>
+            </div>
+
+            <a href="quote.html" style="background: var(--primary-blue); color: white; padding: 0.875rem 1.75rem; border-radius: 6px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-block; cursor: pointer; transition: all 0.3s ease;">Get a freight quote</a>
+        </div>
+    </section>
+
+    <!-- Four Ways Section -->
+    <section style="background: var(--light-gray); padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.8rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">Four ways to move it</h2>
+            <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 3rem; max-width: 900px;">Speed, cost, route and cargo type decide which mode makes sense. Usually it is obvious. Sometimes it takes a conversation.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <!-- Air Freight -->
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="background: linear-gradient(135deg, #7eb3d4 0%, #5a9bc4 100%); height: 220px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.95rem; font-weight: 600;">
+                        Airplane cargo image
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.3rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">Air freight</h3>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
+                            <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--text-dark); font-size: 0.9rem;">
+                                <span style="color: var(--primary-blue); flex-shrink: 0;">✓</span>
+                                <span>Speed: Days, not weeks</span>
+                            </li>
+                            <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--text-dark); font-size: 0.9rem;">
+                                <span style="color: var(--primary-blue); flex-shrink: 0;">✓</span>
+                                <span>High-value, time-sensitive cargo</span>
+                            </li>
+                            <li style="display: flex; gap: 0.75rem; color: var(--text-dark); font-size: 0.9rem;">
+                                <span style="color: var(--primary-blue); flex-shrink: 0;">✓</span>
+                                <span>Premium cost for the speed</span>
+                            </li>
+                        </ul>
+                        <a href="quote.html" style="background: var(--primary-blue); color: white; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore air freight</a>
+                    </div>
+                </div>
+
+                <!-- Ocean Freight -->
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="background: linear-gradient(135deg, #4a6fa5 0%, #2d5073 100%); height: 220px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.95rem; font-weight: 600;">
+                        Ocean cargo ship image
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.3rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">Ocean freight</h3>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
+                            <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--text-dark); font-size: 0.9rem;">
+                                <span style="color: var(--primary-blue); flex-shrink: 0;">✓</span>
+                                <span>Best rates for heavy volume</span>
+                            </li>
+                            <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--text-dark); font-size: 0.9rem;">
+                                <span style="color: var(--primary-blue); flex-shrink: 0;">✓</span>
+                                <span>Weeks, not days — but predictable</span>
+                            </li>
+                            <li style="display: flex; gap: 0.75rem; color: var(--text-dark); font-size: 0.9rem;">
+                                <span style="color: var(--primary-blue); flex-shrink: 0;">✓</span>
+                                <span>Containers, break bulk, RoRo</span>
+                            </li>
+                        </ul>
+                        <a href="quote.html" style="background: var(--primary-blue); color: white; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore ocean freight</a>
+                    </div>
+                </div>
+
+                <!-- Trucking -->
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="background: linear-gradient(135deg, #c4a57b 0%, #a0846b 100%); height: 220px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.95rem; font-weight: 600;">
+                        Truck cargo image
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.3rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">Road freight</h3>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
+                            <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--text-dark); font-size: 0.9rem;">
+                                <span style="color: var(--primary-blue); flex-shrink: 0;">✓</span>
+                                <span>Door-to-door, flexible routes</span>
+                            </li>
+                            <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--text-dark); font-size: 0.9rem;">
+                                <span style="color: var(--primary-blue); flex-shrink: 0;">✓</span>
+                                <span>FTL and LTL options available</span>
+                            </li>
+                            <li style="display: flex; gap: 0.75rem; color: var(--text-dark); font-size: 0.9rem;">
+                                <span style="color: var(--primary-blue); flex-shrink: 0;">✓</span>
+                                <span>Good balance of speed and cost</span>
+                            </li>
+                        </ul>
+                        <a href="quote.html" style="background: var(--primary-blue); color: white; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore road freight</a>
+                    </div>
+                </div>
+
+                <!-- Rail Freight -->
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="background: linear-gradient(135deg, #7fb069 0%, #5a8a52 100%); height: 220px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.95rem; font-weight: 600;">
+                        Rail freight landscape image
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="font-size: 1.3rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">Rail freight</h3>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
+                            <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--text-dark); font-size: 0.9rem;">
+                                <span style="color: var(--primary-blue); flex-shrink: 0;">✓</span>
+                                <span>Bulk cargo and heavy equipment</span>
+                            </li>
+                            <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--text-dark); font-size: 0.9rem;">
+                                <span style="color: var(--primary-blue); flex-shrink: 0;">✓</span>
+                                <span>Cost-effective for long distances</span>
+                            </li>
+                            <li style="display: flex; gap: 0.75rem; color: var(--text-dark); font-size: 0.9rem;">
+                                <span style="color: var(--primary-blue); flex-shrink: 0;">✓</span>
+                                <span>Fixed schedules, reliable timing</span>
+                            </li>
+                        </ul>
+                        <a href="quote.html" style="background: var(--primary-blue); color: white; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore rail freight</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Each Mode Is Good At -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.8rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">What each mode is actually good at</h2>
+            <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 3rem; max-width: 900px;">Direct comparison. Pick based on what matters for your shipment.</p>
+
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--primary-blue);">
+                            <th style="padding: 1rem; text-align: left; color: var(--dark-blue); font-weight: 700;">Criteria</th>
+                            <th style="padding: 1rem; text-align: center; color: var(--dark-blue); font-weight: 700;">Air</th>
+                            <th style="padding: 1rem; text-align: center; color: var(--dark-blue); font-weight: 700;">Ocean</th>
+                            <th style="padding: 1rem; text-align: center; color: var(--dark-blue); font-weight: 700;">Road</th>
+                            <th style="padding: 1rem; text-align: center; color: var(--dark-blue); font-weight: 700;">Rail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #e8e8e8;">
+                            <td style="padding: 1rem; color: var(--text-dark);">Speed</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-light);">★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e8e8e8;">
+                            <td style="padding: 1rem; color: var(--text-dark);">Cost per kg</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-light);">★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★★</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e8e8e8;">
+                            <td style="padding: 1rem; color: var(--text-dark);">Route flexibility</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-light);">★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-light);">★</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e8e8e8;">
+                            <td style="padding: 1rem; color: var(--text-dark);">Bulk capacity</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★★★</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; color: var(--text-dark);">Door-to-door</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-light);">★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-blue); font-weight: 600;">★★★★★</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-light);">★</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Your Cargo Travels In -->
+    <section style="background: var(--light-gray); padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.8rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">What your cargo travels in</h2>
+            <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 3rem; max-width: 900px;">The container matters. Size, type and packaging affect price, speed, handling and what can travel alongside your cargo.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                <div style="background: white; border-radius: 8px; padding: 1.75rem; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.5rem;">20ft Container</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">Standard single box. 20 cubic meters, roughly 18 tons.</p>
+                </div>
+
+                <div style="background: white; border-radius: 8px; padding: 1.75rem; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.5rem;">40ft Container</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">Double the space. 40 cubic meters, roughly 28 tons.</p>
+                </div>
+
+                <div style="background: white; border-radius: 8px; padding: 1.75rem; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.5rem;">40ft HC</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">High-cube. Same footprint, extra height. Space, not weight.</p>
+                </div>
+
+                <div style="background: white; border-radius: 8px; padding: 1.75rem; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.5rem;">Pallet + Container</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">Partial load. Share space with other shippers to cut cost.</p>
+                </div>
+
+                <div style="background: white; border-radius: 8px; padding: 1.75rem; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.5rem;">Reefer Container</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">Temperature controlled. Fresh produce, pharmaceuticals, perishables.</p>
+                </div>
+
+                <div style="background: white; border-radius: 8px; padding: 1.75rem; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.5rem;">Break Bulk</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">Individual pieces. Oversized, heavy or irregular cargo.</p>
+                </div>
+
+                <div style="background: white; border-radius: 8px; padding: 1.75rem; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.5rem;">Consolidation</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">Group shipments. Multiple shippers, one container, lower rates.</p>
+                </div>
+
+                <div style="background: white; border-radius: 8px; padding: 1.75rem; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.5rem;">Custom Solutions</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">Special requirements? We work with what your cargo needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Freight Is Priced -->
+    <section style="background: linear-gradient(135deg, #001a3a 0%, #003a70 100%); color: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.8rem; color: white; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">How freight is actually priced</h2>
+            <p style="font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 3rem; max-width: 900px;">Not a mystery, not a guess. Base cost plus adjustments. It is what you see in a quote that you negotiate from.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                <div>
+                    <h3 style="font-size: 1.3rem; color: white; font-weight: 700; margin-bottom: 1.5rem;">What moves the base rate</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem;">
+                        <li>
+                            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); font-weight: 600; margin-bottom: 0.5rem;">Origin and destination</div>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">Where it starts and where it ends. Infrastructure and demand matter.</p>
+                        </li>
+                        <li>
+                            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); font-weight: 600; margin-bottom: 0.5rem;">Weight and volume</div>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">You pay for both. Whichever consumes more of the truck/ship.</p>
+                        </li>
+                        <li>
+                            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); font-weight: 600; margin-bottom: 0.5rem;">Container type</div>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">Reefer costs more than dry. High-cube costs more than standard.</p>
+                        </li>
+                        <li>
+                            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); font-weight: 600; margin-bottom: 0.5rem;">Frequency</div>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">Regular lanes have better rates. One-time shipments cost more.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.3rem; color: white; font-weight: 700; margin-bottom: 1.5rem;">Adjustments and surcharges</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem;">
+                        <li>
+                            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); font-weight: 600; margin-bottom: 0.5rem;">Hazmat, batteries, dangerous goods</div>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">Handling and paperwork have a cost. Usually 10-30% of freight.</p>
+                        </li>
+                        <li>
+                            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); font-weight: 600; margin-bottom: 0.5rem;">Fuel and currency</div>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">Fuel surcharge. Currency surcharge. Market-linked adjustments.</p>
+                        </li>
+                        <li>
+                            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); font-weight: 600; margin-bottom: 0.5rem;">Customs and documentation</div>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">Entry, declaration, licensing fees. Usually flat or per-doc.</p>
+                        </li>
+                        <li>
+                            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); font-weight: 600; margin-bottom: 0.5rem;">Insurance and liability</div>
+                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">Optional for shipments, standard for high-value cargo.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Comes With Booking -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.8rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">What comes with every freight booking</h2>
+            <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 3rem; max-width: 900px;">Not just a price. Coordination, documentation, tracking, and a person who knows your shipment.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div style="text-align: center;">
+                    <div style="width: 60px; height: 60px; background: #E3F2FD; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <svg viewBox="0 0 24 24" style="width: 30px; height: 30px;" fill="none" stroke="#0055CC" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem;">Pickup coordination</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">We schedule collection with you and confirm with carriers.</p>
+                </div>
+
+                <div style="text-align: center;">
+                    <div style="width: 60px; height: 60px; background: #E3F2FD; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <svg viewBox="0 0 24 24" style="width: 30px; height: 30px;" fill="none" stroke="#0055CC" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"></path>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem;">Documentation</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">Invoices, BOLs, customs forms. We prepare and manage it all.</p>
+                </div>
+
+                <div style="text-align: center;">
+                    <div style="width: 60px; height: 60px; background: #E3F2FD; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <svg viewBox="0 0 24 24" style="width: 30px; height: 30px;" fill="none" stroke="#0055CC" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem;">Live tracking</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">Know where it is, when it arrives. Portal access included.</p>
+                </div>
+
+                <div style="text-align: center;">
+                    <div style="width: 60px; height: 60px; background: #E3F2FD; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <svg viewBox="0 0 24 24" style="width: 30px; height: 30px;" fill="none" stroke="#0055CC" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"></path>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem;">Customs handling</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">We clear it through customs. No surprises at the border.</p>
+                </div>
+
+                <div style="text-align: center;">
+                    <div style="width: 60px; height: 60px; background: #E3F2FD; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <svg viewBox="0 0 24 24" style="width: 30px; height: 30px;" fill="none" stroke="#0055CC" stroke-width="2">
+                            <path d="M14 9l-2.5 2.5"></path>
+                            <circle cx="4" cy="4" r="1"></circle>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem;">A dedicated contact</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5; margin: 0;">One person who knows your shipment, not a queue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 2rem;">Pallets, containers and project cargo across air, ocean, road and rail — with classification, entries and clearance handled by our own brokers at both ends of the lane. Business shippers only.</p>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 4rem;">
+                <a href="quote.html" style="background: var(--dark-blue); color: white; padding: 1rem 1.75rem; border-radius: 8px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Quote a Freight Shipment</a>
+                <a href="request-business-account.html" style="background: white; color: var(--dark-blue); border: 2px solid var(--dark-blue); padding: calc(1rem - 2px) calc(1.75rem - 2px); border-radius: 8px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Open a Business Account</a>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding-top: 2rem; border-top: 1px solid #e8e8e8;">
+                <div>
+                    <div style="font-size: 0.75rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.75rem;">Modes</div>
+                    <p style="font-size: 1rem; color: var(--text-dark); font-weight: 600; margin: 0;">Air · Ocean · Road · Rail</p>
+                </div>
+
+                <div>
+                    <div style="font-size: 0.75rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.75rem;">Load Types</div>
+                    <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin: 0;">FCL, LCL, FTL, LTL, break bulk and project cargo</p>
+                </div>
+
+                <div>
+                    <div style="font-size: 0.75rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.75rem;">Customs</div>
+                    <p style="font-size: 0.95rem; color: var(--text-dark); line-height: 1.5; margin: 0;">In-house brokers, origin and destination</p>
+                </div>
+
+                <div>
+                    <div style="font-size: 0.75rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.75rem;">Support</div>
+                    <p style="font-size: 1rem; color: var(--text-dark); font-weight: 600; margin: 0;">Open 24/7, every day</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA Section -->
+    <section class="footer-cta">
+        <div class="footer-cta-container">
+            <h3>Ready to move freight? Our logistics team is standing by.</h3>
+            <button class="footer-cta-btn">Get started →</button>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer-about">
+                <div class="footer-logo">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40'%3E%3Ctext x='40' y='28' font-size='20' font-weight='bold' fill='%230055CC'%3EOPS%3C/text%3E%3Ctext x='40' y='38' font-size='10' fill='%23003A70'%3ELOGISTICS%3C/text%3E%3C/svg%3E" alt="OPS Logistics">
+                </div>
+                <p>Delivering excellence worldwide. Air, sea, road and rail freight to over 220 countries and territories.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>SERVICES</h4>
+                <ul>
+                    <li><a href="#">Express Shipping</a></li>
+                    <li><a href="#">OPS Express</a></li>
+                    <li><a href="#">eCommerce</a></li>
+                    <li><a href="#">Supply Chain</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">About OPS</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Innovation</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HELP</h4>
+                <ul>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Service Updates</a></li>
+                    <li><a href="#">Request a business account</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 OPS Logistics. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Handle dropdown toggle on click
+        const dropdownToggles = document.querySelectorAll('.nav-item-dropdown > .nav-item');
+
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const parentDropdown = toggle.closest('.nav-item-dropdown');
+                const isActive = parentDropdown.classList.contains('active');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => {
+                    if (active !== parentDropdown) {
+                        active.classList.remove('active');
+                    }
+                });
+
+                // Toggle current dropdown
+                if (isActive) {
+                    parentDropdown.classList.remove('active');
+                } else {
+                    parentDropdown.classList.add('active');
+                }
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-item-dropdown')) {
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => {
+                    active.classList.remove('active');
+                });
+            }
+        });
+    </script>
+    <!-- Support Chat Widget -->
+    <script src="chat-widget.js"></script>
+    <!-- Auth Helper for login button -->
+    <script src="auth-helper.js"></script>
+</body>
+</html>
+

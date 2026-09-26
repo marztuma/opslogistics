@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customs and Compliance - OPS Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @media (max-width: 768px) {
+            h1 { font-size: 1.75rem !important; line-height: 1.3 !important; }
+            h2 { font-size: 1.5rem !important; line-height: 1.3 !important; }
+            h3 { font-size: 0.95rem !important; }
+            p { font-size: 0.85rem !important; }
+
+            section { padding: 2rem 1.5rem !important; }
+
+            [style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            [style*="grid-template-columns: repeat(2, 1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            [style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 0.75rem !important;
+            }
+
+            [style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1rem !important;
+            }
+
+            [style*="gap: 3rem"] {
+                gap: 1.5rem !important;
+            }
+
+            [style*="gap: 2rem"] {
+                gap: 1rem !important;
+            }
+
+            [style*="height: 250px"] {
+                height: 200px !important;
+            }
+
+            [style*="height: 300px"] {
+                height: 220px !important;
+            }
+
+            [style*="height: 350px"] {
+                height: 240px !important;
+            }
+
+            [style*="padding: 4rem"] {
+                padding: 2rem 1.5rem !important;
+            }
+
+            [style*="max-width: 1400px"],
+            [style*="max-width: 1000px"] {
+                max-width: 100% !important;
+            }
+
+            .navbar-top-right {
+                display: none !important;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap !important;
+                gap: 0.5rem !important;
+            }
+
+            .login-btn {
+                font-size: 0.8rem !important;
+                padding: 0.5rem 0.75rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section { padding: 1.5rem 1rem !important; }
+            h1 { font-size: 1.5rem !important; }
+            h2 { font-size: 1.25rem !important; }
+
+            [style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 0.75rem !important;
+            }
+
+            [style*="padding: 0.875rem"] {
+                padding: 0.75rem 1rem !important;
+                font-size: 0.8rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="navbar">
+        <!-- Top Bar -->
+        <div class="navbar-top">
+            <div class="navbar-top-container">
+                <div class="logo">
+                    <svg viewBox="0 0 120 50" class="logo-icon">
+                        <g>
+                            <circle cx="20" cy="25" r="15" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M15 28 Q20 18 25 28" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M12 30 L28 30" stroke="#0055CC" stroke-width="1"/>
+                            <path d="M14 32 L26 32" stroke="#0055CC" stroke-width="0.8"/>
+                        </g>
+                        <text x="38" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#003A70">OPS</text>
+                        <text x="38" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#0055CC">LOGISTICS</text>
+                    </svg>
+                </div>
+                <div class="navbar-top-right">
+                    <a href="index.html" class="top-link">Exit</a>
+                    <a href="#" class="top-link">What OPS provides <span>↗</span></a>
+                    <a href="#" class="top-link">To research</a>
+                    <div class="language-selector">
+                        <span>🇨🇲</span>
+                        <a href="#">Cameroon <span>▼</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="navbar-bottom">
+            <div class="navbar-bottom-container">
+                <nav class="nav-menu">
+                    <a href="index.html#track" class="nav-item">Track</a>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Ship <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <h4>START SHIPPING</h4>
+                                <a href="quote.html" class="dropdown-item">
+                                    <span>Get a Quote</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="ship-now.html" class="dropdown-item">
+                                    <span>Ship Now</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="request-business-account.html" class="dropdown-item">
+                                    <span>Request a Business Account</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>LEARN MORE ABOUT</h4>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Document and Package</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="express-document-and-package-shipping.html" class="dropdown-item">
+                                    <span>Express document and package shipping</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="retailers-and-volume-shipping.html" class="dropdown-item">
+                                    <span>Retailers or volume shipping (Business Only)</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>Pallets, Containers and Cargo</h5>
+                                <p class="card-label">BUSINESS ONLY</p>
+                                <p>Air and ocean freight, plus customs and logistics services with OPS Global Forwarding.</p>
+                                <a href="freight-services.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore Freight Services</a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>OPS for Your Business</h5>
+                                <p class="card-label">LET'S BE SHIPPING PARTNERS</p>
+                                <p>Small start-up? Medium-sized business going international? Satisfy your business shipping needs.</p>
+                                <a href="business-offerings.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore Our Business Offerings</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Enterprise logistics services <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-card">
+                                <h5>Enterprise Logistics Services</h5>
+                                <p>Our supply chain division manages warehousing, fulfillment, and freight operations for growing businesses. As your third-party logistics provider.</p>
+                                <button class="dropdown-btn">Explore the OPS supply chain</button>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>SOLUTIONS</h4>
+                                <a href="contract-logistics.html" class="dropdown-item">
+                                    <span>CONTRACT LOGISTICS</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="ecommerce-execution.html" class="dropdown-item">
+                                    <span>E-commerce execution</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="customs-and-compliance.html" class="dropdown-item">
+                                    <span>Customs and compliance</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="cold-chain-logistics.html" class="dropdown-item">
+                                    <span>Cold chain logistics</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="last-mile-delivery.html" class="dropdown-item">
+                                    <span>Last mile delivery</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>THE CREATION</h4>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Technology</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Healthcare and Life Sciences</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Retail and fashion</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Automobile</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Energy and public utilities</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>BEST OS</h4>
+                                <a href="case-studies.html" class="dropdown-item">
+                                    <span>Case studies</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="white-papers.html" class="dropdown-item">
+                                    <span>White papers</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <span>Blog Logistics Insights</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Pricing updates</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="customer-service.html" class="nav-item">Customer Service</a>
+                    <a href="faq.html" class="nav-item">FAQ</a>
+                    <a href="service-updates.html" class="nav-item">Service Updates</a>
+                    <a href="support-chat.html" class="nav-item">Support</a>
+                </nav>
+                <button class="login-btn">Customer portal logins <span>▼</span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: flex-start;">
+                <div>
+                    <p style="font-size: 0.75rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 1.5rem;">Customs & Compliance</p>
+                    <h1 style="font-size: 3.5rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.15; letter-spacing: -0.8px;">A customs entry is a <span style="color: var(--primary-blue);">legal declaration.</span></h1>
+                    <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.7; margin-bottom: 2rem;">Not paperwork. It is a statement to a government about what your goods are, what they are worth and where they came from — and you carry the liability for it, whoever filed it. We keep clearance in-house so that liability sits with people we manage.</p>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#" style="background: var(--primary-blue); color: white; padding: 0.875rem 1.75rem; border-radius: 6px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Talk to a Broker</a>
+                        <button style="background: transparent; color: var(--text-dark); border: 2px solid var(--text-dark); padding: calc(0.875rem - 2px) calc(1.75rem - 2px); border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Quote a Shipment</button>
+                    </div>
+                </div>
+
+                <div style="background: white; border-radius: 12px; padding: 2rem; border: 2px solid var(--dark-blue);">
+                    <div style="background: var(--dark-blue); color: white; padding: 1rem; margin: -2rem -2rem 1.5rem -2rem; border-radius: 10px 10px 0 0; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Scope of service</span>
+                        <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">OPS / Customs</span>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem;">
+                            <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Handled by</span>
+                            <p style="font-size: 0.9rem; color: var(--dark-blue); font-weight: 600; margin: 0; line-height: 1.5;">Our own brokers, in-house — not subcontracted</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem;">
+                            <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Coverage</span>
+                            <p style="font-size: 0.9rem; color: var(--dark-blue); font-weight: 600; margin: 0; line-height: 1.5;">Origin and destination, both ends of the lane</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem;">
+                            <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Modes</span>
+                            <p style="font-size: 0.9rem; color: var(--dark-blue); font-weight: 600; margin: 0; line-height: 1.5;">Air · Ocean · Road · Rail</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem;">
+                            <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Includes</span>
+                            <p style="font-size: 0.9rem; color: var(--dark-blue); font-weight: 600; margin: 0; line-height: 1.5;">Classification, valuation, entries, duty management and screening</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem;">
+                            <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Availability</span>
+                            <p style="font-size: 0.9rem; color: var(--dark-blue); font-weight: 600; margin: 0; line-height: 1.5;">Open 24/7, every day of the year</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Four Ways Costs Section -->
+    <section style="background: linear-gradient(135deg, #001a3a 0%, #003a70 100%); color: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.8rem; color: white; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">Four ways customs costs you money</h2>
+            <p style="font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 3rem; max-width: 900px;">Customs failures create direct costs through penalties and indirect costs through delays. Both hit your margins.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 8px; backdrop-filter: blur(10px);">
+                    <h3 style="font-size: 1.2rem; color: white; font-weight: 700; margin-bottom: 1rem;">Slow tariff classification</h3>
+                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0;">Wrong HS code means wrong duty rate. Getting the code right requires product knowledge and trade rules experience.</p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 8px; backdrop-filter: blur(10px);">
+                    <h3 style="font-size: 1.2rem; color: white; font-weight: 700; margin-bottom: 1rem;">Incomplete documentation</h3>
+                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0;">Missing certificates, invoices, or origin paperwork trigger holds. A missing document can delay a shipment for weeks.</p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 8px; backdrop-filter: blur(10px);">
+                    <h3 style="font-size: 1.2rem; color: white; font-weight: 700; margin-bottom: 1rem;">Slow timing friction</h3>
+                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0;">Filing declarations manually or waiting for approvals adds days. Each day adds cost in warehousing and working capital.</p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 8px; backdrop-filter: blur(10px);">
+                    <h3 style="font-size: 1.2rem; color: white; font-weight: 700; margin-bottom: 1rem;">Customs good labels</h3>
+                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0;">Mislabeled goods create additional inspections. Inspections mean more time, more cost, and increased risk of seizure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Clearance Involves Section -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div style="background: linear-gradient(135deg, #f0c856 0%, #e8b841 100%); border-radius: 12px; height: 350px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                    Container image
+                </div>
+
+                <div>
+                    <h2 style="font-size: 2.2rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">What clearance actually involves</h2>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; gap: 1.5rem;">
+                            <div style="font-size: 1.3rem; color: var(--primary-blue); font-weight: 700; flex-shrink: 0;">01</div>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Classification</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Assigning the correct HS code based on product composition and use.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1.5rem;">
+                            <div style="font-size: 1.3rem; color: var(--primary-blue); font-weight: 700; flex-shrink: 0;">02</div>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Valuation</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Determining the dutiable value of the goods for duty calculation.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1.5rem;">
+                            <div style="font-size: 1.3rem; color: var(--primary-blue); font-weight: 700; flex-shrink: 0;">03</div>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Origin</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Verifying country of origin for duty rate and trade agreement eligibility.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1.5rem;">
+                            <div style="font-size: 1.3rem; color: var(--primary-blue); font-weight: 700; flex-shrink: 0;">04</div>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Licenses & controls</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Checking for restricted items, licenses, and regulatory compliance requirements.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1.5rem;">
+                            <div style="font-size: 1.3rem; color: var(--primary-blue); font-weight: 700; flex-shrink: 0;">05</div>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Entry & declaration</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Filing the customs entry and making declarations on behalf of the importer.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1.5rem;">
+                            <div style="font-size: 1.3rem; color: var(--primary-blue); font-weight: 700; flex-shrink: 0;">06</div>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.5rem 0;">Duty & assessment</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Calculating and arranging payment of all applicable duties and taxes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Have Ready Section -->
+    <section style="background: var(--light-gray); padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.8rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">What to have ready before you ship</h2>
+            <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 3rem; max-width: 900px;">Speed through customs depends on complete documentation. Missing one piece delays the entire entry.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                        <span style="color: var(--primary-blue); font-weight: 700;">✓</span>
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0;">Commercial invoice</h4>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Itemized list with product descriptions, quantities, and prices.</p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                        <span style="color: var(--primary-blue); font-weight: 700;">✓</span>
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0;">Packing list</h4>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Breakdown of contents by box with weights and dimensions.</p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                        <span style="color: var(--primary-blue); font-weight: 700;">✓</span>
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0;">Bill of lading</h4>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Proof of shipment and carrier documentation.</p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                        <span style="color: var(--primary-blue); font-weight: 700;">✓</span>
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0;">Certificate of origin</h4>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Document proving the country where goods were manufactured.</p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                        <span style="color: var(--primary-blue); font-weight: 700;">✓</span>
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0;">Export/import permits</h4>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Any required licenses for controlled or restricted goods.</p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                        <span style="color: var(--primary-blue); font-weight: 700;">✓</span>
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0;">Technical documents</h4>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Specs, certifications, or standards compliance documents if applicable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Part That Saves Money Section -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <h2 style="font-size: 2.2rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">The part that saves money rather than time</h2>
+                    <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.7; margin-bottom: 2rem;">Duty optimization is about knowing what tools are available and whether your goods qualify. Most importers leave savings on the table by not exploring duty reduction programs.</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                        <div style="display: flex; gap: 1rem;">
+                            <span style="color: var(--primary-blue); font-weight: 700; flex-shrink: 0;">•</span>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.25rem 0;">Preferential trade agreements</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">FTA, GSP, and other preferential rates can reduce duty by 50% or more.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem;">
+                            <span style="color: var(--primary-blue); font-weight: 700; flex-shrink: 0;">•</span>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.25rem 0;">Bonded warehousing</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Defer duties while goods are in storage, then only pay when goods leave for sale.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem;">
+                            <span style="color: var(--primary-blue); font-weight: 700; flex-shrink: 0;">•</span>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.25rem 0;">Drawback claims</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Recover duties paid on materials that are exported in finished products.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem;">
+                            <span style="color: var(--primary-blue); font-weight: 700; flex-shrink: 0;">•</span>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin: 0 0 0.25rem 0;">Tariff reclassification</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0; line-height: 1.6;">Challenge HS codes through formal processes if duties can be reduced.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #8fa8b8 0%, #708299 100%); border-radius: 12px; height: 350px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                    Workers image
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Ways Section -->
+    <section style="background: var(--light-gray); padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.8rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">Three ways to use this</h2>
+            <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 3rem; max-width: 900px;">Choose the engagement model that fits your business volume and complexity.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">Build into your freight</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">Customs clearance bundled with your freight service. You ship, we clear customs and deliver.</p>
+                </div>
+
+                <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">Brokerage only</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">You arrange transport. We handle all customs clearance, documentation, and duty payment.</p>
+                </div>
+
+                <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">Review and advisory</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">We review your classifications, documentation, and duty strategy for optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section style="background: linear-gradient(135deg, #001a3a 0%, #003a70 100%); color: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <h2 style="font-size: 2.8rem; color: white; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">Send us a code you are unsure about.</h2>
+                    <p style="font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 2.5rem;">We will review your HS code, check duty rates, and tell you if there is a better classification that saves money. No obligation.</p>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="quote.html" style="background: var(--primary-blue); color: white; padding: 0.875rem 1.75rem; border-radius: 6px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Get a review</a>
+                        <button style="background: transparent; color: white; border: 2px solid white; padding: calc(0.875rem - 2px) calc(1.75rem - 2px); border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Talk to our team</button>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #a0b8c8 0%, #8fa8b8 100%); border-radius: 12px; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                    Customs image
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA Section -->
+    <section class="footer-cta">
+        <div class="footer-cta-container">
+            <h3>Questions about your tariff classification? Our customs experts are ready to help.</h3>
+            <button class="footer-cta-btn">Get started →</button>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer-about">
+                <div class="footer-logo">
+                    <img src="https://res.cloudinary.com/tyt96rdp/image/upload/v1790463065/opslogistics/customs/me7qc8rrt84xzqqlfuxa.webp" alt="OPS Logistics">
+                </div>
+                <p>Delivering excellence worldwide. Air, sea, road and rail freight to over 220 countries and territories.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>SERVICES</h4>
+                <ul>
+                    <li><a href="#">Express Shipping</a></li>
+                    <li><a href="#">OPS Express</a></li>
+                    <li><a href="#">eCommerce</a></li>
+                    <li><a href="#">Supply Chain</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">About OPS</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Innovation</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HELP</h4>
+                <ul>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Service Updates</a></li>
+                    <li><a href="#">Request a business account</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 OPS Logistics. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Handle dropdown toggle on click
+        const dropdownToggles = document.querySelectorAll('.nav-item-dropdown > .nav-item');
+
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const parentDropdown = toggle.closest('.nav-item-dropdown');
+                const isActive = parentDropdown.classList.contains('active');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => {
+                    if (active !== parentDropdown) {
+                        active.classList.remove('active');
+                    }
+                });
+
+                // Toggle current dropdown
+                if (isActive) {
+                    parentDropdown.classList.remove('active');
+                } else {
+                    parentDropdown.classList.add('active');
+                }
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-item-dropdown')) {
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => {
+                    active.classList.remove('active');
+                });
+            }
+        });
+    </script>
+    <!-- Support Chat Widget -->
+    <script src="chat-widget.js"></script>
+    <!-- Auth Helper for login button -->
+    <script src="auth-helper.js"></script>
+</body>
+</html>
+

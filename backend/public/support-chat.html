@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPS Logistics - Support Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .chat-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #0055CC 0%, #003A70 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+        }
+
+        .chat-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .chat-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .chat-content {
+            background: white;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .chat-main {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+
+        .chat-sidebar {
+            background: #f9f9f9;
+            border-right: 1px solid #eee;
+            padding: 2rem;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .chat-main-content {
+            padding: 2rem;
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .search-box input::placeholder {
+            color: #999;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0055CC;
+            cursor: pointer;
+        }
+
+        .category-tabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .category-tab {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .category-tab.active {
+            background: #0055CC;
+            color: white;
+            border-color: #0055CC;
+        }
+
+        .category-tab:hover {
+            border-color: #0055CC;
+            color: #0055CC;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .quick-link {
+            padding: 0.75rem;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .quick-link:hover {
+            background: #f0f0f0;
+            border-color: #0055CC;
+            color: #0055CC;
+        }
+
+        .contact-section {
+            background: #f0f4f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            font-size: 1rem;
+            color: #003A70;
+            margin-bottom: 1rem;
+        }
+
+        .contact-btn {
+            background: #0055CC;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .contact-btn:hover {
+            background: #0047A3;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #003A70;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #0055CC;
+            padding-bottom: 0.75rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .article-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .article-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        .article-card h3 {
+            font-size: 1rem;
+            color: #003A70;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .helpful-btn {
+            background: transparent;
+            border: 1px solid #ddd;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+            margin-right: 0.5rem;
+        }
+
+        .helpful-btn:hover {
+            border-color: #0055CC;
+            color: #0055CC;
+        }
+
+        .helpful-btn.active {
+            background: #0055CC;
+            color: white;
+            border-color: #0055CC;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: #003A70;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f9f9f9;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f0f4f8;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-icon.open {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 1rem 1.5rem;
+            max-height: 500px;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .faq-answer.open {
+            padding: 1rem 1.5rem;
+            opacity: 1;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            background: #0055CC;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #0047A3;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .chat-main {
+                grid-template-columns: 1fr;
+            }
+
+            .chat-sidebar {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .chat-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>OPS LOGISTICS</h1>
+            <p>We're here to help you!</p>
+        </div>
+
+        <div class="chat-content">
+            <div class="chat-main">
+                <div class="chat-sidebar">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search for quick answers...">
+                        <span class="search-icon">🔍</span>
+                    </div>
+
+                    <div class="category-tabs">
+                        <button class="category-tab active" data-category="all">All Articles</button>
+                    </div>
+
+                    <div class="quick-links" id="quickLinks">
+                        <a href="#" class="quick-link" data-link="ship">Ship a package</a>
+                        <a href="#" class="quick-link" data-link="track">Track a Shipment</a>
+                        <a href="#" class="quick-link" data-link="parcel">Can't find my parcel</a>
+                        <a href="#" class="quick-link" data-link="delivery">Change Delivery date</a>
+                        <a href="#" class="quick-link" data-link="arrive">When will my parcel arrive?</a>
+                    </div>
+
+                    <div class="contact-section">
+                        <h3>Need More Help?</h3>
+                        <button class="contact-btn" id="contactBtn">Send us a message</button>
+                    </div>
+                </div>
+
+                <div class="chat-main-content">
+                    <!-- FAQ Section -->
+                    <div id="faqSection" class="content-section active">
+                        <h2 class="section-title">Frequently Asked Questions</h2>
+                        <div id="faqContainer"></div>
+                    </div>
+
+                    <!-- Contact Form Section -->
+                    <div id="contactSection" class="content-section">
+                        <h2 class="section-title">Send us a message</h2>
+                        <div class="success-message" id="successMessage">
+                            ✓ Your message has been sent successfully! We'll get back to you within 24 hours.
+                        </div>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName">Name</label>
+                                    <input type="text" id="contactName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail">Email</label>
+                                    <input type="email" id="contactEmail" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone">Phone (optional)</label>
+                                <input type="tel" id="contactPhone">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactCategory">Category</label>
+                                <select id="contactCategory" required>
+                                    <option value="">Select a category...</option>
+                                    <option value="shipping">Shipping</option>
+                                    <option value="tracking">Tracking</option>
+                                    <option value="pricing">Pricing</option>
+                                    <option value="account">Account</option>
+                                    <option value="returns">Returns</option>
+                                    <option value="customs">Customs</option>
+                                    <option value="business">Business</option>
+                                    <option value="technical">Technical</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactSubject">Subject</label>
+                                <input type="text" id="contactSubject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage">Message</label>
+                                <textarea id="contactMessage" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = '/api/support';
+
+        // Load FAQs on page load
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadFAQs();
+            setupEventListeners();
+        });
+
+        // Setup event listeners
+        function setupEventListeners() {
+            document.getElementById('contactBtn').addEventListener('click', () => {
+                document.getElementById('faqSection').classList.remove('active');
+                document.getElementById('contactSection').classList.add('active');
+            });
+
+            document.getElementById('contactForm').addEventListener('submit', handleContactForm);
+
+            document.getElementById('searchInput').addEventListener('input', debounce(handleSearch, 300));
+
+            document.querySelectorAll('.quick-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const query = link.textContent;
+                    document.getElementById('searchInput').value = query;
+                    handleSearch();
+                });
+            });
+        }
+
+        // Load FAQs
+        async function loadFAQs() {
+            try {
+                const response = await fetch(`${API_URL}/faqs`);
+                const faqs = await response.json();
+
+                const container = document.getElementById('faqContainer');
+                container.innerHTML = faqs.map(faq => `
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>${faq.question}</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>${faq.answer}</p>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (err) {
+                console.error('Failed to load FAQs:', err);
+            }
+        }
+
+        // Toggle FAQ
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+
+            answer.classList.toggle('open');
+            icon.classList.toggle('open');
+        }
+
+        // Search articles
+        async function handleSearch() {
+            const query = document.getElementById('searchInput').value;
+
+            if (query.length < 2) {
+                await loadFAQs();
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/search?query=${encodeURIComponent(query)}`);
+                const articles = await response.json();
+
+                const container = document.getElementById('faqContainer');
+                if (articles.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: #999; padding: 2rem;">No articles found. Try a different search.</p>';
+                    return;
+                }
+
+                container.innerHTML = articles.map(article => `
+                    <div class="article-card">
+                        <h3>${article.title}</h3>
+                        <p>${article.description || 'Click to view full article'}</p>
+                        <div class="article-meta">📖 Read more...</div>
+                    </div>
+                `).join('');
+            } catch (err) {
+                console.error('Search failed:', err);
+            }
+        }
+
+        // Handle contact form
+        async function handleContactForm(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
+                phone: document.getElementById('contactPhone').value,
+                subject: document.getElementById('contactSubject').value,
+                category: document.getElementById('contactCategory').value,
+                message: document.getElementById('contactMessage').value
+            };
+
+            try {
+                const response = await fetch(`${API_URL}/tickets`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) throw new Error('Failed to send message');
+
+                const data = await response.json();
+
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('successMessage').innerHTML = `
+                    ✓ Your message has been sent successfully!<br>
+                    Your ticket number: <strong>${data.ticket.ticket_number}</strong><br>
+                    We'll get back to you within 24 hours.
+                `;
+
+                // Reset form
+                document.getElementById('contactForm').reset();
+
+                // Redirect after 2 seconds
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 3000);
+            } catch (err) {
+                alert('Failed to send message. Please try again.');
+                console.error(err);
+            }
+        }
+
+        // Utility function for debouncing
+        function debounce(func, wait) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+    </script>
+    <!-- Auth Helper for login button -->
+    <script src="auth-helper.js"></script>
+</body>
+</html>

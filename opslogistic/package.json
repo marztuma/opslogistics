@@ -1,0 +1,13 @@
+{
+  "name": "opslogistics",
+  "version": "1.0.0",
+  "description": "OPS Logistics Frontend",
+  "type": "module",
+  "scripts": {
+    "dev": "npx http-server -p 8000 -c-1",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "keywords": ["logistics", "shipping", "tracking"],
+  "author": "OPS Logistics",
+  "license": "MIT"
+}

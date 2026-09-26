@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote - OPS Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .quote-form-section {
+            background: #f8f9fa;
+            padding: 3rem 2rem;
+            min-height: 100vh;
+        }
+
+        .quote-form-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .form-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+        }
+
+        .form-section {
+            margin-bottom: 3rem;
+        }
+
+        .form-section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-number {
+            background: var(--dark-blue);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row.full {
+            grid-template-columns: 1fr;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-size: 0.85rem;
+            color: var(--dark-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-label .required {
+            color: var(--primary-blue);
+        }
+
+        .form-label .optional {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-weight: 400;
+            margin-left: 0.5rem;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            padding: 0.875rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-input::placeholder,
+        .form-select::placeholder {
+            color: #999;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-hint {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.35rem;
+        }
+
+        .submit-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .submit-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #0047A3;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        .submit-info {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .submit-info strong {
+            color: var(--text-dark);
+        }
+
+        .submit-info a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .submit-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1024px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .form-content {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .form-input,
+            .form-select,
+            .form-textarea {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="navbar">
+        <!-- Top Bar -->
+        <div class="navbar-top">
+            <div class="navbar-top-container">
+                <div class="logo">
+                    <svg viewBox="0 0 120 50" class="logo-icon">
+                        <g>
+                            <circle cx="20" cy="25" r="15" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M15 28 Q20 18 25 28" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M12 30 L28 30" stroke="#0055CC" stroke-width="1"/>
+                            <path d="M14 32 L26 32" stroke="#0055CC" stroke-width="0.8"/>
+                        </g>
+                        <text x="38" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#003A70">OPS</text>
+                        <text x="38" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#0055CC">LOGISTICS</text>
+                    </svg>
+                </div>
+                <div class="navbar-top-right">
+                    <a href="index.html" class="top-link">Exit</a>
+                    <a href="#" class="top-link">What OPS provides <span>↗</span></a>
+                    <a href="#" class="top-link">To research</a>
+                    <div class="language-selector">
+                        <span>🇨🇲</span>
+                        <a href="#">Cameroon <span>▼</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="navbar-bottom">
+            <div class="navbar-bottom-container">
+                <nav class="nav-menu">
+                    <a href="track.html" class="nav-item">Track</a>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Ship <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <h4>START SHIPPING</h4>
+                                <a href="quote.html" class="dropdown-item">
+                                    <span>Get a Quote</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="ship-now.html" class="dropdown-item">
+                                    <span>Ship Now</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="request-business-account.html" class="dropdown-item">
+                                    <span>Request a Business Account</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>LEARN MORE ABOUT</h4>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Document and Package</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="express-document-and-package-shipping.html" class="dropdown-item">
+                                    <span>Express document and package shipping</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="retailers-and-volume-shipping.html" class="dropdown-item">
+                                    <span>Retailers or volume shipping (Business Only)</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>Pallets, Containers and Cargo</h5>
+                                <p class="card-label">BUSINESS ONLY</p>
+                                <p>Air and ocean freight, plus customs and logistics services with OPS Global Forwarding.</p>
+                                <a href="freight-services.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore Freight Services</a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>OPS for Your Business</h5>
+                                <p class="card-label">LET'S BE SHIPPING PARTNERS</p>
+                                <p>Small start-up? Medium-sized business going international? Satisfy your business shipping needs.</p>
+                                <a href="business-offerings.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore Our Business Offerings</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Enterprise Logistics Services <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-card">
+                                <h5>Enterprise Logistics Services</h5>
+                                <p>Our supply chain division creates customized solutions for businesses. The perfect fit as a third-party logistics (3PL) provider.</p>
+                                <button class="dropdown-btn">Explore the OPS supply chain</button>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>SOLUTIONS</h4>
+                                <a href="contract-logistics.html" class="dropdown-item">
+                                    <span>CONTRACT LOGISTICS</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>E-commerce execution</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="customs-and-compliance.html" class="dropdown-item">
+                                    <span>Customs and compliance</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="cold-chain-logistics.html" class="dropdown-item">
+                                    <span>Cold chain logistics</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="last-mile-delivery.html" class="dropdown-item">
+                                    <span>Last mile delivery</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>INDUSTRIES</h4>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Technology</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Healthcare and Life Sciences</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Retail and fashion</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Automobile</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Energy and public utilities</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>RESOURCES</h4>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Case studies</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>White papers</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Logistics Insights</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Pricing updates</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="customer-service.html" class="nav-item">Customer Service</a>
+                    <a href="faq.html" class="nav-item">FAQ</a>
+                    <a href="service-updates.html" class="nav-item">Service Updates</a>
+                    <a href="support-chat.html" class="nav-item">Support</a>
+                </nav>
+                <button class="login-btn">Customer portal logins <span>▼</span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quote Intro Section -->
+    <section class="quote-intro-section" style="background: white; padding: 4rem 2rem; border-bottom: 1px solid #e8e8e8;">
+        <div class="quote-container" style="max-width: 1400px; margin: 0 auto;">
+            <h1 style="font-size: 2.8rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">Tell us what is moving. We will <span style="color: var(--primary-blue);">price</span> it properly.</h1>
+            <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 3rem; max-width: 800px;">Six fields are required. Everything else is optional and genuinely is – a half-filled enquiry still reaches a person, and we would rather ask you one follow-up question than have you give up on a form.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; margin-bottom: 0;">
+                <div style="background: white; border: 1px solid #e8e8e8; border-radius: 8px; padding: 1.75rem;">
+                    <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 0.75rem; display: block;">Have ready 01</span>
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">Where from, where to</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">City and country is enough to start. Postcodes sharpen it.</p>
+                </div>
+                <div style="background: white; border: 1px solid #e8e8e8; border-radius: 8px; padding: 1.75rem;">
+                    <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 0.75rem; display: block;">Have ready 02</span>
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">What it is</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">A plain description. "Machine parts" beats "goods".</p>
+                </div>
+                <div style="background: white; border: 1px solid #e8e8e8; border-radius: 8px; padding: 1.75rem;">
+                    <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 0.75rem; display: block;">Have ready 03</span>
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">Weight and size</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">Even rough figures. Both matter, and not equally.</p>
+                </div>
+                <div style="background: white; border: 1px solid #e8e8e8; border-radius: 8px; padding: 1.75rem;">
+                    <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 0.75rem; display: block;">Have ready 04</span>
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">When</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">Ready date and the date it has to land.</p>
+                </div>
+                <div style="background: white; border: 1px solid #e8e8e8; border-radius: 8px; padding: 1.75rem;">
+                    <span style="font-size: 0.7rem; color: var(--primary-blue); font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 0.75rem; display: block;">Have ready 05</span>
+                    <h3 style="font-size: 1.1rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">Nothing else</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0;">If you don't know a field, leave it. We will ask.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="quote-form-section">
+        <div class="quote-form-container">
+            <!-- Form -->
+            <div class="form-content">
+                <form id="quoteForm">
+                    <!-- The Route -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <div class="section-number">1</div>
+                            <h2 class="section-title">The route</h2>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Collecting from <span class="required">*</span></label>
+                                <input type="text" id="originCountry" class="form-input" placeholder="City and country" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Delivering to <span class="required">*</span></label>
+                                <input type="text" id="destinationCountry" class="form-input" placeholder="City and country" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Preferred mode <span class="optional">OPTIONAL</span></label>
+                                <select id="serviceType" class="form-select">
+                                    <option value="">Not sure – recommend one</option>
+                                    <option value="freight">Air freight</option>
+                                    <option value="freight">Sea freight</option>
+                                    <option value="freight">Road freight</option>
+                                    <option value="freight">Rail freight</option>
+                                </select>
+                                <div class="form-hint">Leaving this on "not sure" is the sensible default.</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Incoterm <span class="optional">OPTIONAL</span></label>
+                                <input type="text" id="incoterm" class="form-input" placeholder="EXW, FOB, DAP...">
+                                <div class="form-hint">If you do not know, leave it blank rather than guessing.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Cargo -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <div class="section-number">2</div>
+                            <h2 class="section-title">The cargo</h2>
+                        </div>
+
+                        <div class="form-row full">
+                            <div class="form-group">
+                                <label class="form-label">What are you shipping <span class="required">*</span></label>
+                                <input type="text" id="contents" class="form-input" placeholder="e.g. packaged machine parts, boxed apparel" required>
+                                <div class="form-hint">Plain words are fine. This also tells us whether anything needs a licence.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Pieces <span class="optional">OPTIONAL</span></label>
+                                <input type="text" id="pieces" class="form-input" placeholder="e.g. 4 pallets">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Total weight <span class="required">*</span></label>
+                                <input type="number" id="weight" class="form-input" placeholder="e.g. 850" required step="0.1">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Dimensions <span class="optional">OPTIONAL</span></label>
+                                <input type="text" id="dimensions" class="form-input" placeholder="L x W x H per piece">
+                            </div>
+                        </div>
+
+                        <div class="form-row full">
+                            <div class="form-group">
+                                <label class="form-label">Anything special about it <span class="optional">OPTIONAL</span></label>
+                                <textarea id="specialRequirements" class="form-textarea" placeholder="Temperature controlled, batteries, hazardous, high value, oversized, stackable or not..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Dates -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <div class="section-number">3</div>
+                            <h2 class="section-title">The dates</h2>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Ready for collection <span class="optional">OPTIONAL</span></label>
+                                <input type="text" id="readyDate" class="form-input" placeholder="Date, or 'flexible'">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Must arrive by <span class="optional">OPTIONAL</span></label>
+                                <input type="text" id="deliveryDate" class="form-input" placeholder="Date, or 'no fixed date'">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- You -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <div class="section-number">4</div>
+                            <h2 class="section-title">You</h2>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Name <span class="required">*</span></label>
+                                <input type="text" id="fullName" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Company <span class="optional">OPTIONAL</span></label>
+                                <input type="text" id="company" class="form-input">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Email <span class="required">*</span></label>
+                                <input type="email" id="email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone <span class="optional">OPTIONAL</span></label>
+                                <input type="tel" id="phone" class="form-input">
+                                <div class="form-hint">Quicker for anything complicated.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="submit-section">
+                        <button type="submit" class="submit-btn" id="submitBtn">Send this enquiry</button>
+                        <div id="loadingMsg" style="display: none; text-align: center; color: #0055CC; font-weight: 600;">
+                            ⏳ Getting your quote...
+                        </div>
+                        <div id="errorMsg" style="display: none; background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 4px; margin-top: 1rem;"></div>
+                        <div class="submit-info">
+                            Prefer to talk? Call <strong>+1 858-428-7703</strong> – the line is open around the clock. We use what you send here to prepare a quote and nothing else; see our <a href="#">privacy policy</a>.
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Quote Results Section (Hidden until quote generated) -->
+            <div id="quoteResults" style="display: none; background: white; padding: 2.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2 style="font-size: 1.8rem; color: #003A70; font-weight: 700; margin-bottom: 2rem;">Your Quote</h2>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                    <div>
+                        <p style="font-size: 0.85rem; color: #666; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">Quote Number</p>
+                        <p id="quoteNumber" style="font-size: 1.5rem; color: #003A70; font-weight: 700; margin: 0;">-</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.85rem; color: #666; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">Valid Until</p>
+                        <p id="quoteExpiry" style="font-size: 1.5rem; color: #003A70; font-weight: 700; margin: 0;">7 days</p>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.1rem; color: #003A70; font-weight: 700; margin-bottom: 1.5rem;">Price Breakdown</h3>
+
+                    <div style="display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; margin-bottom: 1rem;">
+                        <span style="color: #666;">Base Shipping Cost:</span>
+                        <span id="basePrice" style="font-weight: 600;">$0.00</span>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; margin-bottom: 1rem;">
+                        <span style="color: #666;">Tariffs & Duties:</span>
+                        <span id="tariffCost" style="font-weight: 600;">$0.00</span>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 2px solid #0055CC; margin-bottom: 1rem;">
+                        <span style="color: #666;">Tax (10%):</span>
+                        <span id="taxAmount" style="font-weight: 600;">$0.00</span>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; padding: 1rem 0;">
+                        <span style="color: #003A70; font-weight: 700; font-size: 1.1rem;">Total Price:</span>
+                        <span id="totalPrice" style="color: #0055CC; font-weight: 700; font-size: 1.3rem;">$0.00</span>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+                    <button id="requestShipmentBtn" class="submit-btn">Request This Shipment</button>
+                    <button id="newQuoteBtn" class="submit-btn" style="background: white; color: #0055CC; border: 2px solid #0055CC;">Get Another Quote</button>
+                </div>
+
+                <div style="background: #f0f4f8; padding: 1.5rem; border-radius: 8px; font-size: 0.9rem; color: #666; line-height: 1.6;">
+                    <p style="margin: 0; margin-bottom: 0.5rem;">✓ Quote valid for 7 days</p>
+                    <p style="margin: 0; margin-bottom: 0.5rem;">✓ This is not a binding offer, but it's accurate to current rates</p>
+                    <p style="margin: 0;">✓ Conditions and exclusions apply – see details in the full quote email</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer CTA Section -->
+    <section class="footer-cta">
+        <div class="footer-cta-container">
+            <h3>Need help with your shipment? Our team is available 24/7.</h3>
+            <button class="footer-cta-btn">Track Your Shipment →</button>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer-about">
+                <div class="footer-logo">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40'%3E%3Ctext x='40' y='28' font-size='20' font-weight='bold' fill='%230055CC'%3EOPS%3C/text%3E%3Ctext x='40' y='38' font-size='10' fill='%23003A70'%3ELOGISTICS%3C/text%3E%3C/svg%3E" alt="OPS Logistics">
+                </div>
+                <p>Delivering excellence worldwide. Air, sea, road and rail freight to over 220 countries and territories.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>SERVICES</h4>
+                <ul>
+                    <li><a href="#">Express Shipping</a></li>
+                    <li><a href="#">OPS Express</a></li>
+                    <li><a href="#">eCommerce</a></li>
+                    <li><a href="#">Supply Chain</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">About OPS</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Innovation</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HELP</h4>
+                <ul>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Service Updates</a></li>
+                    <li><a href="#">Request a business account</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 OPS Logistics. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const API_URL = 'http://localhost:5000/api';
+
+        // Handle dropdown toggle on click
+        const dropdownToggles = document.querySelectorAll('.nav-item-dropdown > .nav-item');
+
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const parentDropdown = toggle.closest('.nav-item-dropdown');
+                const isActive = parentDropdown.classList.contains('active');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => {
+                    if (active !== parentDropdown) {
+                        active.classList.remove('active');
+                    }
+                });
+
+                // Toggle current dropdown
+                if (isActive) {
+                    parentDropdown.classList.remove('active');
+                } else {
+                    parentDropdown.classList.add('active');
+                }
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-item-dropdown')) {
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => {
+                    active.classList.remove('active');
+                });
+            }
+        });
+
+        // Quote Form Handler
+        document.getElementById('quoteForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const loadingMsg = document.getElementById('loadingMsg');
+            const errorMsg = document.getElementById('errorMsg');
+            const quoteForm = document.getElementById('quoteForm');
+            const quoteResults = document.getElementById('quoteResults');
+
+            // Show loading state
+            submitBtn.style.display = 'none';
+            loadingMsg.style.display = 'block';
+            errorMsg.style.display = 'none';
+
+            try {
+                // Prepare form data
+                const formData = {
+                    origin_country: document.getElementById('originCountry').value,
+                    destination_country: document.getElementById('destinationCountry').value,
+                    weight: parseFloat(document.getElementById('weight').value),
+                    dimensions: document.getElementById('dimensions').value,
+                    service_type: document.getElementById('serviceType').value || 'express',
+                    shipment_type: 'parcel',
+                    items: [
+                        {
+                            description: document.getElementById('contents').value,
+                            quantity: 1,
+                            weight: parseFloat(document.getElementById('weight').value),
+                            value: 0,
+                            hs_code: ''
+                        }
+                    ]
+                };
+
+                // Call API
+                const response = await fetch(`${API_URL}/quotes`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || 'Failed to generate quote');
+                }
+
+                // Display quote results
+                document.getElementById('quoteNumber').textContent = data.quote.quote_number;
+                document.getElementById('basePrice').textContent = '$' + (data.breakdown.base_price || 0).toFixed(2);
+                document.getElementById('tariffCost').textContent = '$' + (data.breakdown.tariff_cost || 0).toFixed(2);
+                document.getElementById('taxAmount').textContent = '$' + (data.breakdown.tax || 0).toFixed(2);
+                document.getElementById('totalPrice').textContent = '$' + (data.breakdown.total_price || 0).toFixed(2);
+
+                // Hide form, show results
+                quoteForm.style.display = 'none';
+                quoteResults.style.display = 'block';
+
+                // Scroll to results
+                quoteResults.scrollIntoView({ behavior: 'smooth' });
+
+            } catch (err) {
+                console.error('Quote error:', err);
+                errorMsg.textContent = '❌ ' + err.message;
+                errorMsg.style.display = 'block';
+                submitBtn.style.display = 'block';
+                loadingMsg.style.display = 'none';
+            }
+        });
+
+        // Request Shipment Button
+        document.getElementById('requestShipmentBtn').addEventListener('click', () => {
+            const quoteNumber = document.getElementById('quoteNumber').textContent;
+            // Store quote number in session and redirect to ship-now
+            sessionStorage.setItem('selectedQuote', quoteNumber);
+            window.location.href = 'ship-now.html?quote=' + quoteNumber;
+        });
+
+        // New Quote Button
+        document.getElementById('newQuoteBtn').addEventListener('click', () => {
+            document.getElementById('quoteResults').style.display = 'none';
+            document.getElementById('quoteForm').style.display = 'block';
+            document.getElementById('quoteForm').reset();
+            document.getElementById('submitBtn').style.display = 'block';
+            document.getElementById('loadingMsg').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <!-- Support Chat Widget -->
+    <script src="chat-widget.js"></script>
+    <!-- Auth Helper for login button -->
+    <script src="auth-helper.js"></script>
+</body>
+</html>
+

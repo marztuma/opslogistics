@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Tracking — OPS Logistics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0055CC;
+            --dark-blue: #003A70;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --border-light: #e0e0e0;
+            --bg-light: #f8f9fa;
+            --success: #28a745;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .header-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .header-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .header-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .input-group {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            padding: 1rem;
+            border: 2px solid var(--border-light);
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0,85,204,0.1);
+        }
+
+        .btn {
+            padding: 1rem 1.5rem;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+        }
+
+        .tracking-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .tracking-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .tracking-number {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-family: monospace;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .status-badge.in-transit {
+            background: #cfe2ff;
+            color: #084298;
+        }
+
+        .status-badge.pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .pulse {
+            width: 10px;
+            height: 10px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .shipment-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-box {
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+        }
+
+        .detail-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-marker {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-blue);
+            border: 3px solid white;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 0 3px rgba(0,85,204,0.1);
+        }
+
+        .timeline-dot.completed {
+            background: var(--success);
+            box-shadow: 0 0 0 3px rgba(40,167,69,0.1);
+        }
+
+        .timeline-dot.current {
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 0 6px rgba(0,85,204,0.2);
+        }
+
+        .timeline-connector {
+            width: 2px;
+            height: 60px;
+            background: var(--border-light);
+            margin-top: 5px;
+        }
+
+        .timeline-connector.completed {
+            background: var(--success);
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-top: 2px;
+        }
+
+        .timeline-time {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .timeline-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0.25rem 0;
+        }
+
+        .timeline-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .location-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .updates-panel {
+            background: white;
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .updates-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .update-item {
+            padding: 0.75rem;
+            background: var(--bg-light);
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            border-left: 3px solid var(--primary-blue);
+            padding-left: 1rem;
+        }
+
+        .update-item.new {
+            background: #d4edda;
+            border-left-color: var(--success);
+            color: #155724;
+            font-weight: 600;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .notification-settings {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .notification-label {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .input-group {
+                grid-template-columns: 1fr;
+            }
+
+            .tracking-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .shipment-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">OPS Logistics</div>
+            <div class="header-links">
+                <a href="index.html">Home</a>
+                <a href="quote.html">Quote</a>
+                <a href="track.html">Track</a>
+                <a href="support-chat.html">Support</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">📍 Live Tracking</h1>
+            <p class="page-subtitle">Real-time shipment tracking with instant updates. Enter a tracking number to monitor your freight live.</p>
+        </div>
+
+        <!-- Search -->
+        <div class="input-group">
+            <input type="text" class="search-input" id="trackingInput" placeholder="Enter tracking number...">
+            <button class="btn" onclick="loadTracking()">Track Live</button>
+        </div>
+
+        <!-- Tracking Card -->
+        <div id="trackingContent" style="display: none;">
+            <div class="tracking-card">
+                <div class="tracking-header">
+                    <div>
+                        <div style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.5rem;">TRACKING #</div>
+                        <div class="tracking-number" id="displayTrackingNumber">—</div>
+                    </div>
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="status-badge" id="statusBadge">Pending</div>
+                            <div class="live-indicator">
+                                <span class="pulse"></span>
+                                <span>Live Updates</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipment Details -->
+                <div class="shipment-details">
+                    <div class="detail-box">
+                        <div class="detail-label">Current Location</div>
+                        <div class="detail-value" id="currentLocation">—</div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="detail-label">Estimated Delivery</div>
+                        <div class="detail-value" id="estimatedDelivery">—</div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="detail-label">Progress</div>
+                        <div class="detail-value" id="progress">0%</div>
+                    </div>
+                </div>
+
+                <!-- Updates Panel -->
+                <div class="updates-panel">
+                    <div class="updates-title">
+                        🔔 Recent Updates
+                    </div>
+                    <div id="updatesList">
+                        <div style="color: var(--text-light); text-align: center; padding: 1rem;">Loading updates...</div>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div style="margin-top: 2rem;">
+                    <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--dark-blue); margin-bottom: 1.5rem;">Shipment Timeline</h3>
+                    <div class="timeline" id="timelineContainer">
+                        <!-- Timeline will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="notification-settings">
+                    <div class="notification-label">📧 Notification Preferences</div>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="emailNotif" checked>
+                            <label for="emailNotif">Email when status changes</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="smsNotif">
+                            <label for="smsNotif">SMS alerts (opt-in)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="liveNotif" checked>
+                            <label for="liveNotif">Live in-page notifications</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="emptyState" style="text-align: center; padding: 3rem; color: var(--text-light);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📦</div>
+            <p>Enter a tracking number to see real-time updates</p>
+        </div>
+    </div>
+
+    <script src="live-tracking-script.js"></script>
+    <!-- Auth Helper for login button -->
+    <script src="auth-helper.js"></script>
+</body>
+</html>

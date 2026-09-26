@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Shipment - OPS Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .track-page-hero {
+            background: linear-gradient(135deg, #001a3a 0%, #003a70 100%);
+            color: white;
+            padding: 3rem 2rem 2rem 2rem;
+            text-align: center;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-bottom: 0;
+        }
+
+        .track-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.875rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .track-logo svg {
+            height: 35px;
+            width: auto;
+        }
+
+        .track-logo span {
+            font-size: 0.7rem;
+            letter-spacing: 1.2px;
+            opacity: 0.85;
+            font-weight: 600;
+        }
+
+        .track-page-hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0.875rem 0 0.625rem 0;
+            letter-spacing: -0.8px;
+        }
+
+        .track-page-hero p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin: 0 0 1.75rem 0;
+            line-height: 1.5;
+        }
+
+        .track-search {
+            display: flex;
+            gap: 0;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            padding: 0 2rem;
+        }
+
+        .track-input {
+            padding: 0.75rem 1.25rem;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            width: 350px;
+            max-width: 100%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .track-input:focus {
+            outline: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .track-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            white-space: nowrap;
+        }
+
+        .track-btn:hover {
+            background: #0047A3;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .track-results {
+            width: 100%;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0;
+            padding: 0;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .track-results::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(135deg, #001a3a 0%, #003a70 100%);
+            clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="navbar">
+        <!-- Top Bar -->
+        <div class="navbar-top">
+            <div class="navbar-top-container">
+                <div class="logo">
+                    <svg viewBox="0 0 120 50" class="logo-icon">
+                        <g>
+                            <circle cx="20" cy="25" r="15" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M15 28 Q20 18 25 28" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M12 30 L28 30" stroke="#0055CC" stroke-width="1"/>
+                            <path d="M14 32 L26 32" stroke="#0055CC" stroke-width="0.8"/>
+                        </g>
+                        <text x="38" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#003A70">OPS</text>
+                        <text x="38" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#0055CC">LOGISTICS</text>
+                    </svg>
+                </div>
+                <div class="navbar-top-right">
+                    <a href="index.html" class="top-link">Exit</a>
+                    <a href="#" class="top-link">What OPS provides <span>↗</span></a>
+                    <a href="#" class="top-link">To research</a>
+                    <div class="language-selector">
+                        <span>🇨🇲</span>
+                        <a href="#">Cameroon <span>▼</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="navbar-bottom">
+            <div class="navbar-bottom-container">
+                <nav class="nav-menu">
+                    <a href="index.html#track" class="nav-item">Track</a>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Ship <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <h4>START SHIPPING</h4>
+                                <a href="quote.html" class="dropdown-item">
+                                    <span>Get a Quote</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="ship-now.html" class="dropdown-item">
+                                    <span>Ship Now</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="request-business-account.html" class="dropdown-item">
+                                    <span>Request a Business Account</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>LEARN MORE ABOUT</h4>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Document and Package</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="express-document-and-package-shipping.html" class="dropdown-item">
+                                    <span>Express document and package shipping</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="retailers-and-volume-shipping.html" class="dropdown-item">
+                                    <span>Retailers or volume shipping (Business Only)</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>Pallets, Containers and Cargo</h5>
+                                <p class="card-label">BUSINESS ONLY</p>
+                                <p>Air and ocean freight, plus customs and logistics services with OPS Global Forwarding.</p>
+                                <a href="freight-services.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore Freight Services</a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>OPS for Your Business</h5>
+                                <p class="card-label">LET'S BE SHIPPING PARTNERS</p>
+                                <p>Small start-up? Medium-sized business going international? Satisfy your business shipping needs.</p>
+                                <a href="business-offerings.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Explore Our Business Offerings</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Enterprise logistics services <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-card">
+                                <h5>Enterprise Logistics Services</h5>
+                                <p>Our supply chain division creates customized solutions for businesses. The perfect fit as a third-party logistics (3PL) provider.</p>
+                                <button class="dropdown-btn">Explore the OPS supply chain</button>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>SOLUTIONS</h4>
+                                <a href="contract-logistics.html" class="dropdown-item">
+                                    <span>CONTRACT LOGISTICS</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="ecommerce-execution.html" class="dropdown-item">
+                                    <span>E-commerce execution</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="customs-and-compliance.html" class="dropdown-item">
+                                    <span>Customs and compliance</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="cold-chain-logistics.html" class="dropdown-item">
+                                    <span>Cold chain logistics</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="last-mile-delivery.html" class="dropdown-item">
+                                    <span>Last mile delivery</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>THE CREATION</h4>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Technology</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Healthcare and Life Sciences</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Retail and fashion</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Automobile</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="technology.html" class="dropdown-item">
+                                    <span>Energy and public utilities</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>BEST OS</h4>
+                                <a href="case-studies.html" class="dropdown-item">
+                                    <span>Case studies</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="white-papers.html" class="dropdown-item">
+                                    <span>White papers</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <span>Blog Logistics Insights</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <span>Pricing updates</span>
+                                    <span class="arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="customer-service.html" class="nav-item">Customer Service</a>
+                    <a href="faq.html" class="nav-item">FAQ</a>
+                    <a href="service-updates.html" class="nav-item">Service Updates</a>
+                    <a href="support-chat.html" class="nav-item">Support</a>
+                </nav>
+                <button class="login-btn">Customer portal logins <span>▼</span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Track Page Hero -->
+    <section class="track-page-hero">
+        <div class="track-logo">
+            <svg viewBox="0 0 60 50">
+                <g>
+                    <circle cx="20" cy="25" r="15" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                    <path d="M15 28 Q20 18 25 28" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                    <path d="M12 30 L28 30" stroke="#0055CC" stroke-width="1"/>
+                </g>
+            </svg>
+            <span>GLOBAL FREIGHT SOLUTIONS</span>
+        </div>
+        <h1>SHIPMENT TRACKER</h1>
+        <p>Enter your OPS Logistics tracking number for live updates</p>
+        <div class="track-search">
+            <input type="text" id="trackingInput" placeholder="e.g. OPS20240001" class="track-input">
+            <button id="trackBtn" class="track-btn">TRACK →</button>
+        </div>
+        <div id="trackingError" style="display: none; color: #f8d7da; background: rgba(248,215,218,0.2); padding: 1rem; border-radius: 4px; margin-top: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        </div>
+        <div id="trackingLoading" style="display: none; color: white; margin-top: 1.5rem;">
+            ⏳ Tracking your shipment...
+        </div>
+        <div id="trackResults" class="track-results" style="display: none;"></div>
+    </section>
+
+    <!-- Tracking Details Section (Hidden until tracked) -->
+    <section id="trackingDetails" style="display: none; background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <!-- Shipment Info Card -->
+            <div style="background: #f9f9f9; padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+                <h2 style="font-size: 1.5rem; color: #003A70; font-weight: 700; margin-bottom: 1.5rem;">Shipment Details</h2>
+
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 2rem;">
+                    <div>
+                        <p style="font-size: 0.85rem; color: #666; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">Tracking Number</p>
+                        <p id="detailTrackingNumber" style="font-size: 1.2rem; color: #003A70; font-weight: 700; margin: 0;">-</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.85rem; color: #666; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">Status</p>
+                        <p id="detailStatus" style="font-size: 1.2rem; color: #0055CC; font-weight: 700; margin: 0;">-</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.85rem; color: #666; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">Current Location</p>
+                        <p id="detailLocation" style="font-size: 1rem; color: #333; margin: 0;">-</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.85rem; color: #666; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">Estimated Delivery</p>
+                        <p id="detailDelivery" style="font-size: 1rem; color: #333; margin: 0;">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tracking Timeline -->
+            <div style="background: white; padding: 2rem; border-radius: 8px;">
+                <h3 style="font-size: 1.2rem; color: #003A70; font-weight: 700; margin-bottom: 2rem;">Tracking History</h3>
+
+                <div id="trackingTimeline" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <!-- Timeline items will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Back to Search -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <button id="backToSearchBtn" style="background: white; color: #0055CC; border: 2px solid #0055CC; padding: 0.75rem 2rem; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 1rem;">← Search Another Shipment</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA Section -->
+    <section class="footer-cta">
+        <div class="footer-cta-container">
+            <h3>Need help with your shipment? Our team is available 24/7.</h3>
+            <button class="footer-cta-btn">Track Your Shipment →</button>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer-about">
+                <div class="footer-logo">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40'%3E%3Ctext x='40' y='28' font-size='20' font-weight='bold' fill='%230055CC'%3EOPS%3C/text%3E%3Ctext x='40' y='38' font-size='10' fill='%23003A70'%3ELOGISTICS%3C/text%3E%3C/svg%3E" alt="OPS Logistics">
+                </div>
+                <p>Delivering excellence worldwide. Air, sea, road and rail freight to over 220 countries and territories.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>SERVICES</h4>
+                <ul>
+                    <li><a href="#">Express Shipping</a></li>
+                    <li><a href="#">OPS Express</a></li>
+                    <li><a href="#">eCommerce</a></li>
+                    <li><a href="#">Supply Chain</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">About OPS</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Innovation</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>HELP</h4>
+                <ul>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Service Updates</a></li>
+                    <li><a href="#">Request a business account</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 OPS Logistics. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const API_URL = 'http://localhost:5000/api';
+
+        // Handle dropdown toggle on click
+        const dropdownToggles = document.querySelectorAll('.nav-item-dropdown > .nav-item');
+
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const parentDropdown = toggle.closest('.nav-item-dropdown');
+                const isActive = parentDropdown.classList.contains('active');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => {
+                    if (active !== parentDropdown) {
+                        active.classList.remove('active');
+                    }
+                });
+
+                // Toggle current dropdown
+                if (isActive) {
+                    parentDropdown.classList.remove('active');
+                } else {
+                    parentDropdown.classList.add('active');
+                }
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-item-dropdown')) {
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => {
+                    active.classList.remove('active');
+                });
+            }
+        });
+
+        // Track Shipment Handler
+        document.getElementById('trackBtn').addEventListener('click', trackShipment);
+        document.getElementById('trackingInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') trackShipment();
+        });
+
+        async function trackShipment() {
+            const trackingNumber = document.getElementById('trackingInput').value.trim().toUpperCase();
+            const errorDiv = document.getElementById('trackingError');
+            const loadingDiv = document.getElementById('trackingLoading');
+            const trackBtn = document.getElementById('trackBtn');
+
+            // Clear previous errors
+            errorDiv.style.display = 'none';
+            errorDiv.textContent = '';
+
+            if (!trackingNumber) {
+                errorDiv.textContent = '❌ Please enter a tracking number';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            // Show loading state
+            loadingDiv.style.display = 'block';
+            trackBtn.disabled = true;
+            trackBtn.textContent = 'TRACKING...';
+
+            try {
+                const response = await fetch(`${API_URL}/tracking/${trackingNumber}`);
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || 'Shipment not found');
+                }
+
+                // Display tracking details
+                displayTrackingDetails(data);
+
+            } catch (err) {
+                console.error('Tracking error:', err);
+                errorDiv.textContent = '❌ ' + (err.message || 'Failed to track shipment');
+                errorDiv.style.display = 'block';
+            } finally {
+                loadingDiv.style.display = 'none';
+                trackBtn.disabled = false;
+                trackBtn.textContent = 'TRACK →';
+            }
+        }
+
+        function displayTrackingDetails(data) {
+            const trackingDetails = document.getElementById('trackingDetails');
+            const heroSection = document.querySelector('.track-page-hero');
+
+            // Update detail section
+            document.getElementById('detailTrackingNumber').textContent = data.tracking_number;
+            document.getElementById('detailStatus').textContent = formatStatus(data.status);
+            document.getElementById('detailLocation').textContent = data.current_location || 'In transit';
+            document.getElementById('detailDelivery').textContent = data.estimated_delivery ? new Date(data.estimated_delivery).toLocaleDateString() : 'Not specified';
+
+            // Build tracking timeline
+            const timeline = document.getElementById('trackingTimeline');
+            timeline.innerHTML = (data.tracking_history || []).map((event, idx) => `
+                <div style="padding-left: 2.5rem; position: relative; padding-bottom: 1rem;">
+                    <div style="width: 10px; height: 10px; background: #0055CC; border: 2px solid white; border-radius: 50%; position: absolute; left: 0; top: 0.35rem; box-shadow: 0 0 0 2px #0055CC;"></div>
+                    ${idx < data.tracking_history.length - 1 ? '<div style="width: 1px; height: 2.5rem; background: #ddd; position: absolute; left: 4px; top: 1.5rem;"></div>' : ''}
+                    <p style="font-weight: 600; color: #003A70; margin: 0; margin-bottom: 0.25rem;">${event.status}</p>
+                    <p style="color: #666; margin: 0; margin-bottom: 0.25rem;">${event.location}</p>
+                    <p style="color: #999; font-size: 0.85rem; margin: 0;">${new Date(event.timestamp).toLocaleString()}</p>
+                </div>
+            `).join('');
+
+            // Show details section
+            trackingDetails.style.display = 'block';
+            heroSection.style.padding = '2rem 2rem';
+
+            // Scroll to details
+            trackingDetails.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function formatStatus(status) {
+            const statusMap = {
+                'pending': '📦 Pending Pickup',
+                'booked': '📋 Booked',
+                'picked_up': '🚚 Picked Up',
+                'in_transit': '🌍 In Transit',
+                'out_for_delivery': '📍 Out for Delivery',
+                'delivered': '✓ Delivered',
+                'failed': '❌ Delivery Failed'
+            };
+            return statusMap[status] || status;
+        }
+
+        // Back to search button
+        document.getElementById('backToSearchBtn').addEventListener('click', () => {
+            document.getElementById('trackingDetails').style.display = 'none';
+            document.getElementById('trackingInput').value = '';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <!-- Support Chat Widget -->
+    <script src="chat-widget.js"></script>
+    <!-- Auth Helper for login button -->
+    <script src="auth-helper.js"></script>
+</body>
+</html>
+

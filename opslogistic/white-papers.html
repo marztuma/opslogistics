@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Papers - OPS Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @media (max-width: 768px) {
+            h1 { font-size: 1.75rem !important; line-height: 1.3 !important; }
+            h2 { font-size: 1.5rem !important; line-height: 1.3 !important; }
+            section { padding: 2rem 1.5rem !important; }
+            [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+            [style*="grid-template-columns: repeat"] { grid-template-columns: 1fr !important; gap: 1rem !important; }
+            [style*="height: 300px"], [style*="height: 350px"] { height: 220px !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="navbar">
+        <div class="navbar-top">
+            <div class="navbar-top-container">
+                <div class="logo">
+                    <svg viewBox="0 0 120 50" class="logo-icon">
+                        <g>
+                            <circle cx="20" cy="25" r="15" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M15 28 Q20 18 25 28" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M12 30 L28 30" stroke="#0055CC" stroke-width="1"/>
+                            <path d="M14 32 L26 32" stroke="#0055CC" stroke-width="0.8"/>
+                        </g>
+                        <text x="38" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#003A70">OPS</text>
+                        <text x="38" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#0055CC">LOGISTICS</text>
+                    </svg>
+                </div>
+                <div class="navbar-top-right">
+                    <a href="index.html" class="top-link">Exit</a>
+                    <a href="#" class="top-link">What OPS provides <span>↗</span></a>
+                    <a href="#" class="top-link">To research</a>
+                    <div class="language-selector">
+                        <span>🇨🇲</span>
+                        <a href="#">Cameroon <span>▼</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-bottom">
+            <div class="navbar-bottom-container">
+                <nav class="nav-menu">
+                    <a href="index.html#track" class="nav-item">Track</a>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Ship <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <h4>START SHIPPING</h4>
+                                <a href="quote.html" class="dropdown-item"><span>Get a Quote</span><span class="arrow">→</span></a>
+                                <a href="ship-now.html" class="dropdown-item"><span>Ship Now</span><span class="arrow">→</span></a>
+                                <a href="request-business-account.html" class="dropdown-item"><span>Request a Business Account</span><span class="arrow">→</span></a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>LEARN MORE ABOUT</h4>
+                                <a href="#" class="dropdown-item"><span>Document and Package</span><span class="arrow">→</span></a>
+                                <a href="express-document-and-package-shipping.html" class="dropdown-item"><span>Express document and package shipping</span><span class="arrow">→</span></a>
+                                <a href="retailers-and-volume-shipping.html" class="dropdown-item"><span>Retailers or volume shipping (Business Only)</span><span class="arrow">→</span></a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>Pallets, Containers and Cargo</h5>
+                                <p class="card-label">BUSINESS ONLY</p>
+                                <p>Air and ocean freight, plus customs and logistics services with OPS Global Forwarding.</p>
+                                <a href="freight-services.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block;">Explore Freight Services</a>
+                            </div>
+                            <div class="dropdown-card">
+                                <h5>OPS for Your Business</h5>
+                                <p class="card-label">LET'S BE SHIPPING PARTNERS</p>
+                                <p>Small start-up? Medium-sized business going international? Satisfy your business shipping needs.</p>
+                                <a href="business-offerings.html" style="background: var(--primary-blue); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block;">Explore Our Business Offerings</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="nav-item">Enterprise logistics services <span>▼</span></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-card">
+                                <h5>Enterprise Logistics Services</h5>
+                                <p>Our supply chain division manages warehousing, fulfillment, and freight operations for growing businesses. As your third-party logistics provider.</p>
+                                <button class="dropdown-btn">Explore the OPS supply chain</button>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>SOLUTIONS</h4>
+                                <a href="contract-logistics.html" class="dropdown-item"><span>CONTRACT LOGISTICS</span><span class="arrow">→</span></a>
+                                <a href="ecommerce-execution.html" class="dropdown-item"><span>E-commerce execution</span><span class="arrow">→</span></a>
+                                <a href="customs-and-compliance.html" class="dropdown-item"><span>Customs and compliance</span><span class="arrow">→</span></a>
+                                <a href="cold-chain-logistics.html" class="dropdown-item"><span>Cold chain logistics</span><span class="arrow">→</span></a>
+                                <a href="last-mile-delivery.html" class="dropdown-item"><span>Last mile delivery</span><span class="arrow">→</span></a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>THE CREATION</h4>
+                                <a href="technology.html" class="dropdown-item"><span>Technology</span><span class="arrow">→</span></a>
+                                <a href="healthcare-and-life-sciences.html" class="dropdown-item"><span>Healthcare and Life Sciences</span><span class="arrow">→</span></a>
+                                <a href="retail-and-fashion.html" class="dropdown-item"><span>Retail and fashion</span><span class="arrow">→</span></a>
+                                <a href="automobile.html" class="dropdown-item"><span>Automobile</span><span class="arrow">→</span></a>
+                                <a href="energy-and-public-utilities.html" class="dropdown-item"><span>Energy and public utilities</span><span class="arrow">→</span></a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>BEST OS</h4>
+                                <a href="case-studies.html" class="dropdown-item"><span>Case studies</span><span class="arrow">→</span></a>
+                                <a href="white-papers.html" class="dropdown-item"><span>White papers</span><span class="arrow">→</span></a>
+                                <a href="#" class="dropdown-item"><span>Blog Logistics Insights</span><span class="arrow">→</span></a>
+                                <a href="#" class="dropdown-item"><span>Pricing updates</span><span class="arrow">→</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="customer-service.html" class="nav-item">Customer Service</a>
+                    <a href="faq.html" class="nav-item">FAQ</a>
+                    <a href="service-updates.html" class="nav-item">Service Updates</a>
+                    <a href="support-chat.html" class="nav-item">Support</a>
+                </nav>
+                <button class="login-btn">Customer portal logins <span>▼</span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <p style="font-size: 0.85rem; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem;">BLOG / INSIGHTS</p>
+                    <h1 style="font-size: 3rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.8px;">Longer than a blog post, because the <span style="color: var(--primary-blue);">answer is.</span></h1>
+                    <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7; margin-bottom: 2rem;">Frameworks for decisions that cost real money. How to compare freight quotes properly, when consolidation actually pays, what to do when a temperature record goes missing. Written for the person who has to defend the decision internally, not for the person searching.</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#" style="background: var(--dark-blue); color: white; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-block;">FREIGHT COSTS</a>
+                        <a href="#" style="background: white; color: var(--text-dark); border: 1px solid #ddd; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-block;">ROUTING</a>
+                        <a href="#" style="background: white; color: var(--text-dark); border: 1px solid #ddd; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-block;">FREQUENCY</a>
+                        <a href="#" style="background: white; color: var(--text-dark); border: 1px solid #ddd; padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none; display: inline-block;">LATE DATA</a>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(135deg, #b8c8d0 0%, #a0b8c8 100%); border-radius: 12px; height: 350px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Warehouse worker image</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The One Worth Reading First -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <p style="font-size: 0.85rem; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2rem;">FEATURED RESOURCE</p>
+            <h2 style="font-size: 2.8rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 3rem;">The one worth reading first</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: start;">
+                <div style="background: var(--dark-blue); color: white; padding: 2rem; border-radius: 12px; height: fit-content;">
+                    <p style="font-size: 0.8rem; color: rgba(255,255,255,0.6); font-weight: 600; text-transform: uppercase; margin-bottom: 1rem;">WHITE PAPER</p>
+                    <h3 style="font-size: 1.5rem; color: white; font-weight: 700; margin-bottom: 1rem; line-height: 1.3;">Comparing Freight Quotes That Are Not Comparable</h3>
+                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0;">A practical guide to understanding why freight quotes differ and how to build a fair comparison.</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.3rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem;">Comparing freight quotes that are not comparable</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.7; margin-bottom: 2rem;">When you ask three freight brokers for quotes on the same lane, you never get the same answer. Comparing apples to apples requires knowing which variables the brokers are using, which charges are actually in the numbers you are seeing, and how to build a fair foundation for comparing.</p>
+                    <div style="background: #f5f5f5; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h4 style="font-size: 0.9rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem;">What you will learn</h4>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                <svg style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                <p style="font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; margin: 0;">Why two quotes for one lane arrive at different numbers</p>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                <svg style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                <p style="font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; margin: 0;">Comparing weight- and mode-charges the routing</p>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                <svg style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                <p style="font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; margin: 0;">Building a normalized comparison table</p>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                <svg style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                <p style="font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; margin: 0;">Questions to ask in your RFQ to trim waste fast</p>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                <svg style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                <p style="font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; margin: 0;">A worked example, start to finish</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" style="background: var(--primary-blue); color: white; padding: 0.875rem 1.75rem; border-radius: 6px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-block;">Download the paper</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Everything Else -->
+    <section style="background: var(--light-gray); padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 style="font-size: 2.2rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 3rem;">Everything else</h2>
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div style="display: grid; grid-template-columns: 200px 1fr 150px; gap: 2rem; align-items: center; background: white; padding: 2rem; border-radius: 8px;">
+                    <div style="background: var(--dark-blue); border-radius: 8px; height: 140px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; text-align: center; font-size: 0.85rem;">Incoterms icon</div>
+                    <div>
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.5rem;">Incoterms in practice: a decision guide for buyers</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.6; margin: 0;">Which term to use, what each one means per unit for the cost and where the responsibility actually sits. Written to get you past the confusing acronyms that sound the same.</p>
+                    </div>
+                    <a href="#" style="background: white; color: var(--primary-blue); border: 1px solid var(--primary-blue); padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-block; text-align: center;">Download</a>
+                </div>
+                <div style="display: grid; grid-template-columns: 200px 1fr 150px; gap: 2rem; align-items: center; background: white; padding: 2rem; border-radius: 8px;">
+                    <div style="background: var(--dark-blue); border-radius: 8px; height: 140px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; text-align: center; font-size: 0.85rem;">Fulfillment icon</div>
+                    <div>
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.5rem;">When outsourcing fulfillment pays — and when it does not</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.6; margin: 0;">Including the point where in-house inventory packed or parcel it is in no longer does not. When to operate in-house. When to partner, and where the breakeven point sits.</p>
+                    </div>
+                    <a href="#" style="background: white; color: var(--primary-blue); border: 1px solid var(--primary-blue); padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-block; text-align: center;">Download</a>
+                </div>
+                <div style="display: grid; grid-template-columns: 200px 1fr 150px; gap: 2rem; align-items: center; background: white; padding: 2rem; border-radius: 8px;">
+                    <div style="background: var(--dark-blue); border-radius: 8px; height: 140px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; text-align: center; font-size: 0.85rem;">Temperature icon</div>
+                    <div>
+                        <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.5rem;">Managing a temperature excursion: a practical framework</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.6; margin: 0;">When the cold chain is interrupted and cold chain is not broken. A product goes outside a range and the correct action can only qualify than a decision after a brief window closes.</p>
+                    </div>
+                    <a href="#" style="background: white; color: var(--primary-blue); border: 1px solid var(--primary-blue); padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-block; text-align: center;">Download</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- You Do Not Have To Give Us Your Email -->
+    <section style="background: white; padding: 4rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <h2 style="font-size: 2.2rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 1.5rem;">You do not have to give us your email</h2>
+                    <p style="font-size: 0.95rem; color: var(--text-light); line-height: 1.7; margin-bottom: 2rem;">Getting a document behind a form is a way of converting a reader into a lead before they have decided whether the document was any good. We respect that you want to read, not to be contacted because you want to.</p>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <svg style="width: 24px; height: 24px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.25rem;">Download without registering</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0;">No form. No follow-up. The links are live the day we publish them.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <svg style="width: 24px; height: 24px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.25rem;">No follow-up you did not ask for</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0;">We do not email address you. If there is a newer version of a paper, we do not append you with an upgrade message.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <svg style="width: 24px; height: 24px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.25rem;">Share it freely</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0;">If the paper is useful to your team, your partners, or your boss, share it. We get no extra value from exclusive access.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <svg style="width: 24px; height: 24px; flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <div>
+                                <h4 style="font-size: 0.95rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.25rem;">Ask for the warranty</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-light); margin: 0;">If you are not sure about a conclusion, we are and we will show you the facts that justify its own form of it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(135deg, #7fa8c0 0%, #6a98b0 100%); border-radius: 12px; height: 350px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">OPS Truck image</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section style="background: linear-gradient(135deg, #001a3a 0%, #003a70 100%); color: white; padding: 4rem 2rem;">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.8rem; color: white; font-weight: 700; margin-bottom: 1.5rem;">Tell us the decision you are stuck on.</h2>
+            <p style="font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 2.5rem;">Every paper here started with a question somebody could not get a straight answer to. If we are struggling something out and the only material you can find is too general, describe it to us. We might write a paper. Or we might just give you the answer directly.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#" style="background: var(--primary-blue); color: white; padding: 0.875rem 1.75rem; border-radius: 6px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-block;">Request a Paper</a>
+                <button style="background: transparent; color: white; border: 2px solid white; padding: calc(0.875rem - 2px) calc(1.75rem - 2px); border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer;">Read the Blog</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="footer-cta-container">
+            <h3>Need help with your shipment? Our team is available 24/7</h3>
+            <button class="footer-cta-btn">Track Your Shipment →</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer-about">
+                <div class="footer-logo">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40'%3E%3Ctext x='40' y='28' font-size='20' font-weight='bold' fill='%230055CC'%3EOPS%3C/text%3E%3Ctext x='40' y='38' font-size='10' fill='%23003A70'%3ELOGISTICS%3C/text%3E%3C/svg%3E" alt="OPS Logistics">
+                </div>
+                <p>Delivering excellence worldwide. Air, sea, road and rail freight to over 220 countries and territories.</p>
+            </div>
+            <div class="footer-section">
+                <h4>SERVICES</h4>
+                <ul><li><a href="#">Express Shipping</a></li><li><a href="#">OPS Express</a></li><li><a href="#">eCommerce</a></li><li><a href="#">Supply Chain</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul><li><a href="#">About OPS</a></li><li><a href="#">Sustainability</a></li><li><a href="#">Innovation</a></li><li><a href="#">Careers</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>HELP</h4>
+                <ul><li><a href="#">Customer Service</a></li><li><a href="#">Service Updates</a></li><li><a href="#">Request a business account</a></li><li><a href="#">FAQ</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OPS Logistics. All rights reserved.</p>
+            <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Cookie Policy</a></div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar dropdown functionality
+        const dropdownToggles = document.querySelectorAll('.nav-item-dropdown > .nav-item');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const parentDropdown = toggle.closest('.nav-item-dropdown');
+                const isActive = parentDropdown.classList.contains('active');
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => {
+                    if (active !== parentDropdown) active.classList.remove('active');
+                });
+                parentDropdown.classList.toggle('active');
+            });
+        });
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-item-dropdown')) {
+                document.querySelectorAll('.nav-item-dropdown.active').forEach(active => active.classList.remove('active'));
+            }
+        });
+    </script>
+    <!-- Support Chat Widget -->
+    <script src="chat-widget.js"></script>
+    <!-- Auth Helper for login button -->
+    <script src="auth-helper.js"></script>
+</body>
+</html>

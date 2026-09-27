@@ -10,167 +10,194 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         * { box-sizing: border-box; }
-        body { margin: 0; padding: 0; }
+        body { margin: 0; padding: 0; font-family: 'Source Sans Pro', sans-serif; }
 
-        /* MOBILE FIRST */
+        .logo-img { max-width: 150px; height: auto; margin: 1rem 0; }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://res.cloudinary.com/tyt96rdp/image/upload/v1790462997/opslogistics/home/lkdmmmqwdmdz1jyz1lmn.webp') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            min-height: 550px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero p { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; font-weight: 600; }
+        .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 2rem; line-height: 1.2; }
+
+        .search-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .search-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #0055CC;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        /* CARDS SECTION */
+        .cards-section { padding: 4rem 2rem; background: white; }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+
+        .card-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .card h3 { font-size: 1.2rem; font-weight: 700; color: #003A70; margin-bottom: 0.5rem; }
+        .card p { color: #666; font-size: 0.9rem; }
+
+        /* CONTENT SECTION */
+        .content-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .content-section h2 { font-size: 2.2rem; font-weight: 700; color: #003A70; margin-bottom: 1rem; }
+        .content-section p { font-size: 0.95rem; line-height: 1.8; color: #333; margin-bottom: 1.5rem; }
+
+        .content-btn {
+            background: #0055CC;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .content-img { width: 100%; height: auto; border-radius: 8px; }
+
+        /* FOOTER */
+        footer { background: #001a3a; color: white; padding: 2rem; text-align: center; font-size: 0.85rem; }
+
+        /* MOBILE */
         @media (max-width: 768px) {
-            .hero { padding: 4rem 1rem 6rem !important; min-height: 400px !important; }
-            .hero h1 { font-size: 2rem !important; margin-bottom: 1.5rem !important; }
-            .hero p { font-size: 0.8rem !important; }
-            .search-form { flex-direction: column !important; gap: 0.5rem !important; max-width: 100% !important; }
-            .search-form input { border-radius: 4px !important; }
-            .search-form button { border-radius: 4px !important; width: 100% !important; }
-
-            .cards-container { position: static !important; bottom: auto !important; left: auto !important; transform: none !important; margin-top: 2rem !important; margin-bottom: 1rem !important; height: auto !important; }
-            .card { padding: 1.5rem !important; }
-            .card-number { width: 40px !important; height: 40px !important; font-size: 1.2rem !important; }
-            .card h3 { font-size: 1rem !important; }
-            .card p { font-size: 0.85rem !important; }
-
-            .split-section { padding: 2rem 1rem !important; }
-            .split-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
-            .split-section h2 { font-size: 1.5rem !important; }
-            .split-section p { font-size: 0.9rem !important; }
-            .split-section button { padding: 0.7rem 1.2rem !important; font-size: 0.85rem !important; }
-
-            .cta-section { padding: 2rem 1rem !important; }
-            .cta-section h2 { font-size: 1.8rem !important; }
-            .cta-section button { padding: 0.8rem 1.5rem !important; font-size: 0.9rem !important; }
-
-            footer { padding: 2rem 1rem !important; }
-        }
-
-        /* TABLET */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .hero { padding: 5rem 2rem 7rem !important; }
-            .hero h1 { font-size: 2.5rem !important; }
-
-            .cards-container { bottom: -50px !important; }
-            .card { padding: 1.8rem !important; }
-
-            .split-grid { grid-template-columns: 1fr 1fr !important; }
-            .split-section h2 { font-size: 2rem !important; }
-        }
-
-        /* DESKTOP */
-        @media (min-width: 1025px) {
-            .hero h1 { font-size: 3rem !important; }
-            .cards-container { bottom: -60px !important; }
-            .split-section h2 { font-size: 2.2rem !important; }
+            .hero { padding: 3rem 1rem; min-height: 400px; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 0.75rem; }
+            .search-box { padding: 1rem; }
+            .cards-section { padding: 2rem 1rem; }
+            .content-section { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1rem; }
+            .content-section h2 { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header/Navigation -->
-    <header class="navbar">
-        <div class="navbar-top">
-            <div class="navbar-top-container">
-                <div class="logo">
-                    <svg viewBox="0 0 120 50" class="logo-icon" style="width: 120px; height: 50px;">
-                        <g>
-                            <circle cx="20" cy="25" r="15" fill="none" stroke="#0055CC" stroke-width="1.5"/>
-                            <path d="M15 28 Q20 18 25 28" fill="none" stroke="#0055CC" stroke-width="1.5"/>
-                            <path d="M12 30 L28 30" stroke="#0055CC" stroke-width="1"/>
-                            <path d="M14 32 L26 32" stroke="#0055CC" stroke-width="0.8"/>
-                        </g>
-                        <text x="38" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#003A70">OPS</text>
-                        <text x="38" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#0055CC">LOGISTICS</text>
-                    </svg>
-                </div>
-                <div class="navbar-top-right" style="display: flex; gap: 2rem; align-items: center; font-size: 0.9rem;">
-                    <a href="#" style="color: #003A70; text-decoration: none;">Check Out</a>
-                    <a href="#" style="color: #003A70; text-decoration: none;">What OPS Provides <span>↗</span></a>
-                    <a href="#" style="color: #003A70; text-decoration: none;">To research</a>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
-                        <span>🇨🇲</span>
-                        <a href="#" style="color: #003A70; text-decoration: none;">Cameroon <span>▼</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="navbar-bottom" style="background: #003A70; padding: 1rem 2rem;">
-            <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; color: white;">
-                <nav style="display: flex; gap: 2rem;">
-                    <a href="track.html" style="color: white; text-decoration: none; font-weight: 500;">Track</a>
-                    <a href="#" style="color: white; text-decoration: none; font-weight: 500;">Ship ▼</a>
-                    <a href="#" style="color: white; text-decoration: none; font-weight: 500;">Enterprise logistics ▼</a>
-                    <a href="customer-service.html" style="color: white; text-decoration: none; font-weight: 500;">Customer Service</a>
-                </nav>
-                <button style="background: #0055CC; color: white; padding: 0.7rem 1.2rem; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 0.9rem;">Customer portal logins ▼</button>
-            </div>
-        </div>
+    <!-- HEADER -->
+    <header style="background: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <div style="font-size: 1.5rem; font-weight: 700; color: #003A70;">OPS LOGISTICS</div>
+        <button style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">☰</button>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero" style="position: relative; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/tyt96rdp/image/upload/v1790462997/opslogistics/home/lkdmmmqwdmdz1jyz1lmn.webp') center/cover no-repeat; padding: 6rem 2rem 8rem; text-align: center; color: white; min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">DELIVERING EXCELLENCE WORLDWIDE</p>
-        <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 2.5rem; line-height: 1.2;">Track Your Shipment</h1>
-
-        <div class="search-form" style="display: flex; gap: 0; width: 100%; max-width: 600px; margin-bottom: 4rem;">
-            <input type="text" placeholder="Enter your tracking number(s)" style="flex: 1; padding: 1rem; font-size: 1rem; border: none; outline: none; border-radius: 4px 0 0 4px;">
-            <button style="background: #0055CC; color: white; padding: 1rem 2.5rem; border: none; font-weight: 600; cursor: pointer; font-size: 1rem; white-space: nowrap; border-radius: 0 4px 4px 0;">Track Shipment</button>
+    <!-- HERO -->
+    <section class="hero">
+        <p>DELIVERING EXCELLENCE WORLDWIDE</p>
+        <h1>Track Your Shipment</h1>
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Enter your tracking number(s)">
+            <button class="search-btn">Track Delivery</button>
         </div>
+    </section>
 
-        <!-- THREE CARDS (OVERLAPPING ON DESKTOP) -->
-        <div class="cards-container" style="position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1100px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-            <div class="card" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); color: #333;">
-                <div class="card-number" style="width: 50px; height: 50px; background: #0055CC; color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; margin: 0 auto 1.5rem;">01</div>
-                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #003A70;">Ship Now</h3>
-                <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">Find the right service</p>
+    <!-- CARDS -->
+    <section class="cards-section">
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">📦</div>
+                <h3>Ship Now</h3>
+                <p>Find the right service</p>
             </div>
-
-            <div class="card" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); color: #333;">
-                <div class="card-number" style="width: 50px; height: 50px; background: #0055CC; color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; margin: 0 auto 1.5rem;">02</div>
-                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #003A70;">Get a Quote</h3>
-                <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">Estimate cost to share and compare</p>
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <h3>Get a Quote</h3>
+                <p>Estimate cost to share and compare</p>
             </div>
-
-            <div class="card" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); color: #333;">
-                <div class="card-number" style="width: 50px; height: 50px; background: #0055CC; color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; margin: 0 auto 1.5rem;">03</div>
-                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #003A70;">Request a Business Account</h3>
-                <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">Shipping regularly? Learn discounts</p>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Request a Business Account</h3>
+                <p>Shipping regularly? Learn about volume discounts</p>
             </div>
         </div>
     </section>
 
-    <div style="height: 120px;"></div>
+    <!-- CONTENT 1 -->
+    <section class="content-section" style="background: #f5f5f5;">
+        <div>
+            <h2>Professional Logistics Services</h2>
+            <p>We provide comprehensive shipping solutions for businesses of all sizes. Whether you're shipping documents, packages, or full containers, OPS Logistics delivers excellence.</p>
+            <button class="content-btn">Learn More</button>
+        </div>
+        <img src="https://res.cloudinary.com/tyt96rdp/image/upload/v1790463086/opslogistics/home/cxo1nqj5mncxapnw7pj9.webp" alt="Professional logistics" class="content-img">
+    </section>
 
-    <!-- SPLIT SECTION -->
-    <section class="split-section" style="background: #003A70; color: white; padding: 4rem 2rem;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div class="split-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-                <div style="text-align: center;">
-                    <img src="https://res.cloudinary.com/tyt96rdp/image/upload/v1790463133/opslogistics/white%20papers/hv1ej71u0jtazlpztjmo.webp" alt="Trade Advisory" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                </div>
-                <div>
-                    <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; color: #FFD700; margin-bottom: 1rem; font-weight: 600;">TRADE ADVISORY</p>
-                    <h2 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">Navigating Latest Tariff Developments</h2>
-                    <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; opacity: 0.95;">Global trade is increasingly complex. OPS Logistics helps you navigate tariff changes and reciprocal measures.</p>
-                    <button style="background: #0055CC; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 0.9rem;">Explore Our Solutions</button>
-                </div>
-            </div>
+    <!-- CONTENT 2 -->
+    <section class="content-section">
+        <img src="https://res.cloudinary.com/tyt96rdp/image/upload/v1790463133/opslogistics/white%20papers/hv1ej71u0jtazlpztjmo.webp" alt="Trade solutions" class="content-img">
+        <div>
+            <h2>Expert Trade Solutions</h2>
+            <p>Navigate complex tariff regulations and international trade requirements. Our specialists help you understand and comply with all regulations worldwide.</p>
+            <button class="content-btn">Explore Solutions</button>
         </div>
     </section>
 
-    <!-- CTA SECTION -->
-    <section class="cta-section" style="background: #003A70; color: white; padding: 4rem 2rem; text-align: center;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">Ready to Transform Your Logistics?</h2>
-            <p style="font-size: 1rem; line-height: 1.8; margin-bottom: 2.5rem; opacity: 0.9;">Let OPS Logistics handle your shipping needs with reliability and care.</p>
-            <button style="background: #FFD700; color: #003A70; padding: 0.875rem 2rem; border: none; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 0.95rem; min-height: 44px; cursor: pointer;">Get Started Today</button>
+    <!-- CONTENT 3 -->
+    <section class="content-section" style="background: #f5f5f5;">
+        <div>
+            <h2>Technology-Driven Tracking</h2>
+            <p>Real-time visibility into your shipments. Track every step of your delivery with our advanced monitoring system. Know exactly where your packages are at all times.</p>
+            <button class="content-btn">Discover Technology</button>
         </div>
+        <img src="https://res.cloudinary.com/tyt96rdp/image/upload/v1790463077/opslogistics/home/nqy6gxvv52cktkvuzmz1.webp" alt="Technology tracking" class="content-img">
     </section>
 
-    <!-- Footer -->
-    <footer style="background: #001a3a; color: white; padding: 3rem 2rem; text-align: center;">
-        <p style="margin-bottom: 1.5rem; opacity: 0.8;">© 2026 OPS Logistics. All rights reserved.</p>
-        <div style="display: flex; gap: 2rem; justify-content: center; font-size: 0.9rem; flex-wrap: wrap;">
-            <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
-            <a href="#" style="color: white; text-decoration: none;">Terms</a>
-            <a href="#" style="color: white; text-decoration: none;">Contact</a>
-            <a href="#" style="color: white; text-decoration: none;">Support</a>
-        </div>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 OPS Logistics. All rights reserved. | <a href="#" style="color: white; text-decoration: none;">Privacy</a> | <a href="#" style="color: white; text-decoration: none;">Terms</a> | <a href="#" style="color: white; text-decoration: none;">Contact</a></p>
     </footer>
 
     <script src="chat-widget.js"></script>

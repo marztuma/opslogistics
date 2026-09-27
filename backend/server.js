@@ -12,11 +12,11 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      imgSrc: ["'self'", "data:", "https://res.cloudinary.com", "https://*.cloudinary.com"],
+      imgSrc: ["'self'", "https://res.cloudinary.com"],
       scriptSrc: ["'self'"],
       styleSrc: ["'self'", "https://fonts.googleapis.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
-      connectSrc: ["'self'", "https://res.cloudinary.com"]
+      connectSrc: ["'self'"]
     }
   }
 }));

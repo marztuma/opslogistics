@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology - OPS Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../opslogistic/styles.css">
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 0; font-family: 'Source Sans Pro', sans-serif; }
+
+        :root {
+            --primary-blue: #0055CC;
+            --dark-blue: #003A70;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --light-gray: #f5f5f5;
+        }
+
+        /* MOBILE FIRST */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.75rem !important; line-height: 1.3 !important; }
+            h2 { font-size: 1.4rem !important; line-height: 1.3 !important; }
+            section { padding: 2rem 1rem !important; }
+            .grid-2col { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+            .grid-2col-even { grid-template-columns: 1fr !important; gap: 1rem !important; }
+            .grid-4col { grid-template-columns: 1fr !important; gap: 1rem !important; }
+            img { border-radius: 8px !important; }
+            button, a.btn { padding: 0.7rem 1.2rem !important; font-size: 0.85rem !important; }
+            .tabs { flex-direction: column !important; gap: 0.5rem !important; border-bottom: none !important; }
+            .tabs button { border-bottom: none !important; border-left: 3px solid transparent !important; padding: 1rem !important; }
+        }
+
+        /* TABLET */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            h1 { font-size: 2.2rem !important; }
+            h2 { font-size: 2rem !important; }
+            section { padding: 3rem 2rem !important; }
+        }
+
+        /* DESKTOP */
+        @media (min-width: 1025px) {
+            h1 { font-size: 3rem !important; }
+            h2 { font-size: 2.8rem !important; }
+            section { padding: 4rem 2rem !important; }
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; }
+        .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .grid-2col-even { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .grid-4col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+
+        h1 { color: var(--dark-blue); font-weight: 700; line-height: 1.2; letter-spacing: -0.8px; margin-bottom: 1.5rem; }
+        h2 { color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem; }
+        h3 { font-weight: 700; margin: 0; }
+        h4 { color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem; }
+        p { color: var(--text-light); line-height: 1.7; }
+        img { width: 100%; height: auto; display: block; }
+
+        .btn { background: var(--primary-blue); color: white; padding: 0.875rem 1.75rem; border-radius: 6px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-block; border: none; cursor: pointer; }
+        .btn:hover { background: #003a8f; }
+        .btn-outline { background: transparent; color: var(--text-dark); border: 2px solid var(--text-dark); padding: calc(0.875rem - 2px) calc(1.75rem - 2px); }
+        .btn-outline:hover { background: var(--light-gray); }
+        .btn-white-outline { background: transparent; color: white; border: 2px solid white; padding: calc(0.875rem - 2px) calc(1.75rem - 2px); }
+        .btn-white-outline:hover { background: rgba(255,255,255,0.1); }
+
+        .card { background: var(--light-gray); padding: 1.5rem; border-radius: 8px; }
+        .card h4 { font-size: 0.95rem; }
+        .card p { font-size: 0.85rem; margin: 0; }
+
+        /* Hero Section */
+        .hero { background: white; }
+        .hero h1 { margin-bottom: 1.5rem; }
+        .hero-text { flex: 1; }
+        .hero-image { flex: 1; }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        /* Dark Section */
+        .dark-section { background: linear-gradient(135deg, #001a3a 0%, #003a70 100%); color: white; }
+        .dark-section h2 { color: white; }
+        .dark-section h3 { color: white; }
+        .dark-section p { color: rgba(255,255,255,0.8); }
+
+        /* Tabs */
+        .tabs { display: flex; gap: 1rem; border-bottom: 2px solid #e0e0e0; margin-bottom: 2rem; }
+        .tab-btn { background: none; border: none; border-bottom: 3px solid transparent; padding: 1rem 1.5rem; color: var(--text-light); font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: all 0.3s; }
+        .tab-btn.active { color: var(--dark-blue); border-bottom-color: var(--primary-blue); }
+        .tab-content { background: #f5f5f5; padding: 2rem; border-radius: 8px; display: none; }
+        .tab-content.active { display: block; }
+
+        /* Comparison cards */
+        .comparison-card { padding: 2rem; border-radius: 8px; }
+        .comparison-card h3 { font-size: 1.2rem; margin-bottom: 1.5rem; }
+        .comparison-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+        .comparison-card li { font-size: 0.9rem; line-height: 1.6; }
+
+        /* Gate cards */
+        .gate-card { background: white; padding: 2rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .gate-card img { margin-bottom: 1rem; }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 3rem 2rem 2rem; }
+        .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 2rem; }
+        .footer-section h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; padding: 0; margin: 0; }
+        .footer-section li { margin-bottom: 0.5rem; }
+        .footer-section a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; }
+        .footer-section a:hover { color: var(--primary-blue); }
+        .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { margin: 0; font-size: 0.85rem; }
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            .grid-2col { grid-template-columns: 1fr !important; }
+            .grid-2col-even { grid-template-columns: 1fr !important; }
+            .grid-4col { grid-template-columns: 1fr !important; }
+            .footer-content { grid-template-columns: 1fr !important; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="navbar">
+        <div class="navbar-top">
+            <div class="navbar-top-container">
+                <div class="logo">
+                    <svg viewBox="0 0 120 50" class="logo-icon" style="width: 120px; height: 50px;">
+                        <g>
+                            <circle cx="20" cy="25" r="15" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M15 28 Q20 18 25 28" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M12 30 L28 30" stroke="#0055CC" stroke-width="1"/>
+                            <path d="M14 32 L26 32" stroke="#0055CC" stroke-width="0.8"/>
+                        </g>
+                        <text x="38" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#003A70">OPS</text>
+                        <text x="38" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#0055CC">LOGISTICS</text>
+                    </svg>
+                </div>
+                <div class="navbar-top-right" style="display: flex; gap: 2rem; align-items: center; font-size: 0.9rem;">
+                    <a href="../opslogistic/index.html" style="color: #003A70; text-decoration: none;">Exit</a>
+                    <a href="#" style="color: #003A70; text-decoration: none;">What OPS provides <span>↗</span></a>
+                    <a href="#" style="color: #003A70; text-decoration: none;">To research</a>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span>🇨🇲</span>
+                        <a href="#" style="color: #003A70; text-decoration: none;">Cameroon <span>▼</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-bottom" style="background: #003A70; padding: 1rem 2rem;">
+            <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; color: white;">
+                <nav style="display: flex; gap: 2rem;">
+                    <a href="../opslogistic/index.html#track" style="color: white; text-decoration: none; font-weight: 500;">Track</a>
+                    <a href="#" style="color: white; text-decoration: none; font-weight: 500;">Ship ▼</a>
+                    <a href="#" style="color: white; text-decoration: none; font-weight: 500;">Enterprise logistics ▼</a>
+                    <a href="#" style="color: white; text-decoration: none; font-weight: 500;">Customer Service</a>
+                </nav>
+                <button style="background: #0055CC; color: white; padding: 0.7rem 1.2rem; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 0.9rem;">Customer portal logins ▼</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="grid-2col">
+                <div class="hero-text">
+                    <h1>Small, light, and worth more than the <span style="color: var(--primary-blue);">truck.</span></h1>
+                    <p>Technology freight breaks the weight-to-value ratio. A small parcel can hold a lot of monetary value and a lot of regulatory care. Shipping tech requires tracking, temperature control, proof of handling, and documentation that proves chains-of-custody.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn">Let's Talk Technology</a>
+                        <button class="btn btn-outline">Learn Compliance</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://res.cloudinary.com/dq8phdkyp/image/upload/q_auto,f_auto/opslogistics/technology/Delivered_installed" alt="Technology logistics delivery" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two Identical Pallets Section -->
+    <section class="dark-section">
+        <div class="container">
+            <h2>Two identical pallets, two completely different problems</h2>
+            <p style="max-width: 900px;">The handling requirements depend on what is in the pallet. Standard cargo is weight-focused. Finished devices are liability-focused.</p>
+            <div class="grid-2col-even" style="margin-top: 3rem;">
+                <div class="comparison-card" style="background: rgba(255,255,255,0.08);">
+                    <h3>Standard cargo</h3>
+                    <ul>
+                        <li>Weight per unit controls cost</li>
+                        <li>Handling is mechanical—stack, move, unload</li>
+                        <li>Proof of arrival is sufficient</li>
+                        <li>Damage is cost of freight insurance</li>
+                    </ul>
+                </div>
+                <div class="comparison-card" style="background: white; color: var(--dark-blue);">
+                    <h3 style="color: var(--dark-blue);">Finished devices</h3>
+                    <ul style="color: var(--text-light);">
+                        <li>Value per unit controls cost</li>
+                        <li>Handling is protective—careful movement, climate control</li>
+                        <li>Proof of condition and chain of custody required</li>
+                        <li>Damage becomes liability and customer dissatisfaction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Stage Section with Tabs -->
+    <section style="background: white;">
+        <div class="container">
+            <h2>The stage where nothing is allowed to happen</h2>
+            <p style="max-width: 900px;">Technology in transit is a high-consequence logistics problem. It cannot be dropped, cannot get wet, cannot get too hot or too cold.</p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab(event, 0)">Departure</button>
+                <button class="tab-btn" onclick="showTab(event, 1)">Handoff points</button>
+                <button class="tab-btn" onclick="showTab(event, 2)">Dwell locations</button>
+                <button class="tab-btn" onclick="showTab(event, 3)">Arrival</button>
+            </div>
+            <div id="tab-content-0" class="tab-content active">
+                <h4>Departure from facility</h4>
+                <p style="margin: 0;">Verification of condition, proper packaging, environmental seal, and documentation before handoff to carrier.</p>
+            </div>
+            <div id="tab-content-1" class="tab-content">
+                <h4>Handoff points</h4>
+                <p style="margin: 0;">Each carrier transition requires inspection and re-sealing. Conditions must be documented at each point.</p>
+            </div>
+            <div id="tab-content-2" class="tab-content">
+                <h4>Dwell locations</h4>
+                <p style="margin: 0;">Temperature and environmental monitoring at warehouses and transfer hubs. Climate control is non-negotiable.</p>
+            </div>
+            <div id="tab-content-3" class="tab-content">
+                <h4>Arrival</h4>
+                <p style="margin: 0;">Inspection for damage, seal verification, and documentation of condition before handoff to customer or deployment.</p>
+            </div>
+            <div style="background: white; padding: 1.5rem; margin-top: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <p style="font-size: 0.9rem; color: var(--text-dark); margin: 0;">Any break in the chain—a dent, a temperature excursion, a missing seal—becomes a warranty claim and a customer problem.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Four Gates Section -->
+    <section style="background: var(--light-gray);">
+        <div class="container">
+            <h2>Four gates, and all four have to pass</h2>
+            <p style="max-width: 900px;">Technology logistics has compliance gates at every stage. Failure at any gate means the shipment cannot proceed.</p>
+            <div class="grid-4col" style="margin-bottom: 2rem;">
+                <div class="gate-card">
+                    <img src="https://res.cloudinary.com/dq8phdkyp/image/upload/q_auto,f_auto/opslogistics/technology/Tech_shipping" alt="Technology classification" loading="lazy">
+                    <h4>Classification</h4>
+                    <p style="font-size: 0.85rem; margin: 0;">Determine regulatory classification and handling category.</p>
+                </div>
+                <div class="gate-card">
+                    <img src="https://res.cloudinary.com/dq8phdkyp/image/upload/q_auto,f_auto/opslogistics/technology/Tech_destination" alt="Destination validation" loading="lazy">
+                    <h4>Where it's going</h4>
+                    <p style="font-size: 0.85rem; margin: 0;">Destination and carrier capabilities must match requirements.</p>
+                </div>
+                <div class="gate-card">
+                    <img src="https://res.cloudinary.com/dq8phdkyp/image/upload/q_auto,f_auto/opslogistics/technology/Tech_packaging" alt="Tech packaging" loading="lazy">
+                    <h4>Packaging right</h4>
+                    <p style="font-size: 0.85rem; margin: 0;">Protective packaging for transit method must be verified.</p>
+                </div>
+                <div class="gate-card">
+                    <img src="https://res.cloudinary.com/dq8phdkyp/image/upload/q_auto,f_auto/opslogistics/technology/Tech_insurance" alt="Insurance coverage" loading="lazy">
+                    <h4>Insurance cover</h4>
+                    <p style="font-size: 0.85rem; margin: 0;">Coverage must match the declared value and risk profile.</p>
+                </div>
+            </div>
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <p style="font-size: 0.9rem; color: var(--text-dark); margin: 0;">All four gates are mandatory. Tech devices cannot ship without passing each one. Miss one and the shipment does not leave the facility.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Most Tech Ships Section -->
+    <section style="background: white;">
+        <div class="container">
+            <div class="grid-2col">
+                <div>
+                    <h2>Most tech ships more than once</h2>
+                    <p>Warranty claims, failed components, and device recalls create reverse logistics flows. Some tech ships forward multiple times as units get refurbished and re-deployed.</p>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem;">
+                        <div class="card">
+                            <h4>RMA & warranty returns</h4>
+                            <p>Defective units back to factory for evaluation.</p>
+                        </div>
+                        <div class="card">
+                            <h4>Recall logistics</h4>
+                            <p>Damaged or safety-critical units recalled from field.</p>
+                        </div>
+                        <div class="card">
+                            <h4>Refurbishment & recovery</h4>
+                            <p>Units repaired and re-certified for resale or redeployment.</p>
+                        </div>
+                        <div class="card">
+                            <h4>Cross-loading results</h4>
+                            <p>Refurbished units shipped to new customers or regions.</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://res.cloudinary.com/dq8phdkyp/image/upload/q_auto,f_auto/opslogistics/technology/Tech_multiple_shipments" alt="Technology multi-shipment logistics" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivered Section -->
+    <section style="background: var(--light-gray);">
+        <div class="container">
+            <div class="grid-2col">
+                <img src="https://res.cloudinary.com/dq8phdkyp/image/upload/q_auto,f_auto/opslogistics/technology/Delivered_installation" alt="Tech installation and delivery" loading="lazy">
+                <div>
+                    <h2>Delivered is not the same as installed</h2>
+                    <p>Getting the device to the destination is only half the problem. Installation, configuration, and initial testing determine whether the customer accepts the shipment. A delivered device that does not power on is a failed delivery.</p>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-top: 1.5rem;">
+                        <p style="font-size: 0.85rem; color: var(--text-dark); margin: 0;">Tech logistics often includes site assessment, power and network setup, initial configuration, and operator training. The warehouse job is only where it starts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="dark-section">
+        <div class="container" style="max-width: 1000px; text-align: center;">
+            <h2>Send us the launch date and the site constraints.</h2>
+            <p>We assess the requirements, classify the logistics, and design a custom flow that meets both the technical and regulatory profile. Tech launches are not one-size shipping.</p>
+            <div class="hero-buttons" style="justify-content: center;">
+                <a href="#" class="btn">Plan a Launch</a>
+                <button class="btn btn-white-outline">Learn Tech Compliance</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section style="background: var(--primary-blue); color: white; text-align: center; padding: 3rem 2rem;">
+        <div class="container">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Technology logistics is not a commodity. It is a custom service built to your specifications.</h3>
+            <a href="#" class="btn" style="background: white; color: var(--primary-blue);">Get started →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>SERVICES</h4>
+                <ul>
+                    <li><a href="#">Express Shipping</a></li>
+                    <li><a href="#">OPS Express</a></li>
+                    <li><a href="#">eCommerce</a></li>
+                    <li><a href="#">Supply Chain</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">About OPS</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Innovation</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>HELP</h4>
+                <ul>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Service Updates</a></li>
+                    <li><a href="#">Request a business account</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OPS Logistics. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(event, index) {
+            event.preventDefault();
+            const contents = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+            contents.forEach((el, i) => {
+                el.classList.toggle('active', i === index);
+            });
+            buttons.forEach((btn, i) => {
+                btn.classList.toggle('active', i === index);
+            });
+        }
+    </script>
+</body>
+</html>

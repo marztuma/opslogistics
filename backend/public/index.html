@@ -63,95 +63,59 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/tyt96rdp/image/upload/v1790462997/opslogistics/home/lkdmmmqwdmdz1jyz1lmn.webp') center/cover no-repeat; padding: 8rem 2rem; text-align: center; color: white; min-height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <!-- HERO SECTION WITH OVERLAPPING CARDS -->
+    <section style="position: relative; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/tyt96rdp/image/upload/v1790462997/opslogistics/home/lkdmmmqwdmdz1jyz1lmn.webp') center/cover no-repeat; padding: 6rem 2rem 8rem; text-align: center; color: white; min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">DELIVERING EXCELLENCE WORLDWIDE</p>
-        <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 3rem; line-height: 1.2;">Track Your Shipment</h1>
+        <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 2.5rem; line-height: 1.2;">Track Your Shipment</h1>
 
         <!-- Search Form -->
-        <div style="display: flex; gap: 0; width: 100%; max-width: 600px; margin: 0 auto;">
-            <input type="text" placeholder="Enter your tracking number(s)" style="flex: 1; padding: 1rem; font-size: 1rem; border: none; outline: none;">
-            <button style="background: #0055CC; color: white; padding: 1rem 2.5rem; border: none; font-weight: 600; cursor: pointer; font-size: 1rem; white-space: nowrap;">Track Shipment</button>
+        <div style="display: flex; gap: 0; width: 100%; max-width: 600px; margin: 0 auto; margin-bottom: 4rem;">
+            <input type="text" placeholder="Enter your tracking number(s)" style="flex: 1; padding: 1rem; font-size: 1rem; border: none; outline: none; border-radius: 4px 0 0 4px;">
+            <button style="background: #0055CC; color: white; padding: 1rem 2.5rem; border: none; font-weight: 600; cursor: pointer; font-size: 1rem; white-space: nowrap; border-radius: 0 4px 4px 0;">Track Shipment</button>
         </div>
-    </section>
 
-    <!-- THREE CARDS SECTION -->
-    <section style="background: #f5f5f5; padding: 4rem 2rem;">
-        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        <!-- THREE CARDS (OVERLAPPING) -->
+        <div style="position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1100px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
 
-            <!-- Card 1: Ship Now -->
-            <div style="background: white; padding: 2.5rem 2rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s ease; cursor: pointer;">
-                <div style="font-size: 3rem; margin-bottom: 1.5rem;">📦</div>
-                <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; color: #003A70;">Ship Now</h3>
-                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">Find the right service</p>
-                <a href="ship-now.html" style="margin-top: 1.5rem; color: #0055CC; text-decoration: none; font-weight: 600; display: inline-block;">Get started →</a>
+            <!-- Card 1 -->
+            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+                <div style="width: 50px; height: 50px; background: #0055CC; color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; margin-bottom: 1.5rem;">01</div>
+                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #003A70;">Ship Now</h3>
+                <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">Find the right service</p>
             </div>
 
-            <!-- Card 2: Get a Quote -->
-            <div style="background: white; padding: 2.5rem 2rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s ease; cursor: pointer;">
-                <div style="font-size: 3rem; margin-bottom: 1.5rem;">📋</div>
-                <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; color: #003A70;">Get a Quote</h3>
-                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">Estimate cost to share and compare</p>
-                <a href="quote.html" style="margin-top: 1.5rem; color: #0055CC; text-decoration: none; font-weight: 600; display: inline-block;">Get quote →</a>
+            <!-- Card 2 -->
+            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+                <div style="width: 50px; height: 50px; background: #0055CC; color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; margin-bottom: 1.5rem;">02</div>
+                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #003A70;">Get a Quote</h3>
+                <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">Estimate cost to share and compare</p>
             </div>
 
-            <!-- Card 3: Request Business Account -->
-            <div style="background: white; padding: 2.5rem 2rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s ease; cursor: pointer;">
-                <div style="font-size: 3rem; margin-bottom: 1.5rem;">🏢</div>
-                <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; color: #003A70;">Request a Business Account</h3>
-                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">Shipping regularly? Learn about volume discounts</p>
-                <a href="request-business-account.html" style="margin-top: 1.5rem; color: #0055CC; text-decoration: none; font-weight: 600; display: inline-block;">Request account →</a>
+            <!-- Card 3 -->
+            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+                <div style="width: 50px; height: 50px; background: #0055CC; color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; margin-bottom: 1.5rem;">03</div>
+                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #003A70;">Request a Business Account</h3>
+                <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">Shipping regularly? Learn about volume discounts</p>
             </div>
         </div>
     </section>
 
-    <!-- SPLIT SECTION 1: Image Right, Text Left (Dark Blue) -->
+    <!-- SPACING FOR OVERLAPPING CARDS -->
+    <div style="height: 120px;"></div>
+
+    <!-- SPLIT SECTION 1: Image LEFT, Text RIGHT (Dark Blue) -->
     <section style="background: #003A70; color: white; padding: 4rem 2rem;">
         <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
 
+            <div style="text-align: center;">
+                <img src="https://res.cloudinary.com/tyt96rdp/image/upload/v1790463133/opslogistics/white%20papers/hv1ej71u0jtazlpztjmo.webp" alt="Trade Advisory - Professional" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+            </div>
+
             <div>
                 <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; color: #FFD700; margin-bottom: 1rem; font-weight: 600;">TRADE ADVISORY</p>
-                <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">Navigating Latest Tariff Developments</h2>
+                <h2 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">Navigating Latest Tariff Developments</h2>
                 <p style="font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; opacity: 0.95;">Global trade is becoming increasingly complex as new U.S. tariffs and varying reciprocal measures emerge across countries and industries. At OPS Logistics, we are committed to helping you navigate these changes.</p>
-                <button style="background: #0055CC; color: white; padding: 0.875rem 1.75rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: all 0.3s ease;">Explore Our Solutions</button>
-            </div>
-
-            <div style="text-align: center;">
-                <img src="https://res.cloudinary.com/tyt96rdp/image/upload/v1790463086/opslogistics/home/cxo1nqj5mncxapnw7pj9.webp" alt="Trade Advisory - Professional" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-            </div>
-        </div>
-    </section>
-
-    <!-- SPLIT SECTION 2: Image Left, Text Right (White Background) -->
-    <section style="background: white; padding: 4rem 2rem;">
-        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-
-            <div style="text-align: center;">
-                <img src="https://res.cloudinary.com/tyt96rdp/image/upload/v1790463086/opslogistics/home/cxo1nqj5mncxapnw7pj9.webp" alt="Sustainable Logistics" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            </div>
-
-            <div>
-                <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; color: #0055CC; margin-bottom: 1rem; font-weight: 600;">SUSTAINABLE SHIPPING</p>
-                <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: #003A70; line-height: 1.2;">Environmentally Responsible Logistics</h2>
-                <p style="font-size: 0.95rem; line-height: 1.8; color: #333; margin-bottom: 2rem;">We believe sustainability is not just good for the planet—it's good for business. Our green shipping initiatives help reduce carbon footprint while maintaining reliability and cost-effectiveness.</p>
-                <button style="background: #0055CC; color: white; padding: 0.875rem 1.75rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: all 0.3s ease;">Learn More</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- SPLIT SECTION 3: Image Right, Text Left (Light Gray) -->
-    <section style="background: #f9f9f9; padding: 4rem 2rem;">
-        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-
-            <div>
-                <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; color: #0055CC; margin-bottom: 1rem; font-weight: 600;">INNOVATION</p>
-                <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: #003A70; line-height: 1.2;">Technology-Driven Solutions</h2>
-                <p style="font-size: 0.95rem; line-height: 1.8; color: #333; margin-bottom: 2rem;">Our advanced tracking systems and AI-powered logistics optimization ensure your shipments arrive on time, every time. Real-time visibility gives you complete control.</p>
-                <button style="background: #0055CC; color: white; padding: 0.875rem 1.75rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: all 0.3s ease;">Discover Technology</button>
-            </div>
-
-            <div style="text-align: center;">
-                <img src="https://res.cloudinary.com/tyt96rdp/image/upload/v1790463086/opslogistics/home/cxo1nqj5mncxapnw7pj9.webp" alt="Technology Innovation" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <button style="background: #0055CC; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 0.9rem; transition: all 0.3s ease;">Explore Our Solutions</button>
             </div>
         </div>
     </section>
@@ -161,7 +125,7 @@
         <div style="max-width: 800px; margin: 0 auto;">
             <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">Ready to Transform Your Logistics?</h2>
             <p style="font-size: 1rem; line-height: 1.8; margin-bottom: 2.5rem; opacity: 0.9;">Let OPS Logistics handle your shipping needs with reliability and care.</p>
-            <button style="background: #FFD700; color: #003A70; padding: 1rem 2rem; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 1rem; transition: all 0.3s ease;">Get Started Today</button>
+            <button style="background: #FFD700; color: #003A70; padding: 0.875rem 2rem; border: none; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 0.95rem; transition: all 0.3s ease;">Get Started Today</button>
         </div>
     </section>
 

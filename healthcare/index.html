@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare and Life Sciences - OPS Logistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../opslogistic/styles.css">
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 0; font-family: 'Source Sans Pro', sans-serif; }
+
+        :root {
+            --primary-blue: #0055CC;
+            --dark-blue: #003A70;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --light-gray: #f5f5f5;
+        }
+
+        /* MOBILE FIRST */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.75rem !important; line-height: 1.3 !important; }
+            h2 { font-size: 1.4rem !important; line-height: 1.3 !important; }
+            section { padding: 2rem 1rem !important; }
+            .grid-2col { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+            .grid-auto { grid-template-columns: 1fr !important; gap: 1rem !important; }
+            img { border-radius: 8px !important; }
+            table { font-size: 0.75rem !important; }
+            table td, table th { padding: 0.5rem !important; }
+            button, a.btn { padding: 0.7rem 1.2rem !important; font-size: 0.85rem !important; width: auto !important; }
+        }
+
+        /* TABLET */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            h1 { font-size: 2.2rem !important; }
+            h2 { font-size: 2rem !important; }
+            section { padding: 3rem 2rem !important; }
+        }
+
+        /* DESKTOP */
+        @media (min-width: 1025px) {
+            h1 { font-size: 3rem !important; }
+            h2 { font-size: 2.8rem !important; }
+            section { padding: 4rem 2rem !important; }
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; }
+        .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .grid-auto { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
+        h1 { color: var(--dark-blue); font-weight: 700; line-height: 1.2; letter-spacing: -0.8px; margin-bottom: 1.5rem; }
+        h2 { color: var(--dark-blue); font-weight: 700; margin-bottom: 1rem; }
+        h3 { color: white; font-weight: 700; margin: 0; }
+        h4 { color: var(--dark-blue); font-weight: 700; margin-bottom: 0.75rem; }
+        p { color: var(--text-light); line-height: 1.7; }
+        img { width: 100%; height: auto; display: block; }
+
+        .btn { background: var(--primary-blue); color: white; padding: 0.875rem 1.75rem; border-radius: 6px; font-size: 0.95rem; font-weight: 600; text-decoration: none; display: inline-block; border: none; cursor: pointer; }
+        .btn:hover { background: #003a8f; }
+        .btn-outline { background: transparent; color: var(--text-dark); border: 2px solid var(--text-dark); padding: calc(0.875rem - 2px) calc(1.75rem - 2px); }
+        .btn-outline:hover { background: var(--light-gray); }
+        .btn-white-outline { background: transparent; color: white; border: 2px solid white; padding: calc(0.875rem - 2px) calc(1.75rem - 2px); }
+        .btn-white-outline:hover { background: rgba(255,255,255,0.1); }
+
+        .card { background: var(--light-gray); padding: 1.5rem; border-radius: 8px; }
+        .card h4 { font-size: 0.95rem; }
+        .card p { font-size: 0.85rem; margin: 0; }
+
+        /* Hero Section */
+        .hero { background: white; }
+        .hero h1 { margin-bottom: 1.5rem; }
+        .hero-text { flex: 1; }
+        .hero-image { flex: 1; }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        /* Table Section */
+        .table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        thead tr { background: var(--light-gray); border-bottom: 2px solid #ddd; }
+        th { text-align: left; padding: 1rem; font-weight: 700; color: var(--dark-blue); }
+        td { padding: 1rem; border-bottom: 1px solid #eee; }
+        tbody tr:last-child td { border-bottom: none; }
+        .table-legend { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-top: 2rem; }
+        .table-legend p { font-size: 0.9rem; color: var(--text-dark); margin: 0; }
+
+        /* Dark Section */
+        .dark-section { background: linear-gradient(135deg, #001a3a 0%, #003a70 100%); color: white; }
+        .dark-section h2 { color: white; }
+        .dark-section p { color: rgba(255,255,255,0.8); }
+
+        .collapsible { background: rgba(255,255,255,0.08); padding: 2rem; border-radius: 8px; cursor: pointer; margin-bottom: 1rem; }
+        .collapsible-header { display: flex; justify-content: space-between; align-items: center; }
+        .collapsible-header h4 { margin: 0; font-size: 1.1rem; }
+        .collapsible-toggle { font-size: 1.2rem; color: rgba(255,255,255,0.6); }
+        .collapsible-content { display: none; font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.6; margin-top: 1rem; }
+        .collapsible.active .collapsible-content { display: block; }
+        .collapsible.active .collapsible-toggle { transform: rotate(45deg); }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 3rem 2rem 2rem; }
+        .footer-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 2rem; }
+        .footer-section h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; }
+        .footer-section ul { list-style: none; padding: 0; margin: 0; }
+        .footer-section li { margin-bottom: 0.5rem; }
+        .footer-section a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; }
+        .footer-section a:hover { color: var(--primary-blue); }
+        .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { margin: 0; font-size: 0.85rem; }
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            .grid-2col { grid-template-columns: 1fr !important; }
+            .grid-auto { grid-template-columns: 1fr !important; }
+            .footer-content { grid-template-columns: 1fr !important; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="navbar">
+        <div class="navbar-top">
+            <div class="navbar-top-container">
+                <div class="logo">
+                    <svg viewBox="0 0 120 50" class="logo-icon" style="width: 120px; height: 50px;">
+                        <g>
+                            <circle cx="20" cy="25" r="15" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M15 28 Q20 18 25 28" fill="none" stroke="#0055CC" stroke-width="1.5"/>
+                            <path d="M12 30 L28 30" stroke="#0055CC" stroke-width="1"/>
+                            <path d="M14 32 L26 32" stroke="#0055CC" stroke-width="0.8"/>
+                        </g>
+                        <text x="38" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#003A70">OPS</text>
+                        <text x="38" y="45" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#0055CC">LOGISTICS</text>
+                    </svg>
+                </div>
+                <div class="navbar-top-right" style="display: flex; gap: 2rem; align-items: center; font-size: 0.9rem;">
+                    <a href="../opslogistic/index.html" style="color: #003A70; text-decoration: none;">Exit</a>
+                    <a href="#" style="color: #003A70; text-decoration: none;">What OPS provides <span>↗</span></a>
+                    <a href="#" style="color: #003A70; text-decoration: none;">To research</a>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span>🇨🇲</span>
+                        <a href="#" style="color: #003A70; text-decoration: none;">Cameroon <span>▼</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-bottom" style="background: #003A70; padding: 1rem 2rem;">
+            <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; color: white;">
+                <nav style="display: flex; gap: 2rem;">
+                    <a href="../opslogistic/index.html#track" style="color: white; text-decoration: none; font-weight: 500;">Track</a>
+                    <a href="#" style="color: white; text-decoration: none; font-weight: 500;">Ship ▼</a>
+                    <a href="#" style="color: white; text-decoration: none; font-weight: 500;">Enterprise logistics ▼</a>
+                    <a href="#" style="color: white; text-decoration: none; font-weight: 500;">Customer Service</a>
+                </nav>
+                <button style="background: #0055CC; color: white; padding: 0.7rem 1.2rem; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; font-size: 0.9rem;">Customer portal logins ▼</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="grid-2col">
+                <div class="hero-text">
+                    <h1>The shipment is the <span style="color: var(--primary-blue);">evidence.</span></h1>
+                    <p>Healthcare and life sciences shipments are not cargo. They are evidence. Every unit, every degree, every moment in transit gets documented. The regulatory burden is not bureaucratic—it is clinical and legal accountability that determines whether the product is safe to use and whether it can be administered to a patient.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn">Get a Quote</a>
+                        <button class="btn btn-outline">Learn Compliance</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://res.cloudinary.com/dq8phdkyp/image/upload/q_auto,f_auto/opslogistics/healthcare/Stock_circulates_healthcare" alt="Healthcare stock in circulation" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sector Table Section -->
+    <section style="background: white;">
+        <div class="container">
+            <h2>Not one sector, six different problems</h2>
+            <p>Healthcare logistics is sector-specific. Pharma, biotech, medical devices, life sciences, clinical trial materials, and blood/tissue products all have different regulatory requirements, stability windows, and handling protocols.</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sector</th>
+                            <th style="text-align: center;">Temperature Control</th>
+                            <th style="text-align: center;">Tracking & Monitoring</th>
+                            <th style="text-align: center;">Documentation</th>
+                            <th style="text-align: center;">Special Handling</th>
+                            <th style="text-align: center;">Shelf Life Critical</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600;">Pharmaceutical</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Biotech & Life Sciences</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center; color: var(--primary-blue);">◯</td>
+                            <td style="text-align: center;">●</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Medical Devices</td>
+                            <td style="text-align: center; color: var(--primary-blue);">◯</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center; color: var(--primary-blue);">◯</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Clinical Trial Materials</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Blood & Tissue Products</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center;">●</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">Cosmeceuticals</td>
+                            <td style="text-align: center; color: var(--primary-blue);">◯</td>
+                            <td style="text-align: center; color: var(--primary-blue);">◯</td>
+                            <td style="text-align: center;">●</td>
+                            <td style="text-align: center; color: var(--primary-blue);">◯</td>
+                            <td style="text-align: center;">●</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-legend">
+                <p>● = Required for sector | ◯ = Not applicable to sector | The regulatory complexity varies by product and destination. We assess each shipment individually.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Five Layers Section -->
+    <section class="dark-section">
+        <div class="container">
+            <h2>Five layers between your product and e-write-off</h2>
+            <p>Healthcare product failure in transit becomes a financial liability and a patient safety issue.</p>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="collapsible" onclick="toggleCollapsible(this)">
+                    <div class="collapsible-header">
+                        <h4>Documentation & audit trail</h4>
+                        <span class="collapsible-toggle">+</span>
+                    </div>
+                    <p class="collapsible-content">Every movement, every temperature reading, every handoff is documented. Regulators expect full traceability. Missing a single entry makes the entire shipment suspect.</p>
+                </div>
+                <div class="collapsible" onclick="toggleCollapsible(this)">
+                    <div class="collapsible-header">
+                        <h4>Temperature & environmental seals</h4>
+                        <span class="collapsible-toggle">+</span>
+                    </div>
+                    <p class="collapsible-content">Data loggers and environmental monitors track conditions in real-time. Excursions outside acceptable range trigger immediate notification and investigation protocols.</p>
+                </div>
+                <div class="collapsible" onclick="toggleCollapsible(this)">
+                    <div class="collapsible-header">
+                        <h4>Packaging & protective measures</h4>
+                        <span class="collapsible-toggle">+</span>
+                    </div>
+                    <p class="collapsible-content">Specialized packaging with phase change materials, insulation, and shock protection is non-negotiable. Every shipment gets customized to its product profile and transit duration.</p>
+                </div>
+                <div class="collapsible" onclick="toggleCollapsible(this)">
+                    <div class="collapsible-header">
+                        <h4>Insurance & liability coverage</h4>
+                        <span class="collapsible-toggle">+</span>
+                    </div>
+                    <p class="collapsible-content">Healthcare shipments require specialized insurance that covers regulatory violations, patient harm, and recall costs. Standard cargo insurance is insufficient.</p>
+                </div>
+                <div class="collapsible" onclick="toggleCollapsible(this)">
+                    <div class="collapsible-header">
+                        <h4>The product itself</h4>
+                        <span class="collapsible-toggle">+</span>
+                    </div>
+                    <p class="collapsible-content">If all layers work and the product still fails to perform, the shipment is a total loss. Your capital, reputation, and potentially patient outcomes are at risk.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supply Chain Section -->
+    <section style="background: white;">
+        <div class="container">
+            <h2>The only supply chain that has to come back</h2>
+            <p>Healthcare logistics is unique. Products used in patient care cannot be disposed of like standard goods. They must be returned, tracked, and either refurbished or properly destroyed.</p>
+            <div class="grid-2col" style="margin-bottom: 3rem;">
+                <img src="https://res.cloudinary.com/dq8phdkyp/image/upload/q_auto,f_auto/opslogistics/healthcare/Supply_chain_returns" alt="Healthcare reverse logistics" loading="lazy">
+                <div>
+                    <div class="card">
+                        <h4>Reverse logistics program</h4>
+                        <p>Every patient-facing product generates a reverse logistics obligation. OPS manages the return, inspection, and processing.</p>
+                    </div>
+                    <div class="card" style="margin-top: 1.5rem;">
+                        <h4>Refurbishment & recertification</h4>
+                        <p>Returned products are assessed, refurbished if possible, and recertified for reuse. Waste minimization protects margins.</p>
+                    </div>
+                    <div class="card" style="margin-top: 1.5rem;">
+                        <h4>Biohazard disposal</h4>
+                        <p>Products that cannot be reused are incinerated or disposed through regulated medical waste channels. Full documentation is retained.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stock Circulation Section -->
+    <section style="background: var(--light-gray);">
+        <div class="container">
+            <div class="grid-2col">
+                <img src="https://res.cloudinary.com/dq8phdkyp/image/upload/q_auto,f_auto/opslogistics/healthcare/Shipment_evidence" alt="Healthcare product evidence" loading="lazy">
+                <div>
+                    <h2>Stock that circulates instead of selling</h2>
+                    <p>Healthcare inventory does not sit in warehouses. It circulates between hospitals, clinics, field teams, and patients. OPS manages this multi-leg logistics flow to ensure stock is available where it is needed, when it is needed.</p>
+                    <div class="grid-auto" style="margin-top: 2rem;">
+                        <div class="card">
+                            <h4>Hub & spoke distribution</h4>
+                            <p>Centralized warehousing feeds regional distribution centers that supply local medical facilities and field sites.</p>
+                        </div>
+                        <div class="card">
+                            <h4>Real-time visibility</h4>
+                            <p>Every unit is tracked through the supply chain. Inventory data feeds back to your planning systems for demand forecasting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="dark-section">
+        <div class="container" style="max-width: 1000px; text-align: center;">
+            <h2>Send your requirements before your rate request.</h2>
+            <p>Healthcare logistics is not a standard freight rate. We need to understand your product, your regulatory requirements, and your distribution model to design a logistics flow that protects your product, your liability, and your margins.</p>
+            <div class="hero-buttons" style="justify-content: center;">
+                <a href="#" class="btn">Get Started</a>
+                <button class="btn btn-white-outline">Talk to an Expert</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section style="background: var(--primary-blue); color: white; text-align: center; padding: 3rem 2rem;">
+        <div class="container">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Healthcare and life sciences logistics is not a commodity. It is a regulated service with patient safety implications.</h3>
+            <a href="#" class="btn" style="background: white; color: var(--primary-blue);">Get started →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>SERVICES</h4>
+                <ul>
+                    <li><a href="#">Express Shipping</a></li>
+                    <li><a href="#">OPS Express</a></li>
+                    <li><a href="#">eCommerce</a></li>
+                    <li><a href="#">Supply Chain</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">About OPS</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Innovation</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>HELP</h4>
+                <ul>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Service Updates</a></li>
+                    <li><a href="#">Request a business account</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OPS Logistics. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleCollapsible(element) {
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

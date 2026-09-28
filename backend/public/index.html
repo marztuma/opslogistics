@@ -14,28 +14,70 @@
         /* HEADER */
         header {
             background: white;
-            padding: 1.5rem 2rem;
+            padding: 1rem 2rem;
             border-bottom: 1px solid #e0e0e0;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .logo { font-size: 1rem; font-weight: 700; color: #000; }
-        nav a { color: #0055CC; text-decoration: none; margin-left: 2rem; font-size: 0.9rem; }
-        nav a:hover { text-decoration: underline; }
+
+        nav {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: #000;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        nav a:hover { color: #0055CC; }
+
+        .nav-right {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-right a { color: #0055CC; font-size: 0.8rem; }
+
+        .login-btn {
+            background: #0055CC;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
 
         /* HERO */
         .hero {
-            background: linear-gradient(135deg, #b0b0b0 0%, #808080 100%);
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('placeholder-hero.jpg') center/cover;
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 10rem 2rem;
+            padding: 8rem 2rem;
             text-align: center;
-            min-height: 500px;
+            min-height: 600px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 2rem;
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            opacity: 0.9;
         }
 
         .hero h1 {
@@ -47,90 +89,127 @@
         .search-box {
             background: white;
             border-radius: 4px;
-            padding: 1.5rem;
-            max-width: 500px;
+            padding: 1rem;
+            max-width: 600px;
             width: 100%;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 1rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
         }
 
         .search-input {
-            width: 100%;
+            flex: 1;
             padding: 0.8rem;
-            border: 1px solid #ddd;
+            border: none;
             border-radius: 4px;
             font-size: 0.95rem;
-            margin-bottom: 1rem;
         }
 
         .search-btn {
-            width: 100%;
-            padding: 0.8rem;
+            padding: 0.8rem 2rem;
             background: #0055CC;
             color: white;
             border: none;
             border-radius: 4px;
             font-weight: 600;
             cursor: pointer;
+            white-space: nowrap;
         }
 
         .action-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 1rem;
         }
 
         .action-btn {
             background: white;
-            color: #0055CC;
-            border: 1px solid #ddd;
-            padding: 0.7rem 1.5rem;
-            border-radius: 4px;
+            color: #333;
+            border: none;
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             font-size: 0.9rem;
+            text-align: center;
+            min-width: 150px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        /* CONTENT */
-        section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .action-btn:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 
-        .split-content {
+        /* SECTIONS */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .split-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
-            align-items: flex-start;
+            align-items: center;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #0055CC;
+            margin-bottom: 1rem;
+        }
+
+        .section-label.yellow {
+            color: #FFA500;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #000;
             font-weight: 700;
             margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
+
+        h2.white { color: white; }
 
         p {
             color: #555;
-            font-size: 0.95rem;
+            font-size: 1rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
 
+        p.white { color: rgba(255,255,255,0.9); }
+
         .btn {
             background: #0055CC;
             color: white;
-            padding: 0.8rem 1.8rem;
+            padding: 0.9rem 2rem;
             border: none;
             border-radius: 4px;
             font-weight: 600;
             cursor: pointer;
             font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .btn:hover { background: #003a8a; }
+
+        .btn.white {
+            background: white;
+            color: #0055CC;
         }
 
         .img-placeholder {
             width: 100%;
-            height: 350px;
+            height: 400px;
             background: #e0e0e0;
-            border-radius: 4px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -138,32 +217,84 @@
             font-size: 1rem;
         }
 
-        /* GRID */
-        .grid {
+        /* FEATURES GRID */
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .card {
-            padding: 2rem;
-            text-align: center;
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
         }
 
-        .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-        .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .card p { font-size: 0.9rem; color: #666; }
+        .feature-number {
+            background: #003A70;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
 
-        /* STATS */
-        .stats {
+        .feature-text h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* SOLUTIONS GRID */
+        .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            text-align: center;
+            margin-top: 2rem;
         }
 
-        .stat h3 { font-size: 2.5rem; color: #0055CC; font-weight: 700; margin-bottom: 0.5rem; }
-        .stat p { color: #666; font-size: 0.9rem; }
+        .solution-card {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .solution-icon {
+            font-size: 2rem;
+        }
+
+        .solution-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #000;
+        }
+
+        /* DARK SECTIONS */
+        .bg-dark {
+            background: #003A70;
+            color: white;
+        }
+
+        .bg-dark h2 { color: white; }
+        .bg-dark p { color: rgba(255,255,255,0.9); }
+
+        .bg-light { background: #f8f8f8; }
 
         /* FOOTER */
         footer {
@@ -174,7 +305,7 @@
         }
 
         .footer-grid {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -182,12 +313,12 @@
             margin-bottom: 2rem;
         }
 
-        .footer-col h4 { margin-bottom: 1rem; font-size: 1rem; }
+        .footer-col h4 { margin-bottom: 1rem; font-size: 1rem; font-weight: 700; }
         .footer-col a { color: #0099ff; text-decoration: none; font-size: 0.9rem; display: block; margin: 0.5rem 0; }
-        .footer-col p { font-size: 0.9rem; opacity: 0.8; }
+        .footer-col p { font-size: 0.9rem; opacity: 0.8; line-height: 1.6; }
 
         .footer-bottom {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             text-align: center;
             border-top: 1px solid #333;
@@ -196,17 +327,18 @@
             opacity: 0.8;
         }
 
-        .bg-light { background: #f8f8f8; }
-        .bg-dark { background: #003A70; color: white; }
-        .bg-dark h2 { color: white; }
-        .bg-dark p { color: rgba(255,255,255,0.9); }
-
         @media (max-width: 768px) {
             .hero { padding: 3rem 1rem; }
             .hero h1 { font-size: 2rem; }
-            .split-content { grid-template-columns: 1fr; }
-            nav { display: none; }
+            .split-section { grid-template-columns: 1fr; }
+            .search-box { flex-direction: column; }
+            .action-buttons { flex-direction: column; }
+            .action-btn { width: 100%; }
+            nav { gap: 1rem; font-size: 0.8rem; }
+            h2 { font-size: 1.8rem; }
             .footer-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .solutions-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -215,135 +347,194 @@
     <header>
         <div class="logo">OPS LOGISTICS</div>
         <nav>
-            <a href="ship-now.html">Ship</a>
-            <a href="track.html">Track</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+            <a href="#ship">Ship</a>
+            <a href="#enterprise">Enterprise logistics services</a>
+            <a href="#clients">Service Clients</a>
+            <div class="nav-right">
+                <a href="#research">To research</a>
+                <a href="#login" class="login-btn">Customer portal logins</a>
+            </div>
         </nav>
     </header>
 
     <!-- HERO -->
     <section class="hero">
+        <div class="hero-subtitle">Providing Excellence Worldwide</div>
         <h1>Track your parcel</h1>
         <div class="search-box">
             <input type="text" class="search-input" placeholder="Enter your tracking number(s)">
-            <button class="search-btn">Track Delivery</button>
+            <button class="search-btn">Delivery tracking</button>
         </div>
         <div class="action-buttons">
-            <button class="action-btn">Ship Now</button>
-            <button class="action-btn">Get a Quote</button>
-            <button class="action-btn">Business Account</button>
+            <button class="action-btn">
+                <div>📅</div>
+                <div>Ship now</div>
+                <div style="font-size: 0.8rem; opacity: 0.7;">Find the right service</div>
+            </button>
+            <button class="action-btn">
+                <div>📋</div>
+                <div>Estimation</div>
+                <div style="font-size: 0.8rem; opacity: 0.7;">Estimate the cost of sharing and comparison</div>
+            </button>
+            <button class="action-btn">
+                <div>📊</div>
+                <div>Request a business account</div>
+                <div style="font-size: 0.8rem; opacity: 0.7;">Ship regularly? Learn more about volume discounts</div>
+            </button>
         </div>
     </section>
 
-    <!-- SECTION 1 -->
-    <section>
-        <div class="split-content">
-            <div>
-                <h2>Navigate the latest pricing developments</h2>
-                <p>Global trade is becoming increasingly complex as new tariffs emerge across countries and industries. OPS Logistics keeps you informed and helps you navigate these changes with confidence and clarity.</p>
-                <button class="btn">Explore Our Solutions</button>
-            </div>
-            <div class="img-placeholder">[Image Placeholder]</div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="bg-light">
-        <h2>Our Services</h2>
-        <div class="grid">
-            <div class="card" style="background: #003A70; color: white;">
-                <div class="card-icon">📦</div>
-                <h3>Shipping Containers</h3>
-                <p>Quality containers for all your storage and transportation needs</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🚚</div>
-                <h3>Last Mile Delivery</h3>
-                <p>Fast and reliable door-to-door delivery service</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">❄️</div>
-                <h3>Cold Chain Logistics</h3>
-                <p>Temperature-controlled logistics solutions</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📊</div>
-                <h3>Contract Logistics</h3>
-                <p>Customized supply chain solutions</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 2 -->
-    <section>
-        <div class="split-content" style="direction: rtl;">
-            <div style="direction: ltr;">
-                <h2>Shipping documents and parcels</h2>
-                <p>Professional handling of your important documents and parcels with secure, tracked, and reliable service worldwide.</p>
-                <button class="btn">Learn More</button>
-            </div>
-            <div class="img-placeholder">[Image Placeholder]</div>
-        </div>
-    </section>
-
-    <!-- SECTION 3 -->
+    <!-- COMMERCIAL ADVICE SECTION -->
     <section class="bg-dark">
-        <div class="split-content">
+        <div class="split-section">
+            <div class="img-placeholder">[Image Placeholder]</div>
+            <div>
+                <div class="section-label">Commercial Advice</div>
+                <h2 class="white">Navigate the latest pricing developments</h2>
+                <p class="white">Global trade is becoming increasingly complex as new US tariffs vary and reciprocal measures emerge between countries and industries. At OPS Logistics, we are committed to helping you navigate these changes.</p>
+                <button class="btn white">Discover our solutions</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHIPPING CONTAINERS SECTION -->
+    <section class="bg-light">
+        <div class="split-section">
+            <div>
+                <div class="section-label yellow">Quality Containers Available</div>
+                <h2>Shipping containers for sale</h2>
+                <p>Shop reliable shipping containers for sale for storage, commercial use, transportation, construction projects, equipment storage and container conversions.</p>
+                <p>Explore a selection of new and used shipping containers in popular sizes and configurations. Whether you need a container for storage, commercial use, or construction, we have the right solution for you.</p>
+
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-number">01</div>
+                        <div class="feature-text">
+                            <h3>New and used containers</h3>
+                            <p>Explore several container conditions suitable for storage, commercial, and project applications.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">02</div>
+                        <div class="feature-text">
+                            <h3>Multiple sizes</h3>
+                            <p>Choose from popular container sizes and configurations for different space requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="img-placeholder">[Image Placeholder]</div>
+        </div>
+    </section>
+
+    <!-- ECOMMERCE / RETAIL SECTION -->
+    <section>
+        <div class="split-section">
+            <div class="img-placeholder">[Image Placeholder]</div>
+            <div>
+                <h2>Shipping to the retailer or in bulk</h2>
+                <div class="section-label">For Professional Use Only</div>
+                <p>We have two divisions that offer reliable commercial shipping for e-commerce, supplier, or manufacturing companies.</p>
+
+                <div style="background: white; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <div style="font-size: 2rem;">🚚</div>
+                        <div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">OPS eCommerce</h3>
+                            <p style="margin: 0; font-size: 0.9rem;">Connecting businesses to consumers with standard national and international residential delivery and return solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: white; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 8px;">
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <div style="font-size: 2rem;">✈️</div>
+                        <div>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">OPS Express</h3>
+                            <p style="margin: 0; font-size: 0.9rem;">Fast, door-to-door delivery by courier. On-time delivery to over 220 countries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BULK MARITIME SECTION -->
+    <section class="bg-light">
+        <div class="split-section">
+            <div>
+                <h2>Bulk maritime transport</h2>
+                <div class="section-label">For Professional Use Only</div>
+                <p>Discover the shipping and logistics service options of OPS Global Forwarding.</p>
+
+                <div style="background: white; border: 1px solid #e0e0e0; padding: 2rem; border-radius: 8px; margin-top: 2rem;">
+                    <div class="section-label" style="color: #0055CC; margin-bottom: 1rem;">Available Services</div>
+                    <div class="solutions-grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
+                        <div style="text-align: left;">
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✈️</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Air freight</div>
+                        </div>
+                        <div style="text-align: left;">
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🚛</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Road transport (pallet)</div>
+                        </div>
+                        <div style="text-align: left;">
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🏠</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Fret maritime</div>
+                        </div>
+                        <div style="text-align: left;">
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🚂</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Frette, rail</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" style="margin-top: 2rem;">Explore OPS Global Forwarding</button>
+            </div>
+            <div class="img-placeholder">[Image Placeholder]</div>
+        </div>
+    </section>
+
+    <!-- ENTERPRISE LOGISTICS SECTION -->
+    <section>
+        <div class="split-section">
+            <div class="img-placeholder">[Image Placeholder]</div>
             <div>
                 <h2>Enterprise Logistics Services</h2>
-                <p>Customized logistics solutions designed for large-scale operations. Our team of experts creates tailored supply chain strategies.</p>
-                <button class="btn">Discover Solutions</button>
-            </div>
-            <div class="img-placeholder" style="background: #555;">[Image Placeholder]</div>
-        </div>
-    </section>
+                <div class="section-label">For Professional Use Only</div>
+                <p>Discover how OPS Supply Chain can revolutionize your business as a 3PL provider.</p>
 
-    <!-- STATS -->
-    <section>
-        <div class="stats">
-            <div class="stat">
-                <h3>220+</h3>
-                <p>Countries Served</p>
-            </div>
-            <div class="stat">
-                <h3>24/7</h3>
-                <p>Customer Support</p>
-            </div>
-            <div class="stat">
-                <h3>3PL</h3>
-                <p>Solutions</p>
-            </div>
-            <div class="stat">
-                <h3>100%</h3>
-                <p>Satisfaction</p>
-            </div>
-        </div>
-    </section>
+                <div style="background: #f5f5f5; padding: 2rem; border-radius: 8px; margin-top: 2rem;">
+                    <div class="section-label" style="margin-bottom: 1rem;">17+ Solutions Available</div>
+                    <div class="solutions-grid">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📦</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Storage</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📋</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Packaging</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏠</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Real estate</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚚</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Transport</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Service logistics</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">➕</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">And much more!</div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- FEATURES -->
-    <section class="bg-light">
-        <h2>Why Choose OPS Logistics?</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">✓</div>
-                <h3>Reliable</h3>
-                <p>On-time delivery guaranteed</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">✓</div>
-                <h3>Affordable</h3>
-                <p>Competitive pricing without compromise</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">✓</div>
-                <h3>Transparent</h3>
-                <p>Real-time tracking and visibility</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">✓</div>
-                <h3>Professional</h3>
-                <p>Expert team dedicated to success</p>
+                <button class="btn" style="margin-top: 2rem; width: 100%; padding: 1rem;">Explore the OPS supply chain</button>
             </div>
         </div>
     </section>
@@ -353,25 +544,28 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>OPS LOGISTICS</h4>
-                <p>Global logistics solutions for businesses worldwide.</p>
+                <p>Global logistics solutions for businesses worldwide. Excellence in every shipment.</p>
             </div>
             <div class="footer-col">
                 <h4>Services</h4>
-                <a href="ship-now.html">Ship Now</a>
-                <a href="quote.html">Get a Quote</a>
-                <a href="track.html">Track</a>
+                <a href="#ship">Ship Now</a>
+                <a href="#quote">Get a Quote</a>
+                <a href="#track">Track</a>
+                <a href="#services">Services</a>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-                <a href="#">FAQ</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#faq">FAQ</a>
+                <a href="#careers">Careers</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <a href="#">Support</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#terms">Terms</a>
+                <a href="#support">Support</a>
+                <a href="#security">Security</a>
             </div>
         </div>
         <div class="footer-bottom">

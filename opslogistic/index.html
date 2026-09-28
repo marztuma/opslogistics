@@ -14,24 +14,24 @@
         /* HEADER */
         header {
             background: white;
-            padding: 1rem 2rem;
+            padding: 1rem 3rem;
             border-bottom: 1px solid #e0e0e0;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .logo { font-size: 1rem; font-weight: 700; color: #000; }
+        .logo { font-size: 0.85rem; font-weight: 700; color: #000; letter-spacing: 1px; }
 
         nav {
             display: flex;
-            gap: 3rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
         nav a {
             color: #000;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 600;
         }
 
@@ -39,110 +39,133 @@
 
         .nav-right {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
+            margin-left: auto;
         }
 
-        .nav-right a { color: #0055CC; font-size: 0.8rem; }
+        .nav-right a { color: #666; font-size: 0.7rem; }
 
         .login-btn {
             background: #0055CC;
             color: white;
-            padding: 0.5rem 1.5rem;
+            padding: 0.5rem 1rem;
             border-radius: 4px;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 600;
         }
 
         /* HERO */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('placeholder-hero.jpg') center/cover;
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2634 100%);
             color: white;
-            padding: 8rem 2rem;
+            padding: 10rem 3rem;
             text-align: center;
-            min-height: 600px;
+            min-height: 700px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 2rem;
+            gap: 2.5rem;
             position: relative;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700"><rect fill="%23334455" width="1200" height="700"/></svg>');
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .hero > * { position: relative; z-index: 1; }
+
         .hero-subtitle {
-            font-size: 0.75rem;
-            letter-spacing: 2px;
+            font-size: 0.7rem;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
             opacity: 0.9;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 700;
             line-height: 1.1;
+            margin: 0.5rem 0;
         }
 
         .search-box {
             background: white;
             border-radius: 4px;
-            padding: 1rem;
-            max-width: 600px;
+            padding: 1.2rem;
+            max-width: 700px;
             width: 100%;
             display: flex;
             gap: 1rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
         }
 
         .search-input {
             flex: 1;
-            padding: 0.8rem;
+            padding: 0.9rem 1rem;
             border: none;
             border-radius: 4px;
             font-size: 0.95rem;
+            font-family: 'Source Sans Pro', sans-serif;
         }
 
         .search-btn {
-            padding: 0.8rem 2rem;
+            padding: 0.9rem 2.5rem;
             background: #0055CC;
             color: white;
             border: none;
             border-radius: 4px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
+            font-size: 0.9rem;
+            font-family: 'Source Sans Pro', sans-serif;
             white-space: nowrap;
         }
 
+        .search-btn:hover { background: #003a8a; }
+
         .action-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
 
         .action-btn {
             background: white;
             color: #333;
             border: none;
-            padding: 1.5rem 2rem;
+            padding: 1.5rem 1.8rem;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-align: center;
-            min-width: 150px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            line-height: 1.5;
+            font-family: 'Source Sans Pro', sans-serif;
         }
 
-        .action-btn:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .action-btn:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+
+        .action-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
 
         /* SECTIONS */
         section {
-            padding: 4rem 2rem;
+            padding: 5rem 3rem;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -150,15 +173,15 @@
         .split-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .section-label {
-            font-size: 0.75rem;
-            letter-spacing: 1.5px;
+            font-size: 0.65rem;
+            letter-spacing: 1.8px;
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: 800;
             color: #0055CC;
             margin-bottom: 1rem;
         }
@@ -168,11 +191,11 @@
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #000;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            line-height: 1.2;
+            line-height: 1.15;
         }
 
         h2.white { color: white; }
@@ -184,18 +207,19 @@
             margin-bottom: 1.5rem;
         }
 
-        p.white { color: rgba(255,255,255,0.9); }
+        p.white { color: rgba(255,255,255,0.95); }
 
         .btn {
             background: #0055CC;
             color: white;
-            padding: 0.9rem 2rem;
+            padding: 1rem 2.5rem;
             border: none;
             border-radius: 4px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             font-size: 0.9rem;
             display: inline-block;
+            font-family: 'Source Sans Pro', sans-serif;
         }
 
         .btn:hover { background: #003a8a; }
@@ -207,41 +231,42 @@
 
         .img-placeholder {
             width: 100%;
-            height: 400px;
-            background: #e0e0e0;
+            height: 450px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #d0d0d0 100%);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #999;
             font-size: 1rem;
+            font-weight: 500;
         }
 
         /* FEATURES GRID */
         .features-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
         }
 
         .feature-item {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             align-items: flex-start;
         }
 
         .feature-number {
             background: #003A70;
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             flex-shrink: 0;
         }
 
@@ -255,34 +280,70 @@
         .feature-text p {
             font-size: 0.9rem;
             margin: 0;
+            color: #666;
+        }
+
+        /* SERVICE BOXES */
+        .service-box {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 1.8rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .service-box h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-box p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #666;
         }
 
         /* SOLUTIONS GRID */
         .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
+        .solutions-grid.three { grid-template-columns: repeat(3, 1fr); }
+
         .solution-card {
-            background: #f5f5f5;
-            padding: 1.5rem;
-            border-radius: 8px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
         }
 
         .solution-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         .solution-card h3 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: #000;
+        }
+
+        .solutions-box {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
         }
 
         /* DARK SECTIONS */
@@ -292,16 +353,16 @@
         }
 
         .bg-dark h2 { color: white; }
-        .bg-dark p { color: rgba(255,255,255,0.9); }
+        .bg-dark p { color: rgba(255,255,255,0.95); }
 
-        .bg-light { background: #f8f8f8; }
+        .bg-light { background: #f5f5f5; }
 
         /* FOOTER */
         footer {
             background: #001a3a;
             color: white;
-            padding: 3rem 2rem;
-            margin-top: 3rem;
+            padding: 4rem 3rem;
+            margin-top: 0;
         }
 
         .footer-grid {
@@ -309,13 +370,13 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
-        .footer-col h4 { margin-bottom: 1rem; font-size: 1rem; font-weight: 700; }
-        .footer-col a { color: #0099ff; text-decoration: none; font-size: 0.9rem; display: block; margin: 0.5rem 0; }
-        .footer-col p { font-size: 0.9rem; opacity: 0.8; line-height: 1.6; }
+        .footer-col h4 { margin-bottom: 1.5rem; font-size: 0.95rem; font-weight: 700; }
+        .footer-col a { color: #0099ff; text-decoration: none; font-size: 0.85rem; display: block; margin: 0.7rem 0; }
+        .footer-col p { font-size: 0.85rem; opacity: 0.85; line-height: 1.7; }
 
         .footer-bottom {
             max-width: 1400px;
@@ -323,20 +384,22 @@
             text-align: center;
             border-top: 1px solid #333;
             padding-top: 2rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.8;
         }
 
         @media (max-width: 768px) {
-            .hero { padding: 3rem 1rem; }
-            .hero h1 { font-size: 2rem; }
-            .split-section { grid-template-columns: 1fr; }
+            header { padding: 1rem 1.5rem; }
+            .hero { padding: 3rem 1.5rem; min-height: auto; }
+            .hero h1 { font-size: 2.2rem; }
+            .split-section { grid-template-columns: 1fr; gap: 2rem; }
             .search-box { flex-direction: column; }
-            .action-buttons { flex-direction: column; }
+            .action-buttons { flex-direction: column; gap: 1rem; }
             .action-btn { width: 100%; }
-            nav { gap: 1rem; font-size: 0.8rem; }
+            nav { gap: 1rem; flex-wrap: wrap; }
             h2 { font-size: 1.8rem; }
-            .footer-grid { grid-template-columns: 1fr; }
+            section { padding: 3rem 1.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
             .features-grid { grid-template-columns: 1fr; }
             .solutions-grid { grid-template-columns: 1fr; }
         }
@@ -367,19 +430,19 @@
         </div>
         <div class="action-buttons">
             <button class="action-btn">
-                <div>📅</div>
-                <div>Ship now</div>
-                <div style="font-size: 0.8rem; opacity: 0.7;">Find the right service</div>
+                <div class="action-icon">📅</div>
+                <div style="font-weight: 700;">Ship now</div>
+                <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Find the right service</div>
             </button>
             <button class="action-btn">
-                <div>📋</div>
-                <div>Estimation</div>
-                <div style="font-size: 0.8rem; opacity: 0.7;">Estimate the cost of sharing and comparison</div>
+                <div class="action-icon">📋</div>
+                <div style="font-weight: 700;">Estimation</div>
+                <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Estimate the cost of sharing and comparison</div>
             </button>
             <button class="action-btn">
-                <div>📊</div>
-                <div>Request a business account</div>
-                <div style="font-size: 0.8rem; opacity: 0.7;">Ship regularly? Learn more about volume discounts</div>
+                <div class="action-icon">📊</div>
+                <div style="font-weight: 700;">Request a business account</div>
+                <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Ship regularly? Learn more about volume discounts</div>
             </button>
         </div>
     </section>
@@ -436,23 +499,19 @@
                 <div class="section-label">For Professional Use Only</div>
                 <p>We have two divisions that offer reliable commercial shipping for e-commerce, supplier, or manufacturing companies.</p>
 
-                <div style="background: white; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
-                    <div style="display: flex; gap: 1rem; align-items: center;">
-                        <div style="font-size: 2rem;">🚚</div>
-                        <div>
-                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">OPS eCommerce</h3>
-                            <p style="margin: 0; font-size: 0.9rem;">Connecting businesses to consumers with standard national and international residential delivery and return solutions</p>
-                        </div>
+                <div class="service-box">
+                    <div class="service-icon">🚚</div>
+                    <div>
+                        <h3>OPS eCommerce</h3>
+                        <p>Connecting businesses to consumers with standard national and international residential delivery and return solutions</p>
                     </div>
                 </div>
 
-                <div style="background: white; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 8px;">
-                    <div style="display: flex; gap: 1rem; align-items: center;">
-                        <div style="font-size: 2rem;">✈️</div>
-                        <div>
-                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">OPS Express</h3>
-                            <p style="margin: 0; font-size: 0.9rem;">Fast, door-to-door delivery by courier. On-time delivery to over 220 countries</p>
-                        </div>
+                <div class="service-box">
+                    <div class="service-icon">✈️</div>
+                    <div>
+                        <h3>OPS Express</h3>
+                        <p>Fast, door-to-door delivery by courier. On-time delivery to over 220 countries</p>
                     </div>
                 </div>
             </div>
@@ -467,24 +526,24 @@
                 <div class="section-label">For Professional Use Only</div>
                 <p>Discover the shipping and logistics service options of OPS Global Forwarding.</p>
 
-                <div style="background: white; border: 1px solid #e0e0e0; padding: 2rem; border-radius: 8px; margin-top: 2rem;">
-                    <div class="section-label" style="color: #0055CC; margin-bottom: 1rem;">Available Services</div>
-                    <div class="solutions-grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
-                        <div style="text-align: left;">
-                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✈️</div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Air freight</div>
+                <div class="solutions-box">
+                    <div class="section-label" style="margin-bottom: 1.5rem;">Available Services</div>
+                    <div class="solutions-grid">
+                        <div class="solution-card">
+                            <div class="solution-icon">✈️</div>
+                            <h3>Air freight</h3>
                         </div>
-                        <div style="text-align: left;">
-                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🚛</div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Road transport (pallet)</div>
+                        <div class="solution-card">
+                            <div class="solution-icon">🚛</div>
+                            <h3>Road transport (pallet)</h3>
                         </div>
-                        <div style="text-align: left;">
-                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🏠</div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Fret maritime</div>
+                        <div class="solution-card">
+                            <div class="solution-icon">🏠</div>
+                            <h3>Fret maritime</h3>
                         </div>
-                        <div style="text-align: left;">
-                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🚂</div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Frette, rail</div>
+                        <div class="solution-card">
+                            <div class="solution-icon">🚂</div>
+                            <h3>Frette, rail</h3>
                         </div>
                     </div>
                 </div>
@@ -502,34 +561,34 @@
             <div>
                 <h2>Enterprise Logistics Services</h2>
                 <div class="section-label">For Professional Use Only</div>
-                <p>Discover how OPS Supply Chain can revolutionize your business as a 3PL provider.</p>
+                <p>Discover how OPS Supply Chain can support your business as a 3PL provider.</p>
 
-                <div style="background: #f5f5f5; padding: 2rem; border-radius: 8px; margin-top: 2rem;">
-                    <div class="section-label" style="margin-bottom: 1rem;">17+ Solutions Available</div>
-                    <div class="solutions-grid">
-                        <div style="text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📦</div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Storage</div>
+                <div class="solutions-box">
+                    <div class="section-label" style="margin-bottom: 1.5rem;">17+ Solutions Available</div>
+                    <div class="solutions-grid three">
+                        <div class="solution-card">
+                            <div class="solution-icon">📦</div>
+                            <h3>Storage</h3>
                         </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📋</div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Packaging</div>
+                        <div class="solution-card">
+                            <div class="solution-icon">📋</div>
+                            <h3>Packaging</h3>
                         </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏠</div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Real estate</div>
+                        <div class="solution-card">
+                            <div class="solution-icon">🏠</div>
+                            <h3>Real estate</h3>
                         </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚚</div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Transport</div>
+                        <div class="solution-card">
+                            <div class="solution-icon">🚚</div>
+                            <h3>Transport</h3>
                         </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Service logistics</div>
+                        <div class="solution-card">
+                            <div class="solution-icon">👥</div>
+                            <h3>Service logistics</h3>
                         </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">➕</div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">And much more!</div>
+                        <div class="solution-card">
+                            <div class="solution-icon">➕</div>
+                            <h3>And much more!</h3>
                         </div>
                     </div>
                 </div>
